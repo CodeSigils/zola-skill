@@ -24,8 +24,8 @@ project-scoped skills under `.agents/skills/` and `.claude/skills/`.
 
 | Host | Install and verify | Pass condition |
 | --- | --- | --- |
-| Codex | `release_dir="$(mktemp -d)" && cd "$release_dir" && npx skills add <owner>/zola-skill@zola --agent codex --copy --yes && test -f .agents/skills/zola/SKILL.md && test -f .agents/skills/zola/workflows/debug-build.md && test -f .agents/skills/zola/workflows/i18n.md && test -f .agents/skills/zola/workflows/modify-review.md && test -f .agents/skills/zola/references/source-registry.md && npx skills ls -a codex` | The installed `zola` skill is listed and all five files exist. |
-| Claude Code | `release_dir="$(mktemp -d)" && cd "$release_dir" && npx skills add <owner>/zola-skill@zola --agent claude-code --copy --yes && test -f .claude/skills/zola/SKILL.md && test -f .claude/skills/zola/workflows/debug-build.md && test -f .claude/skills/zola/workflows/i18n.md && test -f .claude/skills/zola/workflows/modify-review.md && test -f .claude/skills/zola/references/source-registry.md && npx skills ls -a claude-code` | The installed `zola` skill is listed and all five files exist. |
+| Codex | `release_dir="$(mktemp -d)" && cd "$release_dir" && npx skills add <owner>/zola-skill@zola --agent codex --copy --yes && test -f .agents/skills/zola/SKILL.md && test -f .agents/skills/zola/workflows/debug-build.md && test -f .agents/skills/zola/workflows/i18n.md && test -f .agents/skills/zola/workflows/modify-review.md && test -f .agents/skills/zola/workflows/create-site.md && test -f .agents/skills/zola/references/source-registry.md && npx skills ls -a codex` | The installed `zola` skill is listed and all six files exist. |
+| Claude Code | `release_dir="$(mktemp -d)" && cd "$release_dir" && npx skills add <owner>/zola-skill@zola --agent claude-code --copy --yes && test -f .claude/skills/zola/SKILL.md && test -f .claude/skills/zola/workflows/debug-build.md && test -f .claude/skills/zola/workflows/i18n.md && test -f .claude/skills/zola/workflows/modify-review.md && test -f .claude/skills/zola/workflows/create-site.md && test -f .claude/skills/zola/references/source-registry.md && npx skills ls -a claude-code` | The installed `zola` skill is listed and all six files exist. |
 
 After recording each result, remove the exact temporary directory created for
 that row, for example `rm -rf "$release_dir"`. Do not run the command from a
@@ -77,4 +77,17 @@ Skills CLI: `1.5.23`.
 | Claude Code | `.claude/skills/zola` | Passed: entrypoint, debug-build, i18n, and modification/review workflows plus source registry existed; `npx skills ls -a claude-code` listed `zola`. |
 
 Each check ran in a separately created `/tmp/zola-skill-modify-*` directory and
+the directory was removed after the command completed.
+
+### 2026-09-02 Phase 3 site-creation published-package results
+
+Source: `CodeSigils/zola-skill@zola` on the `main` branch, commit `d898c88`.
+Skills CLI: `1.5.23`.
+
+| Host | Observed install path | Result |
+| --- | --- | --- |
+| Codex | `.agents/skills/zola` | Passed: entrypoint, debug-build, i18n, modification/review, and creation workflows plus source registry existed; `npx skills ls -a codex` listed `zola`. |
+| Claude Code | `.claude/skills/zola` | Passed: entrypoint, debug-build, i18n, modification/review, and creation workflows plus source registry existed; `npx skills ls -a claude-code` listed `zola`. |
+
+Each check ran in a separately created `/tmp/zola-skill-create-*` directory and
 the directory was removed after the command completed.
