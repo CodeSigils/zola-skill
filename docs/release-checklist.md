@@ -91,3 +91,16 @@ Skills CLI: `1.5.23`.
 
 Each check ran in a separately created `/tmp/zola-skill-create-*` directory and
 the directory was removed after the command completed.
+
+### 2026-09-02 Phase 3 extended debug/build published-package results
+
+Source: `CodeSigils/zola-skill@zola` on the `main` branch, commit `f6a2295`.
+Skills CLI: `1.5.23`.
+
+| Host | Observed install path | Result |
+| --- | --- | --- |
+| Codex | `.agents/skills/zola` | Passed: entrypoint, debug-build, i18n, modification/review, and creation workflows plus source registry existed; `npx skills ls -a codex` listed `zola`. |
+| Claude Code | `.claude/skills/zola` | Passed: entrypoint, debug-build, i18n, modification/review, and creation workflows plus source registry existed; `npx skills ls -a claude-code` listed `zola`. |
+
+Each check ran in a separately created `/tmp/zola-skill-debug-*` directory and
+the directory was removed after the command completed.
