@@ -387,8 +387,11 @@ The fixture-owned `theme-override-site` selects `starter-theme`, whose
 theme-qualified template and overrides only that block. Under Zola 0.23.4,
 `zola check --skip-external-links` and isolated `zola build` pass; generated
 output proves the host banner, the configured `/docs/` URL, and host content.
-This is an implementation checkpoint, not Phase 3 completion: published-package
-validation remains before the phase-close gate.
+The published package at commit `134fb05` was installed successfully for both
+Codex and Claude Code with the new workflow present; see the
+[release checklist](release-checklist.md) for the commands and outcomes. This
+is an implementation checkpoint; assess the mandatory phase-close gate before
+marking Phase 3 complete.
 
 Each workflow should define inputs, inspection steps, expected output, and
 validation commands.
