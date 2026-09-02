@@ -88,4 +88,13 @@ expect_build_failure_after_check missing-translated-section-index 'section.*not 
 printf 'unauthorized-language-code: expected unauthorized-language failure\n'
 expect_check_and_build_failure unauthorized-language-code 'authorized language|language'
 
-printf 'PASS: debug-build and i18n fixtures passed expected assertions.\n'
+printf 'existing-site-modification: generated route after authorized content change\n'
+run_check_and_build existing-site-modification
+rg -F 'href="https://example.test/docs/updates/">Updates</a>' "$run_root/existing-site-modification-output/index.html"
+rg -F 'Added release notes for the latest update.' "$run_root/existing-site-modification-output/updates/index.html"
+
+printf 'existing-site-review: intentional non-root base_url finding remains visible\n'
+run_check_and_build existing-site-review
+rg -F 'href="/about/">About</a>' "$run_root/existing-site-review-output/index.html"
+
+printf 'PASS: debug-build, i18n, and existing-site fixtures passed expected assertions.\n'

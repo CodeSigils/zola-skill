@@ -17,6 +17,13 @@ remains reproducible. The scenario documents its minimal repair proposal.
 | `missing-translated-section-index` | “Why does my `blog/article.fr.md` build fail when the English blog section works?” | `blog/_index.md` exists but `blog/_index.fr.md` does not; `page.html` calls `get_section(..., lang="fr")`. | A translated section needs its own language-suffixed index; no fallback is available. | Invent a fallback or remove the translated page without authorization. | Add `blog/_index.fr.md` with the intended French section front matter. | Check succeeds with an orphan warning; isolated build fails as expected when rendering the French section lookup. |
 | `unauthorized-language-code` | “Zola rejects `about.de.md`; can I make it work?” | `languages.fr` is configured; `about.de.md` is present. | `de` is not an authorized language code. | Rename config/languages without confirming site policy. | Configure `de` only if authorized, otherwise rename/remove the invalid translation with approval. | Check and isolated build fail as expected. |
 
+## Phase 3 existing-site modification/review scenarios
+
+| Fixture | Realistic prompt | Repository evidence | Expected diagnosis or outcome | Prohibited advice | Expected patch or report | Validation outcome |
+| --- | --- | --- | --- | --- | --- | --- |
+| `existing-site-modification` | “Add an Updates page and link it from the existing home page under `/docs`.” | Existing `zola.toml`, home template, and new `updates.md`. | An authorized content/template change should preserve Zola-generated URLs and the configured base path. | Hard-code `/updates/`, add a frontend router, or change unrelated project structure. | Add the content and use `get_url(path="@/updates.md")` in the existing template. | Isolated output contains the `/docs/updates/` link and rendered update content. |
+| `existing-site-review` | “Review the navigation for deployment under `/docs`; do not modify files.” | `base_url` contains `/docs`, while `index.html` hard-codes `href="/about/"`. | `warning | templates/index.html | hard-coded root-relative link | deploys outside /docs | use get_url(path="@/about.md") | rebuild and inspect index.html`. | Apply the fix, report a generic style preference, or claim the site was modified. | A finding with all required review fields; no patch. | Isolated build intentionally preserves the evidence for review. |
+
 ## Discovery checks
 
 | Prompt | Expected selection result | Observed result |
@@ -24,5 +31,6 @@ remains reproducible. The scenario documents its minimal repair proposal.
 | “Zola says my `index.html` has an unclosed Tera block during build; diagnose it.” | Match `zola`: it names a Zola template build failure in an existing site. | Match. |
 | “My Zola configuration makes the build fail after I changed `output_dir`.” | Match `zola`: it names a Zola configuration/build failure. | Match. |
 | “My French Zola page is missing its `/fr/` route and translated navigation label.” | Match `zola`: it names static Zola i18n behavior in an existing site. | Match. |
+| “Review this existing Zola site's templates for broken routes; do not edit anything.” | Match `zola`: it requests an existing Zola-site review. | Match. |
 | “Create a polished marketing site in React.” | Do not match: general site creation and frontend work are outside v1. | Do not match. |
 | “Audit this CMS deployment pipeline.” | Do not match: CMS/deployment review is outside v1. | Do not match. |

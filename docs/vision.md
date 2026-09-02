@@ -1,6 +1,6 @@
 # Zola Skill Vision
 
-**Status:** Phase 2 static multilingual workflow complete; Phase 3 not started
+**Status:** Phase 3 in progress — existing-site modification/review vertical slice
 **Audience:** Skill maintainers and contributors  
 **Owner:** Project maintainers  
 **Review cadence:** Before a release, after a Zola upgrade, or every six months  
@@ -79,8 +79,9 @@ workflow/reference files.
 The released skill supports two complete workflows in a local repository:
 diagnosing a Zola build or template failure, and diagnosing a static
 multilingual configuration, content, or language-aware template-link failure.
-Its discovery description must target those workflows only; site creation,
-general review, and theme authoring requests must not activate automatically.
+It also supports a bounded existing-site modification/review workflow. Its
+discovery description must target those workflows only; site creation and theme
+authoring requests must not activate automatically.
 
 ### Required v1 behavior
 
@@ -136,6 +137,17 @@ general review, and theme authoring requests must not activate automatically.
   `unauthorized-language-code` asserts that an unconfigured language fails.
 - Complete: `tests/scenarios.md` records prompts, evidence, prohibited advice,
   repair proposals, and validation outcomes for all Phase 2 fixtures.
+
+### Phase 3 existing-site modification/review slice
+
+- In progress: `workflows/modify-review.md` distinguishes authorized small
+  changes from review-only requests, requires evidence-first inspection, and
+  defines the required review-finding format.
+- In progress: `existing-site-modification` asserts that a generated link to a
+  new content page preserves a non-root `/docs` base URL; `existing-site-review`
+  preserves a known hard-coded root-link finding for a non-mutating review.
+- Remaining Phase 3 work: site creation, extended debug/build coverage, and a
+  theme workflow after its required research pass.
 
 ## Deferred work
 
