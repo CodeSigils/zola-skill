@@ -365,11 +365,19 @@ The published package at commit `f6a2295` was installed successfully for both
 Codex and Claude Code with the updated debug/build workflow present; see the
 [release checklist](release-checklist.md) for the commands and outcomes.
 
-Before implementing the theme workflow, complete a bounded research pass:
+The bounded theme research pass is complete. It compares four non-archived
+themes across documentation, blog, multilingual/accessibility, and portfolio
+archetypes; records MIT license provenance, repository activity signals,
+version-check results, and nonportable assumptions in
+[research.md](research.md). It confirms that theme manifests and recent
+activity do not establish compatibility with the pinned Zola version.
 
-- Compare three to five maintained Zola themes across the site archetypes in scope.
-- Record reusable patterns, license provenance, maintenance signals, and
-  nonportable assumptions in `docs/research.md`.
+Implement the theme workflow next with a fixture-owned minimal theme. It must
+exercise one named template-block override in an existing host site, retain the
+host's configuration and non-root URL behavior, and assert the generated
+output. It must inspect the installed theme's manifest, version/revision, and
+required configuration before advice; it must not adopt a third-party theme,
+copy an example configuration wholesale, or introduce CSS/JavaScript tooling.
 
 Each workflow should define inputs, inspection steps, expected output, and
 validation commands.
