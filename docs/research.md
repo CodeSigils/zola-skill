@@ -115,6 +115,14 @@ non-interactive copied installs in isolated temporary directories. Recheck the
 CLI documentation before a public release because these integration details can
 change.
 
+**Published-package validation (2026-09-02):** `CodeSigils/zola-skill@zola`
+was installed successfully into separate temporary projects for both Codex and
+Claude Code with skills CLI `1.5.23`. The copied skills appeared at
+`.agents/skills/zola` and `.claude/skills/zola`, respectively; each contained
+the entrypoint, debug-build workflow, and source registry, and `skills ls`
+listed the skill. Exact commands and outcomes are maintained in the
+[release checklist](release-checklist.md).
+
 **Naming decision:** publish the skill as **Zola** with the machine identifier
 `zola`; retain `zola-skill` only as the source repository name. This gives the
 skill a concise domain-specific discovery name while preserving an unambiguous

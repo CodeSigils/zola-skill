@@ -1,6 +1,6 @@
 # Zola Skill Vision
 
-**Status:** Phase 1 debug-build implementation complete; unreleased  
+**Status:** Phase 1 debug-build release gate passed; Phase 2 not started
 **Audience:** Skill maintainers and contributors  
 **Owner:** Project maintainers  
 **Review cadence:** Before a release, after a Zola upgrade, or every six months  
@@ -117,10 +117,10 @@ must not activate v1 automatically.
   skills/zola` on 2026-09-02.
 - Complete: the repository now includes the MIT terms in `LICENSE`, and the
   distributable skill declares `license: MIT`.
-- Pending public-release evidence: perform published-package skills.sh
-  installation smoke tests for Codex and Claude Code. Those checks require a
-  public, resolvable repository and must not be represented as complete locally.
-  The exact steps are versioned in the [release checklist](release-checklist.md).
+- Complete: published-package skills.sh installation smoke tests passed for
+  Codex and Claude Code from `CodeSigils/zola-skill@zola`. The exact commands,
+  CLI version, paths, and outcomes are recorded in the
+  [release checklist](release-checklist.md).
 
 ## Deferred work
 
