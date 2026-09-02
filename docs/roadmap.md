@@ -341,6 +341,10 @@ prohibits initialization of an existing directory and deployment claims. This
 is an implementation checkpoint, not Phase 3 completion: expanded debug/build
 coverage and theme workflow/research remain outstanding.
 
+The published package at commit `d898c88` was installed successfully for both
+Codex and Claude Code with the creation workflow present; see the
+[release checklist](release-checklist.md) for the commands and outcomes.
+
 Before implementing the theme workflow, complete a bounded research pass:
 
 - Compare three to five maintained Zola themes across the site archetypes in scope.
