@@ -1,0 +1,12 @@
+base_url = "https://example.test/docs"
+title = "English title"
+default_language = "en"
+
+[translations]
+nav_about = "About"
+
+[languages.fr]
+title = "Titre français"
+
+[languages.fr.translations]
+nav_about = "À propos"

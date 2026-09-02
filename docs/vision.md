@@ -1,6 +1,6 @@
 # Zola Skill Vision
 
-**Status:** Phase 1 debug-build release gate passed; Phase 2 not started
+**Status:** Phase 2 static multilingual workflow complete; Phase 3 not started
 **Audience:** Skill maintainers and contributors  
 **Owner:** Project maintainers  
 **Review cadence:** Before a release, after a Zola upgrade, or every six months  
@@ -74,12 +74,13 @@ Planning documents under `docs/` guide maintainers. They are not runtime skill
 context. The runtime skill must remain concise and route to conditional
 workflow/reference files.
 
-## v1: debug and build confidence
+## Implemented workflows: debug, build, and static multilingual confidence
 
-The first release supports one complete workflow: diagnose a Zola build or
-template failure in a local repository. Its discovery description must target
-that workflow only; site creation, general review, and theme authoring requests
-must not activate v1 automatically.
+The released skill supports two complete workflows in a local repository:
+diagnosing a Zola build or template failure, and diagnosing a static
+multilingual configuration, content, or language-aware template-link failure.
+Its discovery description must target those workflows only; site creation,
+general review, and theme authoring requests must not activate automatically.
 
 ### Required v1 behavior
 
@@ -122,9 +123,24 @@ must not activate v1 automatically.
   CLI version, paths, and outcomes are recorded in the
   [release checklist](release-checklist.md).
 
+### Phase 2 i18n acceptance evidence
+
+- Complete: `workflows/i18n.md` limits the workflow to static configuration,
+  translated content/section files, template translations, and language-aware
+  URLs; it excludes translation, locale detection, browser state, and search.
+- Complete: `i18n-site` asserts default and French configuration/translation
+  values, a French content route, and a `get_url(..., lang=lang)` link beneath
+  a non-root `/docs` base URL.
+- Complete: `missing-translated-section-index` proves the missing French
+  section is not silently substituted when a template requests it, and
+  `unauthorized-language-code` asserts that an unconfigured language fails.
+- Complete: `tests/scenarios.md` records prompts, evidence, prohibited advice,
+  repair proposals, and validation outcomes for all Phase 2 fixtures.
+
 ## Deferred work
 
-Site creation, theme authoring/research, deployment patterns, i18n, search,
+Site creation, theme authoring/research, deployment patterns, advanced i18n,
+search,
 accessibility/release checklists, JavaScript enhancement, Rust pre-build tools,
 WASM, and MCP work are valuable but are **not v1 runtime promises**. Add each
 only after a concrete user workflow, evaluation scenario, source evidence, and
@@ -133,9 +149,9 @@ language configuration, translated content paths, template URL generation, and
 fallback behavior require a cohesive, testable workflow. It must not promise
 machine translation, locale selection, or browser-runtime behavior.
 
-After the i18n workflow is proven, prioritize existing-site modification and
-review, theme overrides and inheritance, content-model features (taxonomies,
-pagination, feeds, and search), and accessibility/release checks. See
+Next, prioritize existing-site modification and review, theme overrides and
+inheritance, content-model features (taxonomies, pagination, feeds, and
+search), and accessibility/release checks. See
 [future capabilities](future-capabilities.md) for JavaScript, Rust, WASM, and
 runtime-service guidance.
 

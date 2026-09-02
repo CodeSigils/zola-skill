@@ -1,0 +1,3 @@
+<!doctype html>
+{% set french_blog = get_section(path="blog/_index.md", lang="fr") %}
+<title>{{ config.title | default(value="Missing translated section index") }}</title>
