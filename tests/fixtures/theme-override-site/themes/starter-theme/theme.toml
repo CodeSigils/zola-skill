@@ -1,0 +1,4 @@
+name = "starter-theme"
+description = "Fixture theme for a named-block override"
+license = "MIT"
+min_version = "0.23.4"

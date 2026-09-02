@@ -37,6 +37,12 @@ remains reproducible. The scenario documents its minimal repair proposal.
 | --- | --- | --- | --- | --- | --- | --- |
 | `created-site` | “Create a simple Zola starter site at `https://example.test/docs` with a Welcome page.” | Explicit target, URL, title, and initial page brief. | Initialize only the new target, add minimal root content/template, and retain the non-root base URL. | Use `--force` on an existing directory, add a theme/framework, or claim deployment is configured. | `zola.toml`, root content, and `index.html` template; provisional values stated if supplied. | `zola init` scaffold uses the approved URL; fixture check and isolated build render the title and Welcome content. |
 
+## Phase 3 theme-override scenario
+
+| Fixture | Realistic prompt | Repository evidence | Expected outcome | Prohibited advice | Expected patch or report | Validation outcome |
+| --- | --- | --- | --- | --- | --- | --- |
+| `theme-override-site` | “Change only the banner in my already configured theme; keep the `/docs` deployment path.” | Host `zola.toml` selects `starter-theme`; the installed manifest and `base.html` define `site_banner`; host `templates/index.html` extends the theme template. | An authorized host-side named-block override preserves the theme files, configuration, and generated base URL. | Install a new theme, replace `zola.toml` with an example, edit theme files, or add CSS/JavaScript tooling. | Override only `site_banner` through `starter-theme/templates/index.html`. | Check and isolated build pass; output contains the host banner, generated `/docs/` home URL, and host content. |
+
 ## Discovery checks
 
 | Prompt | Expected selection result | Observed result |

@@ -1,0 +1,3 @@
+base_url = "https://example.test/docs"
+title = "Theme host"
+theme = "starter-theme"
