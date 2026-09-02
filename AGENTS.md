@@ -44,3 +44,19 @@ Creating, removing, renaming, or materially changing the role of a planning
 document requires updating `docs/README.md` and any affected related-document
 links. Before handoff, verify that changed relative Markdown links resolve and
 still describe the linked document accurately.
+
+## Commit message contract
+
+Every commit must have a concise imperative subject and a detailed body with
+both labeled fields below:
+
+```text
+<imperative subject>
+
+what: Describe the files, behavior, or documentation changed.
+why: Explain the user need, evidence, or design reason for the change.
+```
+
+Keep `what:` and `why:` in the commit body even for small changes. Add
+validation details after those fields when useful, but do not replace either
+required label with an unlabeled summary.
