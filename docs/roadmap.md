@@ -1,6 +1,6 @@
 # Zola Skill Roadmap
 
-**Status:** Phase 3 in progress — modification/review, site-creation, extended debug/build, and bounded theme-override slices
+**Status:** Phase 3 complete — four fixture-backed core workflows published and validated
 **Audience:** Skill maintainers and contributors  
 **Owner:** Project maintainers  
 **Last reviewed:** 2026-09-02
@@ -286,7 +286,7 @@ intentionally unchanged because Phase 2 adds no JavaScript, Rust, WebAssembly,
 runtime-service, or Zola-core guidance. The release checklist remains valid
 and records the fresh published-package smoke test for this updated skill.
 
-## Phase 3 — Core workflows
+## Phase 3 — Core workflows (complete)
 
 Implement focused workflows for the highest-value jobs. Start with
 existing-site modification/review because it reuses the proven inspection,
@@ -305,7 +305,7 @@ the review scenario. Review findings must include severity, path, evidence,
 impact, remediation, and validation; do not modify a site during a review-only
 request.
 
-### Phase 3 existing-site modification/review slice — in progress
+### Phase 3 existing-site modification/review slice — complete
 
 `skills/zola/workflows/modify-review.md` implements the first slice. It routes
 authorized small content/template/configuration changes separately from
@@ -318,15 +318,16 @@ The `existing-site-modification` fixture asserts a new content page and a
 intentionally retains `href="/about/"` beneath a `/docs` base URL so the
 scenario can prove a non-mutating warning report rather than a silent repair.
 Both pass `zola check --skip-external-links`, isolated build, and generated
-output assertions under Zola 0.23.4. This is an implementation checkpoint, not
-Phase 3 completion: site creation, expanded debug/build coverage, and the
-theme workflow/research remain outstanding.
+output assertions under Zola 0.23.4. At this implementation checkpoint, site
+creation, expanded debug/build coverage, and the theme workflow/research were
+still outstanding; all later slices are now covered by the close-gate evidence
+below.
 
 The published package at commit `b5fb0c1` was installed successfully for both
 Codex and Claude Code with the new workflow present; see the
 [release checklist](release-checklist.md) for the commands and outcomes.
 
-### Phase 3 minimal site-creation slice — in progress
+### Phase 3 minimal site-creation slice — complete
 
 `skills/zola/workflows/create-site.md` now covers only an explicit new target
 directory, brief-driven `zola init`, minimal root content/template creation,
@@ -337,15 +338,16 @@ provisional values rather than inventing them.
 The runner creates an isolated scaffold through `zola init` with the approved
 `https://example.test/docs` base URL, then validates `created-site` with check,
 isolated build, and generated title/content assertions. The scenario manifest
-prohibits initialization of an existing directory and deployment claims. This
-is an implementation checkpoint, not Phase 3 completion: expanded debug/build
-coverage and theme workflow/research remain outstanding.
+prohibits initialization of an existing directory and deployment claims. At
+this implementation checkpoint, expanded debug/build coverage and theme
+workflow/research were still outstanding; all later slices are now covered by
+the close-gate evidence below.
 
 The published package at commit `d898c88` was installed successfully for both
 Codex and Claude Code with the creation workflow present; see the
 [release checklist](release-checklist.md) for the commands and outcomes.
 
-### Phase 3 extended debug/build slice — in progress
+### Phase 3 extended debug/build slice — complete
 
 `skills/zola/workflows/debug-build.md` now requires the diagnosis to separate
 a malformed root `zola.toml`/`config.toml` from malformed content front matter.
@@ -358,8 +360,9 @@ broken. Under Zola 0.23.4, both `zola check --skip-external-links` and isolated
 `zola build` fail as expected: the former reports a TOML parse error at the
 invalid root-config line, and the latter names the content page whose front
 matter cannot parse. `tests/scenarios.md` records the evidence, forbidden
-advice, and minimal repair for each case. This is an implementation checkpoint,
-not Phase 3 completion: only the theme workflow/research remains.
+advice, and minimal repair for each case. At this implementation checkpoint,
+only the theme workflow/research remained; the close-gate evidence below covers
+that final slice.
 
 The published package at commit `f6a2295` was installed successfully for both
 Codex and Claude Code with the updated debug/build workflow present; see the
@@ -372,7 +375,7 @@ version-check results, and nonportable assumptions in
 [research.md](research.md). It confirms that theme manifests and recent
 activity do not establish compatibility with the pinned Zola version.
 
-### Phase 3 bounded theme-override slice — in progress
+### Phase 3 bounded theme-override slice — complete
 
 `skills/zola/workflows/theme-override.md` implements one authorized host-side
 override of a verified named block in an already configured theme, with a
@@ -389,9 +392,27 @@ theme-qualified template and overrides only that block. Under Zola 0.23.4,
 output proves the host banner, the configured `/docs/` URL, and host content.
 The published package at commit `134fb05` was installed successfully for both
 Codex and Claude Code with the new workflow present; see the
-[release checklist](release-checklist.md) for the commands and outcomes. This
-is an implementation checkpoint; assess the mandatory phase-close gate before
-marking Phase 3 complete.
+[release checklist](release-checklist.md) for the commands and outcomes. The
+mandatory phase-close gate is recorded below.
+
+### Phase 3 close-gate evidence — complete
+
+The documentation index, vision, roadmap, research, source registry, and
+release checklist were re-read on 2026-09-02. `tests/run.sh` passed under Zola
+0.23.4: valid, non-root URL, i18n, authorized modification/review, site
+creation, parser-failure, and theme-override assertions passed; intentional
+broken-template, malformed-configuration/front-matter, untranslated-section,
+and unauthorized-language cases failed as expected. `npx --yes skills-ref
+validate skills/zola` reported `Valid skill: skills/zola`.
+
+The release checklist records successful copied installs of each published
+workflow for Codex and Claude Code, most recently the theme-override workflow
+at commit `134fb05`. The source registry contains the official CLI,
+configuration, Tera, i18n/template, and theme sources used by the workflows;
+research records the theme comparison and fixture result. Affected relative
+documentation links were verified. `future-capabilities.md` remains unchanged
+because Phase 3 added no JavaScript, Rust, WebAssembly, runtime-service, or
+Zola-core guidance. Phase 4 may now begin.
 
 Each workflow should define inputs, inspection steps, expected output, and
 validation commands.
