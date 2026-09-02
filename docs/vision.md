@@ -1,6 +1,6 @@
 # Zola Skill Vision
 
-**Status:** Phase 3 in progress — existing-site modification/review vertical slice
+**Status:** Phase 3 in progress — modification/review and site-creation slices
 **Audience:** Skill maintainers and contributors  
 **Owner:** Project maintainers  
 **Review cadence:** Before a release, after a Zola upgrade, or every six months  
@@ -79,9 +79,9 @@ workflow/reference files.
 The released skill supports two complete workflows in a local repository:
 diagnosing a Zola build or template failure, and diagnosing a static
 multilingual configuration, content, or language-aware template-link failure.
-It also supports a bounded existing-site modification/review workflow. Its
-discovery description must target those workflows only; site creation and theme
-authoring requests must not activate automatically.
+It also supports bounded existing-site modification/review and minimal
+site-creation workflows. Its discovery description must target those workflows
+only; theme authoring requests must not activate automatically.
 
 ### Required v1 behavior
 
@@ -146,13 +146,15 @@ authoring requests must not activate automatically.
 - In progress: `existing-site-modification` asserts that a generated link to a
   new content page preserves a non-root `/docs` base URL; `existing-site-review`
   preserves a known hard-coded root-link finding for a non-mutating review.
-- Remaining Phase 3 work: site creation, extended debug/build coverage, and a
-  theme workflow after its required research pass.
+- In progress: `workflows/create-site.md` limits creation to an explicit new
+  directory and a minimal static site; `created-site` asserts the approved
+  `zola init` base URL plus rendered title and root content.
+- Remaining Phase 3 work: extended debug/build coverage and a theme workflow
+  after its required research pass.
 
 ## Deferred work
 
-Site creation, theme authoring/research, deployment patterns, advanced i18n,
-search,
+Theme authoring/research, deployment patterns, advanced i18n, search,
 accessibility/release checklists, JavaScript enhancement, Rust pre-build tools,
 WASM, and MCP work are valuable but are **not v1 runtime promises**. Add each
 only after a concrete user workflow, evaluation scenario, source evidence, and

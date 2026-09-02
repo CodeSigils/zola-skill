@@ -24,6 +24,12 @@ remains reproducible. The scenario documents its minimal repair proposal.
 | `existing-site-modification` | “Add an Updates page and link it from the existing home page under `/docs`.” | Existing `zola.toml`, home template, and new `updates.md`. | An authorized content/template change should preserve Zola-generated URLs and the configured base path. | Hard-code `/updates/`, add a frontend router, or change unrelated project structure. | Add the content and use `get_url(path="@/updates.md")` in the existing template. | Isolated output contains the `/docs/updates/` link and rendered update content. |
 | `existing-site-review` | “Review the navigation for deployment under `/docs`; do not modify files.” | `base_url` contains `/docs`, while `index.html` hard-codes `href="/about/"`. | `warning | templates/index.html | hard-coded root-relative link | deploys outside /docs | use get_url(path="@/about.md") | rebuild and inspect index.html`. | Apply the fix, report a generic style preference, or claim the site was modified. | A finding with all required review fields; no patch. | Isolated build intentionally preserves the evidence for review. |
 
+## Phase 3 minimal site-creation scenario
+
+| Fixture | Realistic prompt | Repository evidence | Expected outcome | Prohibited advice | Expected result | Validation outcome |
+| --- | --- | --- | --- | --- | --- | --- |
+| `created-site` | “Create a simple Zola starter site at `https://example.test/docs` with a Welcome page.” | Explicit target, URL, title, and initial page brief. | Initialize only the new target, add minimal root content/template, and retain the non-root base URL. | Use `--force` on an existing directory, add a theme/framework, or claim deployment is configured. | `zola.toml`, root content, and `index.html` template; provisional values stated if supplied. | `zola init` scaffold uses the approved URL; fixture check and isolated build render the title and Welcome content. |
+
 ## Discovery checks
 
 | Prompt | Expected selection result | Observed result |
@@ -32,5 +38,6 @@ remains reproducible. The scenario documents its minimal repair proposal.
 | “My Zola configuration makes the build fail after I changed `output_dir`.” | Match `zola`: it names a Zola configuration/build failure. | Match. |
 | “My French Zola page is missing its `/fr/` route and translated navigation label.” | Match `zola`: it names static Zola i18n behavior in an existing site. | Match. |
 | “Review this existing Zola site's templates for broken routes; do not edit anything.” | Match `zola`: it requests an existing Zola-site review. | Match. |
+| “Create a small Zola documentation site in this new directory.” | Match `zola`: it requests a minimal Zola site creation workflow. | Match. |
 | “Create a polished marketing site in React.” | Do not match: general site creation and frontend work are outside v1. | Do not match. |
 | “Audit this CMS deployment pipeline.” | Do not match: CMS/deployment review is outside v1. | Do not match. |

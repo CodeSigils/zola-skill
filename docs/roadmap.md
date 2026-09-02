@@ -326,6 +326,21 @@ The published package at commit `b5fb0c1` was installed successfully for both
 Codex and Claude Code with the new workflow present; see the
 [release checklist](release-checklist.md) for the commands and outcomes.
 
+### Phase 3 minimal site-creation slice — in progress
+
+`skills/zola/workflows/create-site.md` now covers only an explicit new target
+directory, brief-driven `zola init`, minimal root content/template creation,
+and isolated validation. It requires explicit authorization before `--force`,
+does not add a theme/framework/runtime/deployment service, and labels
+provisional values rather than inventing them.
+
+The runner creates an isolated scaffold through `zola init` with the approved
+`https://example.test/docs` base URL, then validates `created-site` with check,
+isolated build, and generated title/content assertions. The scenario manifest
+prohibits initialization of an existing directory and deployment claims. This
+is an implementation checkpoint, not Phase 3 completion: expanded debug/build
+coverage and theme workflow/research remain outstanding.
+
 Before implementing the theme workflow, complete a bounded research pass:
 
 - Compare three to five maintained Zola themes across the site archetypes in scope.

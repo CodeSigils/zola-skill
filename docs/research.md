@@ -44,6 +44,14 @@ environments, but it removes that coverage and must be reported.
 
 Source: [Zola CLI usage](https://www.getzola.org/documentation/getting-started/cli-usage/).
 
+**Phase 3 site-creation validation (2026-09-02, Zola 0.23.4):** In an isolated
+temporary parent directory, `zola init created-with-init` accepted the supplied
+base URL and the Sass/search prompt answers, then created `zola.toml`. The
+fixture runner separately validates a minimal content/template site using that
+base URL. This supports a workflow that initializes only an explicit new
+directory and treats `--force` as an authorization boundary, rather than a
+default convenience flag.
+
 ## Phase 1 fixture-version evidence
 
 **Checked:** 2026-09-02

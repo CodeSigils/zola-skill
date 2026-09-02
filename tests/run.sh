@@ -97,4 +97,12 @@ printf 'existing-site-review: intentional non-root base_url finding remains visi
 run_check_and_build existing-site-review
 rg -F 'href="/about/">About</a>' "$run_root/existing-site-review-output/index.html"
 
-printf 'PASS: debug-build, i18n, and existing-site fixtures passed expected assertions.\n'
+printf 'created-site: init scaffold and minimal-site output\n'
+(cd "$run_root" && printf 'https://example.test/docs\nn\nn\n' | "$zola_bin" init created-with-init)
+test -f "$run_root/created-with-init/zola.toml"
+rg -F 'base_url = "https://example.test/docs"' "$run_root/created-with-init/zola.toml"
+run_check_and_build created-site
+rg -F '<title>Starter site</title>' "$run_root/created-site-output/index.html"
+rg -F '<p>Welcome to the starter site.</p>' "$run_root/created-site-output/index.html"
+
+printf 'PASS: debug-build, i18n, existing-site, and creation fixtures passed expected assertions.\n'
