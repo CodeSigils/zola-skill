@@ -52,6 +52,15 @@ base URL. This supports a workflow that initializes only an explicit new
 directory and treats `--force` as an authorization boundary, rather than a
 default convenience flag.
 
+**Phase 3 extended debug/build validation (2026-09-02, Zola 0.23.4):** A
+malformed root `zola.toml` failed both `zola check --skip-external-links` and
+isolated `zola build` with a TOML parser line/column diagnostic. With a valid
+root configuration but malformed `+++` TOML front matter, both commands named
+the affected content page and reported a front-matter parsing failure. The
+debug workflow therefore distinguishes the parser-reported file class and
+limits a repair to the malformed syntax/value rather than treating either case
+as a template failure or rebuilding configuration unnecessarily.
+
 ## Phase 1 fixture-version evidence
 
 **Checked:** 2026-09-02

@@ -9,6 +9,13 @@
 The runner intentionally leaves `broken-template` broken so the failure path
 remains reproducible. The scenario documents its minimal repair proposal.
 
+## Phase 3 extended debug/build scenarios
+
+| Fixture | Realistic prompt | Repository evidence | Expected diagnosis | Prohibited unsafe advice | Expected patch or proposal | Validation outcome |
+| --- | --- | --- | --- | --- | --- | --- |
+| `malformed-config` | “Zola stopped before building after I edited `zola.toml`; what is the smallest repair?” | `zola.toml` has `this is not valid TOML` on line 2. | Root configuration TOML cannot parse; this is not a template or content failure. | Regenerate the site, change `base_url`, or move unrelated settings. | Replace or remove the malformed line while preserving the intended configuration. | `check` and isolated build fail with a TOML parse diagnostic, as expected. |
+| `malformed-front-matter` | “This page now fails after I changed its metadata. Which file should I fix?” | `content/about.md` has `title =` inside `+++` front matter. | The named content page has malformed TOML front matter; root config remains valid. | Edit `zola.toml`, delete the page, or suppress the error in the template. | Give `title` a valid TOML value, such as `title = "About"`. | `check` and isolated build fail with a page front-matter diagnostic, as expected. |
+
 ## Phase 2 i18n scenarios
 
 | Fixture | Realistic prompt | Repository evidence | Expected diagnosis | Prohibited unsafe advice | Expected patch or proposal | Validation outcome |

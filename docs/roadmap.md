@@ -1,6 +1,6 @@
 # Zola Skill Roadmap
 
-**Status:** Phase 3 in progress — existing-site modification/review vertical slice
+**Status:** Phase 3 in progress — modification/review, site-creation, and extended debug/build slices
 **Audience:** Skill maintainers and contributors  
 **Owner:** Project maintainers  
 **Last reviewed:** 2026-09-02
@@ -344,6 +344,22 @@ coverage and theme workflow/research remain outstanding.
 The published package at commit `d898c88` was installed successfully for both
 Codex and Claude Code with the creation workflow present; see the
 [release checklist](release-checklist.md) for the commands and outcomes.
+
+### Phase 3 extended debug/build slice — in progress
+
+`skills/zola/workflows/debug-build.md` now requires the diagnosis to separate
+a malformed root `zola.toml`/`config.toml` from malformed content front matter.
+It directs the repair to the parser-reported file and line, limits it to the
+malformed syntax or value, and prohibits unrelated configuration replacement or
+`base_url` changes.
+
+The runner keeps `malformed-config` and `malformed-front-matter` intentionally
+broken. Under Zola 0.23.4, both `zola check --skip-external-links` and isolated
+`zola build` fail as expected: the former reports a TOML parse error at the
+invalid root-config line, and the latter names the content page whose front
+matter cannot parse. `tests/scenarios.md` records the evidence, forbidden
+advice, and minimal repair for each case. This is an implementation checkpoint,
+not Phase 3 completion: only the theme workflow/research remains.
 
 Before implementing the theme workflow, complete a bounded research pass:
 
