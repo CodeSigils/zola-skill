@@ -1,0 +1,92 @@
+# OS artifacts
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Editor/IDE artifacts
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+*.bak
+.vim/
+*.log
+.project
+.classpath
+.settings/
+*.sublime-workspace
+*.sublime-project
+
+# Agent/opencode artifacts
+.opencode/
+.omo/
+.open-mem/
+.codegraph/
+*.session.json
+*.session.jsonl
+claude_desktop_config.json
+continue.yaml
+.mcp/
+.agent/
+
+# Build artifacts
+public/
+target/
+dist/
+build/
+*.wasm
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.venv/
+venv/
+env/
+pip-wheel-metadata/
+*.egg-info/
+
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+.pnpm-store/
+
+# Rust
+Cargo.lock
+**/target/
+
+# Zola
+**/public/
+
+# Logs
+*.log
+logs/
+
+# Temp files
+tmp/
+temp/
+*.tmp
+*.temp
+
+# Environment files (keep .env.example but ignore actual .env)
+.env
+.env.local
+.env.*.local
+
+# OS-specific
+*.orig
+*.rej
+
+# Coverage/reports
+coverage/
+.nyc_output/
