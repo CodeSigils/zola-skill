@@ -112,6 +112,46 @@ different parts of this workflow and that missing section fallback must be
 diagnosed from repository/template evidence rather than assumed. An
 unauthorized `about.de.md` failed both commands.
 
+## Theme research pass
+
+**Checked:** 2026-09-02 (default branches cloned at the listed GitHub
+repositories; Zola 0.23.4 for local checks)
+
+This bounded pass compares four non-archived themes across documentation,
+minimal-blog, accessible multilingual-blog, and portfolio archetypes. License
+and `pushed_at` values are GitHub repository metadata captured on the checked
+date. A recent push is a maintenance signal, not a compatibility or quality
+guarantee. Theme repositories are pattern evidence only; official Zola
+documentation remains authoritative for installation, configuration, and
+template behavior.
+
+| Theme | Archetype and observed reusable pattern | License and maintenance signal | Pinned-version check and nonportable assumption |
+| --- | --- | --- | --- |
+| [getzola/book](https://github.com/getzola/book) | Documentation/book layout; `theme.toml` declares a minimum version and `[extra]` defaults, while its sample config enables Sass/search and its README documents weighted chapter/section content. | MIT; non-archived; last pushed 2026-01-11. | Its default branch failed both `check` and isolated `build` under 0.23.4 because Tera reported an unknown `filter` filter. The manifest minimum is not proof of compatibility with the pinned version. |
+| [isunjn/serene](https://github.com/isunjn/serene) | Minimal blog; a separate example config declares explicit content-section and `[extra]` settings, including a theme preference. | MIT; non-archived; last pushed 2026-08-09. | The repository is a theme package, not a standalone site: it has no root Zola config and its example expects installation at `themes/serene`. Its direct root check is therefore not a compatibility result. Do not copy its full configuration or optional reaction endpoint into an unrelated host. |
+| [welpo/tabi](https://github.com/welpo/tabi) | Accessible multilingual personal/blog site; template and config defaults expose theme settings through `[extra]`, while optional JavaScript remains feature-specific. | MIT; non-archived; last pushed 2026-09-01. | Its default branch failed both commands under 0.23.4 because the parser rejected `feed_utils::get_generate_feed()`. Treat its current default branch as incompatible with this fixture version unless a compatible revision is selected and tested. |
+| [awinterstein/zola-theme-project-portfolio](https://github.com/awinterstein/zola-theme-project-portfolio) | Portfolio; documents taxonomies, language/search setup, and inheriting `page`, `section`, or `index` templates to override named extension blocks. | MIT; non-archived; last pushed 2025-10-04. | The repository is a theme package without a root Zola config, so a direct check cannot establish compatibility. Its Tailwind CSS/DaisyUI design and optional JavaScript extension blocks are project-specific dependencies, not defaults for this skill. |
+
+The [official theme-creation guide](https://www.getzola.org/documentation/themes/creating-a-theme/)
+requires a `theme.toml` and recommends a buildable default site, documented
+usage, and Tera blocks for customization. The [official theme-installation
+guide](https://www.getzola.org/documentation/themes/installing-and-using-themes/)
+requires the configured theme directory name to match the installed directory
+and warns that themes may require additional configuration. These are the
+authoritative constraints for the workflow; the four repositories merely show
+that themes also impose distinct content models, optional features, and
+version assumptions.
+
+**Theme-workflow decision:** implement a fixture-owned minimal theme rather
+than adopting a third-party theme. The workflow should first inspect the host
+configuration, installed theme directory, `theme.toml`, pinned revision or
+submodule state, required content/configuration, and the exact template to be
+overridden. It should copy only an evidenced setting or override a verified
+named block, preserve the host architecture, and validate with `zola check`,
+isolated `zola build`, and generated-output inspection. It must not copy an
+example configuration wholesale, introduce a CSS/JavaScript toolchain, or
+assume a theme's declared minimum version proves compatibility.
+
 ## Distribution and portability evidence
 
 **Checked:** 2026-09-02

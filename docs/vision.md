@@ -152,7 +152,11 @@ only; theme authoring requests must not activate automatically.
 - In progress: `workflows/debug-build.md` distinguishes malformed root
   configuration from malformed content front matter; fixtures assert both
   parser failure paths and their minimal syntax-only repairs.
-- Remaining Phase 3 work: a theme workflow after its required research pass.
+- Complete: the bounded theme research pass records reusable patterns, license
+  provenance, maintenance signals, compatibility checks, and nonportable
+  assumptions for four theme archetypes in `docs/research.md`.
+- Remaining Phase 3 work: a fixture-backed theme workflow that preserves host
+  configuration and validates one verified template override.
 
 ## Deferred work
 
