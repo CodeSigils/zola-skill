@@ -224,6 +224,12 @@ Code with skills CLI `1.5.23`. Both installed copies included the updated
 debug-build workflow with the existing workflows and source registry. Details
 are in the [release checklist](release-checklist.md).
 
+**Phase 3 bounded theme-override published-package validation (2026-09-02):**
+The package at commit `134fb05` was installed successfully for Codex and Claude
+Code with skills CLI `1.5.23`. Both installed copies included the theme-override
+workflow with the existing workflows and source registry. Details are in the
+[release checklist](release-checklist.md).
+
 **Naming decision:** publish the skill as **Zola** with the machine identifier
 `zola`; retain `zola-skill` only as the source repository name. This gives the
 skill a concise domain-specific discovery name while preserving an unambiguous
