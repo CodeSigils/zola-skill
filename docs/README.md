@@ -3,9 +3,9 @@
 This directory is the maintained source of truth for the Zola skill's design.
 Follow this selection matrix before changing the skill or these documents.
 
-The current implementation target is the small debug-build vertical slice in
-[roadmap.md](roadmap.md). Planning documents are maintainer context, not future
-runtime context for the skill.
+Phase 2's static multilingual workflow is complete. The next planned target is
+Phase 3's core workflows in [roadmap.md](roadmap.md). Planning documents are
+maintainer context, not future runtime context for the skill.
 
 ## Reading matrix
 

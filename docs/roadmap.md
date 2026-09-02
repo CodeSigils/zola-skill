@@ -1,6 +1,6 @@
 # Zola Skill Roadmap
 
-**Status:** Phase 1 debug-build release gate passed; Phase 2 not started
+**Status:** Phase 2 static multilingual workflow complete; Phase 3 not started
 **Audience:** Skill maintainers and contributors  
 **Owner:** Project maintainers  
 **Last reviewed:** 2026-09-02
@@ -250,6 +250,37 @@ may require a specially built Zola binary and are explicitly deferred.
 Zola multilingual configuration, content, or language-aware template-link
 failure without changing the site's language policy; all listed scenarios pass
 and the source registry records the official facts used.
+
+### Phase 2 completion evidence — 2026-09-02
+
+`skills/zola/workflows/i18n.md` now provides the bounded static i18n workflow,
+and the source registry records the official multilingual and template facts it
+uses. `tests/run.sh` was executed with Zola `0.23.4` and passed the existing
+debug-build fixtures plus these Phase 2 assertions:
+
+- `i18n-site` passed check and isolated build; generated output contained
+  default/French titles and translations, `/fr/about/`, and the generated link
+  `https://example.test/docs/fr/about/`.
+- `missing-translated-section-index` passed `check` with an orphan-page warning
+  but failed isolated build as expected when `get_section(..., lang="fr")`
+  required the absent French section. This distinction is documented rather
+  than being misrepresented as a fallback or a successful repair.
+- `unauthorized-language-code` failed both check and isolated build as expected
+  because `de` was absent from the configured language table.
+
+The runner retains the Phase 1 pinned-version, isolated-output, and no-force
+rules. `tests/scenarios.md` now binds each i18n fixture to a realistic prompt,
+evidence, expected diagnosis, prohibited advice, repair proposal, and outcome.
+`SKILL.md` includes matching i18n discovery terms while retaining the existing
+exclusions for unrelated web work.
+
+Phase-close documentation gate: `docs/README.md`, `vision.md`, `roadmap.md`,
+and `research.md` were re-read and updated as applicable. The source registry
+was updated with official i18n/template entries. `future-capabilities.md` is
+intentionally unchanged because Phase 2 adds no JavaScript, Rust, WebAssembly,
+runtime-service, or Zola-core guidance. The release checklist remains valid
+but will need a fresh published-package smoke test before this updated skill is
+claimed as a newly published release.
 
 ## Phase 3 — Core workflows
 

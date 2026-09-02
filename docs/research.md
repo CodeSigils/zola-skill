@@ -85,6 +85,16 @@ Zola binaries.
 Sources: [Zola multilingual sites](https://www.getzola.org/documentation/content/multilingual/)
 and [Zola template overview](https://www.getzola.org/documentation/templates/overview/).
 
+**Phase 2 validation (2026-09-02, Zola 0.23.4):** A fixture with default and
+French configuration/translation values emitted language-aware content and
+links beneath a non-root base URL. A translated page under a section without
+`_index.fr.md` was accepted by `zola check` with an orphan warning, but a
+template `get_section(..., lang="fr")` lookup failed during `zola build` with
+the expected absent-section error. This proves that `check` and `build` cover
+different parts of this workflow and that missing section fallback must be
+diagnosed from repository/template evidence rather than assumed. An
+unauthorized `about.de.md` failed both commands.
+
 ## Distribution and portability evidence
 
 **Checked:** 2026-09-02

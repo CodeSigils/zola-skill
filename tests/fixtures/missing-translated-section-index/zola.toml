@@ -1,0 +1,4 @@
+base_url = "https://example.test"
+default_language = "en"
+
+[languages.fr]
