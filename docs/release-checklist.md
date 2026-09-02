@@ -6,13 +6,13 @@ checks that cannot be meaningfully run against the local source tree.
 
 ## Pre-publish
 
-- [ ] Replace `<owner>` below with the published repository owner; the release
-  source must resolve as `<owner>/zola-skill@zola`.
-- [ ] Confirm [`LICENSE`](../LICENSE) contains MIT terms and
+- [x] Published source resolves as `CodeSigils/zola-skill@zola`.
+- [x] Confirmed [`LICENSE`](../LICENSE) contains MIT terms and
   `skills/zola/SKILL.md` declares `license: MIT`.
-- [ ] Run `npx --yes skills-ref validate skills/zola`.
-- [ ] Run `tests/run.sh` with Zola 0.23.4 and record its output in the release
-  notes or pull request.
+- [x] `npx --yes skills-ref validate skills/zola` reported `Valid skill:
+  skills/zola`.
+- [x] `tests/run.sh` passed with Zola 0.23.4: valid site and non-root URL
+  checks passed; the broken-template check and build failed as expected.
 
 ## Published-package smoke matrix
 
@@ -39,3 +39,16 @@ command output, discovered install path, and pass/fail result. If a CLI update
 changes an agent identifier, install path, or command syntax, update this
 checklist and the distribution evidence in [research.md](research.md) before
 releasing.
+
+### 2026-09-02 published-package results
+
+Source: `CodeSigils/zola-skill@zola` on the `main` branch, commit `0a4bf18`.
+Skills CLI: `1.5.23`.
+
+| Host | Observed install path | Result |
+| --- | --- | --- |
+| Codex | `.agents/skills/zola` | Passed: `SKILL.md`, `workflows/debug-build.md`, and `references/source-registry.md` existed; `npx skills ls -a codex` listed `zola`. |
+| Claude Code | `.claude/skills/zola` | Passed: `SKILL.md`, `workflows/debug-build.md`, and `references/source-registry.md` existed; `npx skills ls -a claude-code` listed `zola`. |
+
+Each check ran in a separately created `/tmp/zola-skill-*` directory and the
+directory was removed after the command completed.

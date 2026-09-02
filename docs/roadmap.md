@@ -1,6 +1,6 @@
 # Zola Skill Roadmap
 
-**Status:** Phase 1 debug-build vertical slice complete; public-release checks pending  
+**Status:** Phase 1 debug-build release gate passed; Phase 2 not started
 **Audience:** Skill maintainers and contributors  
 **Owner:** Project maintainers  
 **Last reviewed:** 2026-09-02
@@ -204,17 +204,17 @@ validation tier.
 
 Skill validation passed: `npx --yes skills-ref validate skills/zola` reported
 `Valid skill: skills/zola`. `tests/scenarios.md` also records two matching and
-two non-matching discovery prompts. The `skills.sh` Codex/Claude Code install
-matrix remains public-release work because the source repository is not yet
-public/resolvable; it is not falsely claimed as completed. The repository
-license is complete: MIT terms were added to `LICENSE` and declared in the
-skill frontmatter. The versioned [release checklist](release-checklist.md) is
-prepared for the published-package smoke matrix.
+two non-matching discovery prompts. The public repository now resolves as
+`CodeSigils/zola-skill@zola`; the Codex and Claude Code installation matrix
+passed with skills CLI 1.5.23, as recorded in the
+[release checklist](release-checklist.md). The repository license is complete:
+MIT terms are in `LICENSE` and declared in the skill frontmatter.
 
 Phase-close documentation gate: `docs/README.md`, `vision.md`, `roadmap.md`,
-and `research.md` were re-read and updated as applicable. `future-capabilities.md`
-is intentionally unchanged because this phase adds no JavaScript, Rust,
-WebAssembly, runtime-service, or Zola-core guidance.
+`research.md`, and `release-checklist.md` were re-read and updated as
+applicable. `future-capabilities.md` is intentionally unchanged because this
+phase adds no JavaScript, Rust, WebAssembly, runtime-service, or Zola-core
+guidance.
 
 ## Phase 2 — Multilingual (i18n) workflow
 
