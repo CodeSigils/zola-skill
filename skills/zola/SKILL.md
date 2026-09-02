@@ -1,6 +1,6 @@
 ---
 name: zola
-description: Create a minimal Zola site or diagnose, modify, or review an existing Zola or Tera site for build, template, configuration, or static multilingual (i18n) failures. Use for Zola site setup, supplied errors, or authorized existing-site changes/reviews; not for general frontend, CMS, backend, or theme-authoring work.
+description: Create a minimal Zola site or diagnose, modify, review, or make a bounded existing-theme override for a Zola or Tera site with build, template, configuration, or static multilingual (i18n) failures. Use for Zola site setup, supplied errors, or authorized existing-site changes/reviews; not for general frontend, CMS, backend, or full theme authoring.
 license: MIT
 compatibility: Requires filesystem and shell access. Zola is required for build validation; network access is needed only to check live documentation or external Markdown links.
 ---
@@ -8,10 +8,11 @@ compatibility: Requires filesystem and shell access. Zola is required for build 
 # Zola
 
 Use this skill only for minimal site creation, debug-build, static multilingual,
-and existing-site modification/review workflows. If explicitly invoked for
-theme authoring, deployment, automatic translation, browser locale detection,
-search indexing, or unrelated web work, say that mode is not implemented; do
-not substitute generic advice.
+existing-site modification/review, and bounded existing-theme override
+workflows. If explicitly invoked for theme selection, full theme authoring,
+deployment, automatic translation, browser locale detection, search indexing,
+or unrelated web work, say that mode is not implemented; do not substitute
+generic advice.
 
 ## Diagnose first
 
@@ -28,9 +29,11 @@ not substitute generic advice.
    template failure, [the i18n workflow](workflows/i18n.md) for language
    configuration, translated content, or language-aware URL failures, or [the
    modification/review workflow](workflows/modify-review.md) for an existing
-   site's authorized change or review. Consult the matching official entry in
-   [the source registry](references/source-registry.md) before relying on
-   version-sensitive behavior.
+   site's authorized change or review, or [the theme override
+   workflow](workflows/theme-override.md) for one verified existing-theme
+   template override. Consult the matching official entry in [the source
+   registry](references/source-registry.md) before relying on version-sensitive
+   behavior.
 5. Report the likely cause, concrete evidence, smallest safe repair, competing
    hypothesis where relevant, and exact validation commands.
 

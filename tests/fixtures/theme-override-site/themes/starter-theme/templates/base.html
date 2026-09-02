@@ -1,0 +1,11 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>{% block page_title %}{{ config.title }}{% endblock page_title %}</title>
+  </head>
+  <body>
+    <header>{% block site_banner %}<p>Theme banner</p>{% endblock site_banner %}</header>
+    <nav><a href="{{ get_url(path='@/_index.md') }}">Home</a></nav>
+    <main>{% block content %}{{ section.content | safe }}{% endblock content %}</main>
+  </body>
+</html>

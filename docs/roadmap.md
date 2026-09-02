@@ -1,6 +1,6 @@
 # Zola Skill Roadmap
 
-**Status:** Phase 3 in progress — modification/review, site-creation, and extended debug/build slices
+**Status:** Phase 3 in progress — modification/review, site-creation, extended debug/build, and bounded theme-override slices
 **Audience:** Skill maintainers and contributors  
 **Owner:** Project maintainers  
 **Last reviewed:** 2026-09-02
@@ -372,12 +372,23 @@ version-check results, and nonportable assumptions in
 [research.md](research.md). It confirms that theme manifests and recent
 activity do not establish compatibility with the pinned Zola version.
 
-Implement the theme workflow next with a fixture-owned minimal theme. It must
-exercise one named template-block override in an existing host site, retain the
-host's configuration and non-root URL behavior, and assert the generated
-output. It must inspect the installed theme's manifest, version/revision, and
-required configuration before advice; it must not adopt a third-party theme,
-copy an example configuration wholesale, or introduce CSS/JavaScript tooling.
+### Phase 3 bounded theme-override slice — in progress
+
+`skills/zola/workflows/theme-override.md` implements one authorized host-side
+override of a verified named block in an already configured theme, with a
+separate review-only path. It requires inspection of the host configuration,
+installed theme manifest, exact upstream template/block, revision when
+available, and installed Zola version. It excludes theme selection, third-party
+theme adoption, full theme authoring, copied example configurations, and new
+CSS/JavaScript tooling.
+
+The fixture-owned `theme-override-site` selects `starter-theme`, whose
+`base.html` defines `site_banner`. Its host `templates/index.html` extends the
+theme-qualified template and overrides only that block. Under Zola 0.23.4,
+`zola check --skip-external-links` and isolated `zola build` pass; generated
+output proves the host banner, the configured `/docs/` URL, and host content.
+This is an implementation checkpoint, not Phase 3 completion: published-package
+validation remains before the phase-close gate.
 
 Each workflow should define inputs, inspection steps, expected output, and
 validation commands.

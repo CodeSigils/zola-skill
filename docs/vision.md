@@ -1,6 +1,6 @@
 # Zola Skill Vision
 
-**Status:** Phase 3 in progress — modification/review, site-creation, and extended debug/build slices
+**Status:** Phase 3 in progress — modification/review, site-creation, extended debug/build, and bounded theme-override slices
 **Audience:** Skill maintainers and contributors  
 **Owner:** Project maintainers  
 **Review cadence:** Before a release, after a Zola upgrade, or every six months  
@@ -79,9 +79,10 @@ workflow/reference files.
 The released skill supports two complete workflows in a local repository:
 diagnosing a Zola build or template failure, and diagnosing a static
 multilingual configuration, content, or language-aware template-link failure.
-It also supports bounded existing-site modification/review and minimal
-site-creation workflows. Its discovery description must target those workflows
-only; theme authoring requests must not activate automatically.
+It also supports bounded existing-site modification/review, minimal
+site-creation, and existing-theme template-override workflows. Its discovery
+description must target those workflows only; theme selection and full theme
+authoring requests must not activate automatically.
 
 ### Required v1 behavior
 
@@ -155,8 +156,12 @@ only; theme authoring requests must not activate automatically.
 - Complete: the bounded theme research pass records reusable patterns, license
   provenance, maintenance signals, compatibility checks, and nonportable
   assumptions for four theme archetypes in `docs/research.md`.
-- Remaining Phase 3 work: a fixture-backed theme workflow that preserves host
-  configuration and validates one verified template override.
+- In progress: `workflows/theme-override.md` limits work to one verified named
+  block in an existing configured theme; `theme-override-site` preserves the
+  host config/theme files and proves a non-root generated URL plus overridden
+  output.
+- Remaining Phase 3 work: validate the published theme-override package before
+  assessing the phase-close gate.
 
 ## Deferred work
 

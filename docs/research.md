@@ -152,6 +152,15 @@ isolated `zola build`, and generated-output inspection. It must not copy an
 example configuration wholesale, introduce a CSS/JavaScript toolchain, or
 assume a theme's declared minimum version proves compatibility.
 
+**Phase 3 bounded theme-override validation (2026-09-02, Zola 0.23.4):** A
+fixture host selected a local `starter-theme`; its host `templates/index.html`
+extended the installed theme-qualified index template and replaced only the
+`site_banner` block declared by the theme's `base.html`. Both `zola check
+--skip-external-links` and isolated `zola build` passed. Generated output
+contained the host banner, host content, and a `get_url`-generated link under
+the host's non-root `/docs/` base URL. This validates a narrow override pattern
+without treating a third-party theme or its configuration as portable advice.
+
 ## Distribution and portability evidence
 
 **Checked:** 2026-09-02
