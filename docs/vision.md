@@ -1,6 +1,6 @@
 # Zola Skill Vision
 
-**Status:** Phase 3 in progress — modification/review, site-creation, extended debug/build, and bounded theme-override slices
+**Status:** Phase 3 complete — four fixture-backed core workflows published and validated
 **Audience:** Skill maintainers and contributors  
 **Owner:** Project maintainers  
 **Review cadence:** Before a release, after a Zola upgrade, or every six months  
@@ -139,29 +139,32 @@ authoring requests must not activate automatically.
 - Complete: `tests/scenarios.md` records prompts, evidence, prohibited advice,
   repair proposals, and validation outcomes for all Phase 2 fixtures.
 
-### Phase 3 existing-site modification/review slice
+### Phase 3 acceptance evidence
 
-- In progress: `workflows/modify-review.md` distinguishes authorized small
+- Complete: `workflows/modify-review.md` distinguishes authorized small
   changes from review-only requests, requires evidence-first inspection, and
   defines the required review-finding format.
-- In progress: `existing-site-modification` asserts that a generated link to a
+- Complete: `existing-site-modification` asserts that a generated link to a
   new content page preserves a non-root `/docs` base URL; `existing-site-review`
   preserves a known hard-coded root-link finding for a non-mutating review.
-- In progress: `workflows/create-site.md` limits creation to an explicit new
+- Complete: `workflows/create-site.md` limits creation to an explicit new
   directory and a minimal static site; `created-site` asserts the approved
   `zola init` base URL plus rendered title and root content.
-- In progress: `workflows/debug-build.md` distinguishes malformed root
+- Complete: `workflows/debug-build.md` distinguishes malformed root
   configuration from malformed content front matter; fixtures assert both
   parser failure paths and their minimal syntax-only repairs.
 - Complete: the bounded theme research pass records reusable patterns, license
   provenance, maintenance signals, compatibility checks, and nonportable
   assumptions for four theme archetypes in `docs/research.md`.
-- In progress: `workflows/theme-override.md` limits work to one verified named
+- Complete: `workflows/theme-override.md` limits work to one verified named
   block in an existing configured theme; `theme-override-site` preserves the
   host config/theme files and proves a non-root generated URL plus overridden
   output.
-- Remaining Phase 3 work: validate the published theme-override package before
-  assessing the phase-close gate.
+- Complete: the full fixture suite and `skills-ref validate` passed on
+  2026-09-02; Codex and Claude Code published-package installs are recorded in
+  the [release checklist](release-checklist.md).
+- Next: Phase 4 broader fixture coverage, beginning only with behavior backed
+  by an implemented workflow.
 
 ## Deferred work
 

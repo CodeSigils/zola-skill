@@ -230,6 +230,13 @@ Code with skills CLI `1.5.23`. Both installed copies included the theme-override
 workflow with the existing workflows and source registry. Details are in the
 [release checklist](release-checklist.md).
 
+**Phase 3 close-gate validation (2026-09-02):** The full fixture suite passed
+under Zola 0.23.4, with its intentional failure fixtures failing as expected;
+`npx --yes skills-ref validate skills/zola` reported `Valid skill: skills/zola`.
+The source registry was re-read and remains sufficient for the implemented CLI,
+configuration, Tera, multilingual, and theme-override workflows. No new
+external source or architecture decision was adopted during the close gate.
+
 **Naming decision:** publish the skill as **Zola** with the machine identifier
 `zola`; retain `zola-skill` only as the source repository name. This gives the
 skill a concise domain-specific discovery name while preserving an unambiguous
