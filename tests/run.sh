@@ -68,6 +68,12 @@ test -f "$run_root/valid-site-output/index.html"
 printf 'broken-template: expected template failure\n'
 expect_check_and_build_failure broken-template 'template|parse|endif|unexpected'
 
+printf 'malformed-config: expected configuration parsing failure\n'
+expect_check_and_build_failure malformed-config 'config|toml|parse'
+
+printf 'malformed-front-matter: expected front-matter parsing failure\n'
+expect_check_and_build_failure malformed-front-matter 'front.?matter|page|toml|parse'
+
 printf 'non-root-base-url: check, isolated build, and generated-link assertion\n'
 run_check_and_build non-root-base-url
 rg -F 'href="https://example.test/docs/about/"' "$run_root/non-root-base-url-output/index.html"

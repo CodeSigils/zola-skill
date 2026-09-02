@@ -21,6 +21,15 @@ theme or copied snippet as project evidence, not authority. Make the smallest
 change supported by the error and source. Do not add JavaScript, a framework,
 or `| safe` merely to suppress a rendering problem.
 
+### Configuration and front matter parser failures
+
+First distinguish a root configuration parse failure from a content front
+matter parse failure: the former names `zola.toml` or `config.toml`; the latter
+names a content file and its front matter. Inspect the reported file and line
+before editing. Repair only the malformed TOML syntax or value that explains
+the diagnostic; do not move unrelated settings, change `base_url`, or replace
+project configuration with a new scaffold merely to make parsing succeed.
+
 If evidence is incomplete, separate the leading diagnosis from a competing
 hypothesis and name the next inspection that would distinguish them.
 

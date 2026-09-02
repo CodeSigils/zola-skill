@@ -1,6 +1,6 @@
 # Zola Skill Vision
 
-**Status:** Phase 3 in progress — modification/review and site-creation slices
+**Status:** Phase 3 in progress — modification/review, site-creation, and extended debug/build slices
 **Audience:** Skill maintainers and contributors  
 **Owner:** Project maintainers  
 **Review cadence:** Before a release, after a Zola upgrade, or every six months  
@@ -149,8 +149,10 @@ only; theme authoring requests must not activate automatically.
 - In progress: `workflows/create-site.md` limits creation to an explicit new
   directory and a minimal static site; `created-site` asserts the approved
   `zola init` base URL plus rendered title and root content.
-- Remaining Phase 3 work: extended debug/build coverage and a theme workflow
-  after its required research pass.
+- In progress: `workflows/debug-build.md` distinguishes malformed root
+  configuration from malformed content front matter; fixtures assert both
+  parser failure paths and their minimal syntax-only repairs.
+- Remaining Phase 3 work: a theme workflow after its required research pass.
 
 ## Deferred work
 

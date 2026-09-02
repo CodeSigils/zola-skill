@@ -3,9 +3,9 @@
 This directory is the maintained source of truth for the Zola skill's design.
 Follow this selection matrix before changing the skill or these documents.
 
-Phase 3's existing-site modification/review and site-creation slices are in
-progress; see [roadmap.md](roadmap.md). Planning documents are maintainer
-context, not future runtime context for the skill.
+Phase 3's existing-site modification/review, site-creation, and extended
+debug/build slices are in progress; see [roadmap.md](roadmap.md). Planning
+documents are maintainer context, not future runtime context for the skill.
 
 ## Reading matrix
 
