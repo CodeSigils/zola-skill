@@ -24,7 +24,7 @@ $RECYCLE.BIN/
 .opencode/
 .omo/
 .open-mem/
-.codegraph/
+.codegraph
 *.session.json
 *.session.jsonl
 claude_desktop_config.json
