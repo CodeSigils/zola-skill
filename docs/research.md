@@ -133,6 +133,13 @@ the entrypoint, debug-build workflow, and source registry, and `skills ls`
 listed the skill. Exact commands and outcomes are maintained in the
 [release checklist](release-checklist.md).
 
+**Phase 2 published-package validation (2026-09-02):** The Phase 2 package at
+commit `c1bab39` was installed successfully for Codex and Claude Code with
+skills CLI `1.5.23`. Each copied installation included `SKILL.md`, both
+debug-build and i18n workflows, and the source registry. The skill was listed
+for the requested host in each isolated project; details are in the
+[release checklist](release-checklist.md).
+
 **Naming decision:** publish the skill as **Zola** with the machine identifier
 `zola`; retain `zola-skill` only as the source repository name. This gives the
 skill a concise domain-specific discovery name while preserving an unambiguous
