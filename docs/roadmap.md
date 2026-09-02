@@ -322,6 +322,10 @@ output assertions under Zola 0.23.4. This is an implementation checkpoint, not
 Phase 3 completion: site creation, expanded debug/build coverage, and the
 theme workflow/research remain outstanding.
 
+The published package at commit `b5fb0c1` was installed successfully for both
+Codex and Claude Code with the new workflow present; see the
+[release checklist](release-checklist.md) for the commands and outcomes.
+
 Before implementing the theme workflow, complete a bounded research pass:
 
 - Compare three to five maintained Zola themes across the site archetypes in scope.
