@@ -1,17 +1,17 @@
 ---
 name: zola
-description: Diagnose and repair Zola or Tera build, template, configuration, and static multilingual (i18n) failures in an existing local Zola site. Use for supplied Zola build or translated-content errors; not for general frontend, CMS, backend, site-creation, theme-authoring, or general-review work.
+description: Diagnose, modify, or review an existing Zola or Tera site for build, template, configuration, or static multilingual (i18n) failures. Use for supplied Zola errors or authorized existing-site changes/reviews; not for general frontend, CMS, backend, site-creation, or theme-authoring work.
 license: MIT
 compatibility: Requires filesystem and shell access. Zola is required for build validation; network access is needed only to check live documentation or external Markdown links.
 ---
 
 # Zola
 
-Use this skill only for the debug-build and static multilingual workflows. If
-explicitly invoked for site creation, theme authoring, deployment, general
-review, automatic translation, browser locale detection, search indexing, or
-unrelated web work, say that mode is not implemented; do not substitute generic
-advice.
+Use this skill only for debug-build, static multilingual, and existing-site
+modification/review workflows. If explicitly invoked for site creation, theme
+authoring, deployment, automatic translation, browser locale detection, search
+indexing, or unrelated web work, say that mode is not implemented; do not
+substitute generic advice.
 
 ## Diagnose first
 
@@ -24,10 +24,12 @@ advice.
    fixture version, state that limitation and do not claim unverified
    version-specific behavior.
 4. Read [the debug-build workflow](workflows/debug-build.md) for a build or
-   template failure, or [the i18n workflow](workflows/i18n.md) for language
-   configuration, translated content, or language-aware URL failures. Consult
-   the matching official entry in [the source registry](references/source-registry.md)
-   before relying on version-sensitive behavior.
+   template failure, [the i18n workflow](workflows/i18n.md) for language
+   configuration, translated content, or language-aware URL failures, or [the
+   modification/review workflow](workflows/modify-review.md) for an existing
+   site's authorized change or review. Consult the matching official entry in
+   [the source registry](references/source-registry.md) before relying on
+   version-sensitive behavior.
 5. Report the likely cause, concrete evidence, smallest safe repair, competing
    hypothesis where relevant, and exact validation commands.
 

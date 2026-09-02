@@ -1,6 +1,6 @@
 # Zola Skill Roadmap
 
-**Status:** Phase 2 static multilingual workflow complete; Phase 3 not started
+**Status:** Phase 3 in progress — existing-site modification/review vertical slice
 **Audience:** Skill maintainers and contributors  
 **Owner:** Project maintainers  
 **Last reviewed:** 2026-09-02
@@ -288,12 +288,39 @@ and records the fresh published-package smoke test for this updated skill.
 
 ## Phase 3 — Core workflows
 
-Add focused workflows for the highest-value jobs:
+Implement focused workflows for the highest-value jobs. Start with
+existing-site modification/review because it reuses the proven inspection,
+version, source, and validation contract while adding immediate value without
+the broader design surface of site creation or theme authoring:
 
-1. Create a Zola site.
-2. Modify or review an existing site.
+1. Modify or review an existing site.
+2. Create a Zola site.
 3. Extend the debug-build workflow beyond the Phase 1 vertical slice.
 4. Create or review a theme.
+
+The first Phase 3 vertical slice must support an authorized small content or
+template change and a non-mutating review. Its fixture must assert the rendered
+result of the authorized change and retain at least one intentional finding for
+the review scenario. Review findings must include severity, path, evidence,
+impact, remediation, and validation; do not modify a site during a review-only
+request.
+
+### Phase 3 existing-site modification/review slice — in progress
+
+`skills/zola/workflows/modify-review.md` implements the first slice. It routes
+authorized small content/template/configuration changes separately from
+review-only requests, requires repository/version/source inspection, preserves
+the existing architecture, and requires each finding to state severity, path,
+evidence, impact, remediation, and validation.
+
+The `existing-site-modification` fixture asserts a new content page and a
+`get_url`-generated `/docs/updates/` link. The `existing-site-review` fixture
+intentionally retains `href="/about/"` beneath a `/docs` base URL so the
+scenario can prove a non-mutating warning report rather than a silent repair.
+Both pass `zola check --skip-external-links`, isolated build, and generated
+output assertions under Zola 0.23.4. This is an implementation checkpoint, not
+Phase 3 completion: site creation, expanded debug/build coverage, and the
+theme workflow/research remain outstanding.
 
 Before implementing the theme workflow, complete a bounded research pass:
 
