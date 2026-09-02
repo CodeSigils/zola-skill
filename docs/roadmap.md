@@ -274,13 +274,17 @@ evidence, expected diagnosis, prohibited advice, repair proposal, and outcome.
 `SKILL.md` includes matching i18n discovery terms while retaining the existing
 exclusions for unrelated web work.
 
+The updated published package was also installed successfully for Codex and
+Claude Code from commit `c1bab39`; both copies included the i18n workflow. The
+exact commands, paths, and results are recorded in the
+[release checklist](release-checklist.md).
+
 Phase-close documentation gate: `docs/README.md`, `vision.md`, `roadmap.md`,
 and `research.md` were re-read and updated as applicable. The source registry
 was updated with official i18n/template entries. `future-capabilities.md` is
 intentionally unchanged because Phase 2 adds no JavaScript, Rust, WebAssembly,
 runtime-service, or Zola-core guidance. The release checklist remains valid
-but will need a fresh published-package smoke test before this updated skill is
-claimed as a newly published release.
+and records the fresh published-package smoke test for this updated skill.
 
 ## Phase 3 — Core workflows
 
