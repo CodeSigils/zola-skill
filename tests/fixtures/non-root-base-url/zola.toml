@@ -1,0 +1,2 @@
+base_url = "https://example.test/docs"
+title = "Non-root base URL fixture"
