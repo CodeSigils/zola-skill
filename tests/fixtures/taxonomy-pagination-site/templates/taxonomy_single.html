@@ -1,0 +1,7 @@
+<!doctype html>
+{% for page in paginator.pages %}
+<a href="{{ page.permalink }}">{{ page.title }}</a>
+{% endfor %}
+{% if paginator.next %}
+<a href="{{ paginator.next }}">Next</a>
+{% endif %}

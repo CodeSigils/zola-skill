@@ -109,6 +109,14 @@ rg -F '<p>Host banner override</p>' "$run_root/theme-override-site-output/index.
 rg -F 'href="https://example.test/docs/">Home</a>' "$run_root/theme-override-site-output/index.html"
 rg -F '<main><p>Theme host content.</p>' "$run_root/theme-override-site-output/index.html"
 
+printf 'taxonomy-pagination-site: term routes and paginated output\n'
+run_check_and_build taxonomy-pagination-site
+test -f "$run_root/taxonomy-pagination-site-output/tags/rust/page/1/index.html"
+rg -F 'href="https://example.test/docs/tags/rust/">Rust</a>' "$run_root/taxonomy-pagination-site-output/tags/index.html"
+rg -F 'href="https://example.test/docs/tags/rust/page/2/">Next</a>' "$run_root/taxonomy-pagination-site-output/tags/rust/index.html"
+rg -F '<a href="https://example.test/docs/post-two/">Post two</a>' "$run_root/taxonomy-pagination-site-output/tags/rust/index.html"
+rg -F '<a href="https://example.test/docs/post-one/">Post one</a>' "$run_root/taxonomy-pagination-site-output/tags/rust/page/2/index.html"
+
 printf 'created-site: init scaffold and minimal-site output\n'
 (cd "$run_root" && printf 'https://example.test/docs\nn\nn\n' | "$zola_bin" init created-with-init)
 test -f "$run_root/created-with-init/zola.toml"
@@ -117,4 +125,4 @@ run_check_and_build created-site
 rg -F '<title>Starter site</title>' "$run_root/created-site-output/index.html"
 rg -F '<p>Welcome to the starter site.</p>' "$run_root/created-site-output/index.html"
 
-printf 'PASS: debug-build, i18n, existing-site, theme override, and creation fixtures passed expected assertions.\n'
+printf 'PASS: debug-build, i18n, existing-site, theme override, taxonomy pagination, and creation fixtures passed expected assertions.\n'
