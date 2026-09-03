@@ -130,3 +130,16 @@ Skills CLI: `1.5.23`.
 
 Each check ran in a separately created `/tmp/zola-skill-taxonomy-*` directory
 and the directory was removed after the command completed.
+
+### 2026-09-03 Phase 4 unsafe-`safe` review published-package results
+
+Source: `CodeSigils/zola-skill@zola` on the `main` branch, commit `54219d3`.
+Skills CLI: `1.5.23`.
+
+| Host | Observed install path | Result |
+| --- | --- | --- |
+| Codex | `.agents/skills/zola` | Passed: entrypoint, debug-build, i18n, modification/review, creation, and theme-override workflows plus source registry existed; `npx skills ls -a codex` listed `zola`. |
+| Claude Code | `.claude/skills/zola` | Passed: entrypoint, debug-build, i18n, modification/review, creation, and theme-override workflows plus source registry existed; `npx skills ls -a claude-code` listed `zola`. |
+
+Each check ran in a separately created `/tmp/zola-skill-safe-*` directory and
+the directory was removed after the command completed.
