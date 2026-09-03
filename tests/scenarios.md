@@ -43,6 +43,12 @@ remains reproducible. The scenario documents its minimal repair proposal.
 | --- | --- | --- | --- | --- | --- | --- |
 | `theme-override-site` | “Change only the banner in my already configured theme; keep the `/docs` deployment path.” | Host `zola.toml` selects `starter-theme`; the installed manifest and `base.html` define `site_banner`; host `templates/index.html` extends the theme template. | An authorized host-side named-block override preserves the theme files, configuration, and generated base URL. | Install a new theme, replace `zola.toml` with an example, edit theme files, or add CSS/JavaScript tooling. | Override only `site_banner` through `starter-theme/templates/index.html`. | Check and isolated build pass; output contains the host banner, generated `/docs/` home URL, and host content. |
 
+## Phase 4 taxonomy-pagination scenario
+
+| Fixture | Realistic prompt | Repository evidence | Expected outcome | Prohibited advice | Expected patch or report | Validation outcome |
+| --- | --- | --- | --- | --- | --- | --- |
+| `taxonomy-pagination-site` | “Add one post per Rust tag page, while preserving deployment under `/docs`.” | Top-level `taxonomies` declares `tags` with `paginate_by = 1`; two pages assign `Rust`; taxonomy templates consume `terms` and `paginator`. | The existing content model emits a taxonomy list, a canonical Rust term route, and paginated term output. | Put `taxonomies` under `[extra]`, add search/feed/browser tooling, or hard-code a root-relative pager URL. | Keep the top-level declaration; render only verified `paginator` fields in the taxonomy-term template. | Check and isolated build pass; output has `/tags/rust/`, `page/1`, `page/2`, a generated next URL under `/docs`, and one expected post on each pager. |
+
 ## Discovery checks
 
 | Prompt | Expected selection result | Observed result |

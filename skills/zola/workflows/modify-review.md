@@ -22,6 +22,12 @@ through Zola helpers when a link points to content; preserve `base_url`, active
 language behavior, and auto-escaping. Do not add a framework, browser runtime,
 or unrelated reorganization.
 
+For an explicitly requested taxonomy or pagination change, verify the taxonomy
+is declared at the top level of the host configuration, then inspect the
+affected content front matter and taxonomy template. A taxonomy term has a
+`paginator` only when its configured `paginate_by` is positive; do not add
+search, feeds, or a new content model unless requested.
+
 Validate with `zola check --skip-external-links`, an isolated `zola build`, and
 an inspection of the affected generated page. State that external Markdown-link
 coverage was skipped. Respect existing project commands and never add `--force`

@@ -161,6 +161,16 @@ contained the host banner, host content, and a `get_url`-generated link under
 the host's non-root `/docs/` base URL. This validates a narrow override pattern
 without treating a third-party theme or its configuration as portable advice.
 
+**Phase 4 taxonomy/pagination validation (2026-09-03, Zola 0.23.4):** The
+official taxonomy documentation places `taxonomies` in the main configuration
+section and allows a term page to set `paginate_by`; the template documentation
+states that a paginated taxonomy term receives `paginator`. A fixture with two
+pages sharing a Rust tag and `paginate_by = 1` emitted the taxonomy list, the
+canonical term route, and first/second pager files. Its term template used
+`paginator.next`, which generated the non-root `/docs/tags/rust/page/2/` URL.
+This validates only the requested taxonomy/pagination behavior; it does not
+adopt search, feeds, or a broader content-model workflow.
+
 ## Distribution and portability evidence
 
 **Checked:** 2026-09-02

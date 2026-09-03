@@ -1,6 +1,6 @@
 # Zola Skill Vision
 
-**Status:** Phase 3 complete — four fixture-backed core workflows published and validated
+**Status:** Phase 4 in progress — taxonomy/pagination coverage for the existing-site workflow
 **Audience:** Skill maintainers and contributors  
 **Owner:** Project maintainers  
 **Review cadence:** Before a release, after a Zola upgrade, or every six months  
@@ -165,6 +165,16 @@ authoring requests must not activate automatically.
   the [release checklist](release-checklist.md).
 - Next: Phase 4 broader fixture coverage, beginning only with behavior backed
   by an implemented workflow.
+
+### Phase 4 taxonomy/pagination coverage
+
+- In progress: `workflows/modify-review.md` now directs an explicitly requested
+  taxonomy/pagination change to top-level configuration, matching content front
+  matter, and the relevant taxonomy template; it excludes unrelated search,
+  feeds, and content-model changes.
+- In progress: `taxonomy-pagination-site` asserts a non-root taxonomy term
+  route, both first and second pager output, and a `paginator.next` URL beneath
+  `/docs` under Zola 0.23.4.
 
 ## Deferred work
 

@@ -1,6 +1,6 @@
 # Zola Skill Roadmap
 
-**Status:** Phase 3 complete — four fixture-backed core workflows published and validated
+**Status:** Phase 4 in progress — taxonomy/pagination coverage for the existing-site workflow
 **Audience:** Skill maintainers and contributors  
 **Owner:** Project maintainers  
 **Last reviewed:** 2026-09-02
@@ -424,7 +424,7 @@ workflow is not complete until its research findings are recorded.
 **Dependency:** Phase 3 uses the triage, inspection, version, and validation
 contract established in Phase 1.
 
-## Phase 4 — Broader fixture coverage
+## Phase 4 — Broader fixture coverage (in progress)
 
 Create small fixture repositories or directories for:
 
@@ -442,6 +442,20 @@ security guidance are detectable without manual review.
 
 **Dependency:** Phase 4 evaluates the workflows delivered in Phase 3; fixtures
 are not created merely to demonstrate unimplemented guidance.
+
+### Phase 4 taxonomy/pagination slice — in progress
+
+`taxonomy-pagination-site` exercises the existing modification/review workflow
+without introducing a new content-model mode. It declares a top-level `tags`
+taxonomy with `paginate_by = 1`, assigns the same Rust term to two pages, and
+uses generic taxonomy templates. Under Zola 0.23.4, the runner proves the
+generated taxonomy list, canonical term route, first and second pager files,
+`paginator.next` URL under `/docs`, and one expected post on each pager.
+
+The modification/review workflow now limits advice to the declared taxonomy,
+matching content front matter, and verified `paginator` use. It excludes search,
+feeds, browser tooling, and unrelated content-model changes. This begins Phase
+4; the remaining fixture categories are still outstanding.
 
 ## Phase 5 — Focused references and checklists
 

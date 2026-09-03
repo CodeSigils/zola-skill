@@ -5,9 +5,9 @@ Follow this selection matrix before changing the skill or these documents.
 
 Phase 3 is complete: its existing-site modification/review, site-creation,
 extended debug/build, and bounded theme-override slices passed the close gate.
-Phase 4 broader fixture coverage is next; see [roadmap.md](roadmap.md).
-Planning documents are maintainer context, not future runtime context for the
-skill.
+Phase 4 broader fixture coverage is in progress with its taxonomy/pagination
+slice; see [roadmap.md](roadmap.md). Planning documents are maintainer context,
+not future runtime context for the skill.
 
 ## Reading matrix
 
