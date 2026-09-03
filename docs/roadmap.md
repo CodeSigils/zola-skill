@@ -474,6 +474,10 @@ from trusted rendered Zola Markdown, requires the expression and provenance in
 the finding, and prohibits a review-only repair. The remaining Phase 4 fixture
 categories are still outstanding.
 
+The published package at commit `54219d3` was installed successfully for both
+Codex and Claude Code with the expanded modification/review workflow present;
+see the [release checklist](release-checklist.md) for the commands and outcomes.
+
 ## Phase 5 — Focused references and checklists
 
 Add only the references needed by the proven workflows first:
