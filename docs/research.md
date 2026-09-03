@@ -171,6 +171,14 @@ canonical term route, and first/second pager files. Its term template used
 This validates only the requested taxonomy/pagination behavior; it does not
 adopt search, feeds, or a broader content-model workflow.
 
+**Phase 4 unsafe-`safe` review validation (2026-09-03, Zola 0.23.4):** Tera
+auto-escapes `.html`, `.htm`, and `.xml` templates by default, while its `safe`
+filter marks an expression unescaped. A fixture rendering an HTML-like
+`config.extra` announcement through `safe` built successfully and emitted the
+raw `onerror` attribute. This supports a narrow provenance-based review finding
+for arbitrary configuration/data; it does not establish that rendered Zola
+Markdown or every `safe` use is unsafe.
+
 ## Distribution and portability evidence
 
 **Checked:** 2026-09-02

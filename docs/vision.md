@@ -176,6 +176,15 @@ authoring requests must not activate automatically.
   route, both first and second pager output, and a `paginator.next` URL beneath
   `/docs` under Zola 0.23.4.
 
+### Phase 4 unsafe-`safe` review coverage
+
+- In progress: `workflows/modify-review.md` distinguishes trusted rendered
+  Markdown from arbitrary configuration/data passed through `| safe`; it
+  requires a bounded provenance-based finding rather than a generic audit.
+- In progress: `unsafe-safe-review` preserves an unescaped
+  `config.extra.announcement` value and asserts its generated raw attribute so
+  the review evidence remains reproducible under Zola 0.23.4.
+
 ## Deferred work
 
 Theme authoring/research, deployment patterns, advanced i18n, search,

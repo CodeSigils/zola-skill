@@ -1,0 +1,5 @@
+base_url = "https://example.test/docs"
+title = "Unsafe safe review"
+
+[extra]
+announcement = '<img src="x" onerror="alert(1)">'
