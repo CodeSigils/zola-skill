@@ -284,6 +284,13 @@ Code with skills CLI `1.5.23`. Both installed copies included the updated
 modification/review workflow and source registry. Details are in the
 [release checklist](release-checklist.md).
 
+**Phase 5 bounded release-review published-package validation (2026-09-03):**
+The package at commit `e42c5d9` was installed successfully for Codex and Claude
+Code with skills CLI `1.5.23`. Both installed copies included the entrypoint,
+modification/review workflow, release-review reference, and source registry;
+the skill was listed for its selected host. Details are in the
+[release checklist](release-checklist.md).
+
 **Naming decision:** publish the skill as **Zola** with the machine identifier
 `zola`; retain `zola-skill` only as the source repository name. This gives the
 skill a concise domain-specific discovery name while preserving an unambiguous

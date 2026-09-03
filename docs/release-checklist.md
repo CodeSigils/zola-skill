@@ -143,3 +143,16 @@ Skills CLI: `1.5.23`.
 
 Each check ran in a separately created `/tmp/zola-skill-safe-*` directory and
 the directory was removed after the command completed.
+
+### 2026-09-03 Phase 5 bounded release-review published-package results
+
+Source: `CodeSigils/zola-skill@zola` on the `main` branch, commit `e42c5d9`.
+Skills CLI: `1.5.23`.
+
+| Host | Observed install path | Result |
+| --- | --- | --- |
+| Codex | `.agents/skills/zola` | Passed: `SKILL.md`, `workflows/modify-review.md`, `references/release-review.md`, and `references/source-registry.md` existed; `npx skills ls -a codex` listed `zola`. |
+| Claude Code | `.claude/skills/zola` | Passed: `SKILL.md`, `workflows/modify-review.md`, `references/release-review.md`, and `references/source-registry.md` existed; `npx skills ls -a claude-code` listed `zola`. |
+
+Each check ran in a separately created `/tmp/zola-skill-phase5-*` directory and
+the directory was removed after the command completed.
