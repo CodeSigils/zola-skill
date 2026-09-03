@@ -539,7 +539,9 @@ the reference: broken Markdown links are errors by default, while lowering the
 level to a warning can retain broken output. `tests/scenarios.md` includes a
 matching pre-release review prompt. This is the first Phase 5 slice; broader
 references remain deferred until they support an implemented workflow and have
-maintained source evidence.
+maintained source evidence. The published package at commit `e42c5d9` installed
+successfully for Codex and Claude Code with the reference present; see the
+[release checklist](release-checklist.md) for commands and outcomes.
 
 ## Phase 6 — Optional capabilities
 

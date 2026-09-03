@@ -214,6 +214,9 @@ authoring requests must not activate automatically.
 - Complete: the source registry records the official internal-link behavior
   needed by this reference; the matching discovery scenario confirms the skill
   remains scoped to an existing Zola-site review.
+- Complete: the published package at commit `e42c5d9` installed successfully
+  for Codex and Claude Code with the new reference present; exact commands and
+  outcomes are recorded in the [release checklist](release-checklist.md).
 - Next: audit only other reference/checklist gaps that support implemented
   workflows and can be backed by maintained sources.
 
