@@ -31,7 +31,9 @@ generic advice.
    modification/review workflow](workflows/modify-review.md) for an existing
    site's authorized change or review, or [the theme override
    workflow](workflows/theme-override.md) for one verified existing-theme
-   template override. Consult the matching official entry in [the source
+   template override. For an explicitly requested pre-release static-site
+   review, also read [the release-review reference](references/release-review.md).
+   Consult the matching official entry in [the source
    registry](references/source-registry.md) before relying on version-sensitive
    behavior.
 5. Report the likely cause, concrete evidence, smallest safe repair, competing
