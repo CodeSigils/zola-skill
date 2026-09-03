@@ -543,6 +543,21 @@ maintained source evidence. The published package at commit `e42c5d9` installed
 successfully for Codex and Claude Code with the reference present; see the
 [release checklist](release-checklist.md) for commands and outcomes.
 
+### Phase 5 bounded template accessibility-review reference — complete
+
+`references/accessibility-review.md` gives the existing modification/review
+workflow a progressive-disclosure checklist for an explicit template
+accessibility review. It limits findings to source or generated-output evidence
+for meaningful page regions, logical headings, purpose-appropriate image
+alternatives, and link purpose. It records untested keyboard, focus, contrast,
+responsive, assistive-technology, and conformance concerns as limits rather
+than inferring a compliance result.
+
+The source registry records the three W3C WAI pages used by this reference, and
+`tests/scenarios.md` includes its matching review prompt. This supports the
+implemented existing-site review workflow without adding a redesign, runtime,
+or certification mode.
+
 ## Phase 6 — Optional capabilities
 
 Add deployment templates, theme-research guidance, i18n depth, search,

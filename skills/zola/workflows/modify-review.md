@@ -41,7 +41,9 @@ coverage was skipped. Respect existing project commands and never add `--force`
 by default. For an explicitly requested pre-release review, read the bounded
 [release-review reference](../references/release-review.md); it does not turn a
 template review into a deployment, accessibility-compliance, or full security
-audit.
+audit. For an explicitly requested accessibility review of existing templates,
+read [the accessibility-review reference](../references/accessibility-review.md)
+and report only evidence visible in source or generated output.
 
 ## Review-only output
 
