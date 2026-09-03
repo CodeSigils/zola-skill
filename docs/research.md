@@ -247,6 +247,12 @@ The source registry was re-read and remains sufficient for the implemented CLI,
 configuration, Tera, multilingual, and theme-override workflows. No new
 external source or architecture decision was adopted during the close gate.
 
+**Phase 4 taxonomy/pagination published-package validation (2026-09-03):** The
+package at commit `c4fb90d` was installed successfully for Codex and Claude
+Code with skills CLI `1.5.23`. Both installed copies included the updated
+modification/review workflow and source registry. Details are in the
+[release checklist](release-checklist.md).
+
 **Naming decision:** publish the skill as **Zola** with the machine identifier
 `zola`; retain `zola-skill` only as the source repository name. This gives the
 skill a concise domain-specific discovery name while preserving an unambiguous
