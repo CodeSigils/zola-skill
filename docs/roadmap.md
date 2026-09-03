@@ -573,7 +573,10 @@ redirect policy without an explicit request.
 The source registry now records the official content overview, page, and
 section facts used by the reference. `tests/scenarios.md` includes a matching
 route-preserving co-located asset prompt. This supports the implemented
-modification workflow without expanding it into full content-model design.
+modification workflow without expanding it into full content-model design. The
+published package at commit `a1b87af` installed successfully for Codex and
+Claude Code with the reference present; see the
+[release checklist](release-checklist.md) for commands and outcomes.
 
 ## Phase 6 — Optional capabilities
 

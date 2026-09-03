@@ -243,8 +243,12 @@ authoring requests must not activate automatically.
 - Complete: the source registry records official Zola content overview, page,
   and section evidence; the matching discovery scenario covers a route-preserving
   co-located asset change.
-- Next: validate the packaged reference and consider only remaining focused
-  troubleshooting gaps backed by an implemented workflow.
+- Complete: the published package at commit `a1b87af` installed successfully
+  for Codex and Claude Code with the content-model reference present; exact
+  commands and outcomes are recorded in the
+  [release checklist](release-checklist.md).
+- Next: consider only remaining focused troubleshooting gaps backed by an
+  implemented workflow.
 
 ## Deferred work
 
