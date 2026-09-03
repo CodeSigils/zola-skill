@@ -35,6 +35,8 @@ generic advice.
    review, also read [the release-review reference](references/release-review.md).
    For an explicitly requested existing-template accessibility review, read
    [the accessibility-review reference](references/accessibility-review.md).
+   For an authorized content-structure, front-matter, route, or co-located
+   asset change, read [the content-model reference](references/content-model.md).
    Consult the matching official entry in [the source
    registry](references/source-registry.md) before relying on version-sensitive
    behavior.

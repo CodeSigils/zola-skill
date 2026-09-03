@@ -1,6 +1,6 @@
 # Zola Skill Vision
 
-**Status:** Phase 5 in progress — bounded release and template accessibility references
+**Status:** Phase 5 in progress — bounded release, accessibility, and content-model references
 **Audience:** Skill maintainers and contributors  
 **Owner:** Project maintainers  
 **Review cadence:** Before a release, after a Zola upgrade, or every six months  
@@ -234,6 +234,17 @@ authoring requests must not activate automatically.
   [release checklist](release-checklist.md).
 - Next: consider only remaining focused troubleshooting or reference gaps backed
   by implemented workflows.
+
+### Phase 5 bounded content-model reference
+
+- Complete: `references/content-model.md` is discoverable only for authorized
+  existing-site content-structure, front-matter, route, or co-located asset
+  changes. It preserves page/section roles and existing route behavior.
+- Complete: the source registry records official Zola content overview, page,
+  and section evidence; the matching discovery scenario covers a route-preserving
+  co-located asset change.
+- Next: validate the packaged reference and consider only remaining focused
+  troubleshooting gaps backed by an implemented workflow.
 
 ## Deferred work
 
