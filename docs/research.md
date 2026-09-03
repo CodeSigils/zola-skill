@@ -4,7 +4,7 @@
 **Audience:** Skill maintainers and contributors  
 **Owner:** Project maintainers  
 **Review cadence:** Before a release, after a Zola upgrade, or every six months  
-**Last reviewed:** 2026-09-02
+**Last reviewed:** 2026-09-03
 **Purpose:** Inform the design of the Zola skill before implementation. This is
 not a specification or a source of runtime instructions.
 
@@ -178,6 +178,14 @@ filter marks an expression unescaped. A fixture rendering an HTML-like
 raw `onerror` attribute. This supports a narrow provenance-based review finding
 for arbitrary configuration/data; it does not establish that rendered Zola
 Markdown or every `safe` use is unsafe.
+
+**Phase 4 close-gate validation (2026-09-03):** The full fixture runner passed
+with Zola 0.23.4, including expected parser and language failures; `npx --yes
+skills-ref validate skills/zola` reported a valid skill. The source registry
+was re-read and remains sufficient for the implemented CLI, configuration,
+Tera, multilingual, theme-override, taxonomy/pagination, and safe-filter
+review workflows. No external source or architecture decision was adopted in
+the close gate.
 
 ## Distribution and portability evidence
 
