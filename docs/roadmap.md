@@ -556,7 +556,9 @@ than inferring a compliance result.
 The source registry records the three W3C WAI pages used by this reference, and
 `tests/scenarios.md` includes its matching review prompt. This supports the
 implemented existing-site review workflow without adding a redesign, runtime,
-or certification mode.
+or certification mode. The published package at commit `38917ef` installed
+successfully for Codex and Claude Code with the reference present; see the
+[release checklist](release-checklist.md) for commands and outcomes.
 
 ## Phase 6 — Optional capabilities
 

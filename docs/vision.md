@@ -228,8 +228,12 @@ authoring requests must not activate automatically.
 - Complete: the source registry records the W3C WAI evidence used by the
   reference. The matching discovery scenario preserves the no-compliance-claim
   boundary.
-- Next: validate the packaged reference and consider only remaining focused
-  troubleshooting or reference gaps backed by implemented workflows.
+- Complete: the published package at commit `38917ef` installed successfully
+  for Codex and Claude Code with the accessibility reference present; exact
+  commands and outcomes are recorded in the
+  [release checklist](release-checklist.md).
+- Next: consider only remaining focused troubleshooting or reference gaps backed
+  by implemented workflows.
 
 ## Deferred work
 
