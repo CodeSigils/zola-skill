@@ -49,6 +49,12 @@ remains reproducible. The scenario documents its minimal repair proposal.
 | --- | --- | --- | --- | --- | --- | --- |
 | `taxonomy-pagination-site` | “Add one post per Rust tag page, while preserving deployment under `/docs`.” | Top-level `taxonomies` declares `tags` with `paginate_by = 1`; two pages assign `Rust`; taxonomy templates consume `terms` and `paginator`. | The existing content model emits a taxonomy list, a canonical Rust term route, and paginated term output. | Put `taxonomies` under `[extra]`, add search/feed/browser tooling, or hard-code a root-relative pager URL. | Keep the top-level declaration; render only verified `paginator` fields in the taxonomy-term template. | Check and isolated build pass; output has `/tags/rust/`, `page/1`, `page/2`, a generated next URL under `/docs`, and one expected post on each pager. |
 
+## Phase 4 unsafe-`safe` review scenario
+
+| Fixture | Realistic prompt | Repository evidence | Expected diagnosis or outcome | Prohibited advice | Expected patch or report | Validation outcome |
+| --- | --- | --- | --- | --- | --- | --- |
+| `unsafe-safe-review` | “Review this announcement template; do not modify files.” | `config.extra.announcement` contains HTML-like data, and `templates/index.html` renders it through `| safe`. | `warning | templates/index.html | config.extra.announcement is marked safe without trusted-HTML provenance | arbitrary configured markup bypasses HTML escaping | remove safe or establish a vetted trusted-HTML source | rebuild and verify escaped output`. | Apply a fix during review, label every `page.content | safe` use unsafe, or claim a full security audit. | A bounded evidence-based warning; no patch. | Check and isolated build pass; generated output intentionally retains the raw `onerror` attribute as review evidence. |
+
 ## Discovery checks
 
 | Prompt | Expected selection result | Observed result |

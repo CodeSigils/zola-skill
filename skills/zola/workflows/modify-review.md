@@ -28,6 +28,13 @@ affected content front matter and taxonomy template. A taxonomy term has a
 `paginator` only when its configured `paginate_by` is positive; do not add
 search, feeds, or a new content model unless requested.
 
+For a review of `| safe`, distinguish rendered Zola Markdown from arbitrary
+configuration or data. Flag an unescaped `config.extra` or data value unless
+its trusted-HTML provenance and need are explicit. Report the expression and
+source as evidence; recommend removing `safe` or using a deliberately vetted
+rendering path. Do not label every existing `page.content | safe` use unsafe or
+claim a general security audit from one template finding.
+
 Validate with `zola check --skip-external-links`, an isolated `zola build`, and
 an inspection of the affected generated page. State that external Markdown-link
 coverage was skipped. Respect existing project commands and never add `--force`

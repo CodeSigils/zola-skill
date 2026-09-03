@@ -117,6 +117,11 @@ rg -F 'href="https://example.test/docs/tags/rust/page/2/">Next</a>' "$run_root/t
 rg -F '<a href="https://example.test/docs/post-two/">Post two</a>' "$run_root/taxonomy-pagination-site-output/tags/rust/index.html"
 rg -F '<a href="https://example.test/docs/post-one/">Post one</a>' "$run_root/taxonomy-pagination-site-output/tags/rust/page/2/index.html"
 
+printf 'unsafe-safe-review: preserved unsafe template evidence for review\n'
+run_check_and_build unsafe-safe-review
+rg -F '{{ config.extra.announcement | safe }}' "$fixture_root/unsafe-safe-review/templates/index.html"
+rg -F '<img src="x" onerror="alert(1)">' "$run_root/unsafe-safe-review-output/index.html"
+
 printf 'created-site: init scaffold and minimal-site output\n'
 (cd "$run_root" && printf 'https://example.test/docs\nn\nn\n' | "$zola_bin" init created-with-init)
 test -f "$run_root/created-with-init/zola.toml"
@@ -125,4 +130,4 @@ run_check_and_build created-site
 rg -F '<title>Starter site</title>' "$run_root/created-site-output/index.html"
 rg -F '<p>Welcome to the starter site.</p>' "$run_root/created-site-output/index.html"
 
-printf 'PASS: debug-build, i18n, existing-site, theme override, taxonomy pagination, and creation fixtures passed expected assertions.\n'
+printf 'PASS: debug-build, i18n, existing-site, theme override, taxonomy pagination, unsafe-review, and creation fixtures passed expected assertions.\n'

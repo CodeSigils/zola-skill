@@ -461,6 +461,19 @@ The published package at commit `c4fb90d` was installed successfully for both
 Codex and Claude Code with the expanded modification/review workflow present;
 see the [release checklist](release-checklist.md) for the commands and outcomes.
 
+### Phase 4 unsafe-`safe` review slice — in progress
+
+`unsafe-safe-review` keeps an intentionally unsafe expression in an otherwise
+buildable local site: `config.extra.announcement | safe`. The runner proves the
+source expression remains present and the isolated generated page retains its
+raw `onerror` attribute. This is review evidence, not an instruction to execute
+the output or a claim of a complete security audit.
+
+The modification/review workflow now distinguishes arbitrary configuration/data
+from trusted rendered Zola Markdown, requires the expression and provenance in
+the finding, and prohibits a review-only repair. The remaining Phase 4 fixture
+categories are still outstanding.
+
 ## Phase 5 — Focused references and checklists
 
 Add only the references needed by the proven workflows first:
