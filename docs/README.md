@@ -3,10 +3,10 @@
 This directory is the maintained source of truth for the Zola skill's design.
 Follow this selection matrix before changing the skill or these documents.
 
-Phase 4 is complete. Phase 5 is in progress with a bounded static release-review
-reference for the existing review workflow; see [roadmap.md](roadmap.md).
-Planning documents are maintainer context, not future runtime context for the
-skill.
+Phase 4 is complete. Phase 5 is in progress with bounded release and template
+accessibility-review references for the existing review workflow; see
+[roadmap.md](roadmap.md). Planning documents are maintainer context, not future
+runtime context for the skill.
 
 ## Reading matrix
 

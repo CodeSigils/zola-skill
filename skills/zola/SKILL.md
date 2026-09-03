@@ -33,6 +33,8 @@ generic advice.
    workflow](workflows/theme-override.md) for one verified existing-theme
    template override. For an explicitly requested pre-release static-site
    review, also read [the release-review reference](references/release-review.md).
+   For an explicitly requested existing-template accessibility review, read
+   [the accessibility-review reference](references/accessibility-review.md).
    Consult the matching official entry in [the source
    registry](references/source-registry.md) before relying on version-sensitive
    behavior.

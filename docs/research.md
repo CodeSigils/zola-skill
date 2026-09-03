@@ -196,6 +196,15 @@ leave broken output. The new runtime reference therefore records command and
 coverage limits rather than promising a deployment, accessibility-compliance,
 or full-security review.
 
+**Phase 5 bounded template accessibility-review reference (2026-09-03):** W3C
+WAI's page-structure tutorial supports meaningful page regions and logical
+heading nesting; its images tutorial distinguishes informative, decorative, and
+functional image alternatives; and WCAG 2.2's link-purpose guidance allows
+purpose to come from link text or directly associated programmatic context. The
+runtime reference limits review findings to those observable conditions and
+states that it does not establish assistive-technology behavior or WCAG
+conformance.
+
 ## Distribution and portability evidence
 
 **Checked:** 2026-09-02

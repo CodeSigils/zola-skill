@@ -1,6 +1,6 @@
 # Zola Skill Vision
 
-**Status:** Phase 5 in progress — bounded static release-review reference
+**Status:** Phase 5 in progress — bounded release and template accessibility references
 **Audience:** Skill maintainers and contributors  
 **Owner:** Project maintainers  
 **Review cadence:** Before a release, after a Zola upgrade, or every six months  
@@ -219,6 +219,17 @@ authoring requests must not activate automatically.
   outcomes are recorded in the [release checklist](release-checklist.md).
 - Next: audit only other reference/checklist gaps that support implemented
   workflows and can be backed by maintained sources.
+
+### Phase 5 bounded template accessibility-review reference
+
+- Complete: `references/accessibility-review.md` is discoverable only for an
+  explicit existing-template accessibility review. It limits findings to
+  observable page regions, headings, image alternatives, and link purpose.
+- Complete: the source registry records the W3C WAI evidence used by the
+  reference. The matching discovery scenario preserves the no-compliance-claim
+  boundary.
+- Next: validate the packaged reference and consider only remaining focused
+  troubleshooting or reference gaps backed by implemented workflows.
 
 ## Deferred work
 
