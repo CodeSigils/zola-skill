@@ -187,6 +187,15 @@ Tera, multilingual, theme-override, taxonomy/pagination, and safe-filter
 review workflows. No external source or architecture decision was adopted in
 the close gate.
 
+**Phase 5 bounded release-review reference (2026-09-03, Zola 0.23.4):** The
+official CLI documentation states that `check` builds pages without writing
+output and checks external Markdown links, while `--skip-external-links` omits
+that coverage. The official linking documentation states that broken internal
+Markdown links are errors by default and that downgrading them to warnings can
+leave broken output. The new runtime reference therefore records command and
+coverage limits rather than promising a deployment, accessibility-compliance,
+or full-security review.
+
 ## Distribution and portability evidence
 
 **Checked:** 2026-09-02

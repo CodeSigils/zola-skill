@@ -63,6 +63,7 @@ remains reproducible. The scenario documents its minimal repair proposal.
 | “My Zola configuration makes the build fail after I changed `output_dir`.” | Match `zola`: it names a Zola configuration/build failure. | Match. |
 | “My French Zola page is missing its `/fr/` route and translated navigation label.” | Match `zola`: it names static Zola i18n behavior in an existing site. | Match. |
 | “Review this existing Zola site's templates for broken routes; do not edit anything.” | Match `zola`: it requests an existing Zola-site review. | Match. |
+| “Prepare a bounded pre-release review of this Zola site's generated routes and template escaping; do not deploy it.” | Match `zola`: it requests an existing Zola-site review with static release evidence. | Match. |
 | “Create a small Zola documentation site in this new directory.” | Match `zola`: it requests a minimal Zola site creation workflow. | Match. |
 | “Create a polished marketing site in React.” | Do not match: general site creation and frontend work are outside v1. | Do not match. |
 | “Audit this CMS deployment pipeline.” | Do not match: CMS/deployment review is outside v1. | Do not match. |

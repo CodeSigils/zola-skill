@@ -38,7 +38,10 @@ claim a general security audit from one template finding.
 Validate with `zola check --skip-external-links`, an isolated `zola build`, and
 an inspection of the affected generated page. State that external Markdown-link
 coverage was skipped. Respect existing project commands and never add `--force`
-by default.
+by default. For an explicitly requested pre-release review, read the bounded
+[release-review reference](../references/release-review.md); it does not turn a
+template review into a deployment, accessibility-compliance, or full security
+audit.
 
 ## Review-only output
 

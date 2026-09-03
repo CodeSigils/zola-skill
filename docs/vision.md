@@ -1,6 +1,6 @@
 # Zola Skill Vision
 
-**Status:** Phase 4 complete — broader fixture coverage and review evidence validated
+**Status:** Phase 5 in progress — bounded static release-review reference
 **Audience:** Skill maintainers and contributors  
 **Owner:** Project maintainers  
 **Review cadence:** Before a release, after a Zola upgrade, or every six months  
@@ -203,6 +203,19 @@ authoring requests must not activate automatically.
 - Next: Phase 5 may assess focused reference and release-checklist additions
   only where an implemented workflow and maintained source evidence justify
   them.
+
+### Phase 5 bounded release-review reference
+
+- Complete: `references/release-review.md` is discoverable only for an explicit
+  pre-release static-site review. It records version/configuration evidence,
+  permitted `check` coverage, isolated generated-output inspection, and
+  provenance-based `safe` review without claiming deployment, accessibility
+  compliance, or a full security audit.
+- Complete: the source registry records the official internal-link behavior
+  needed by this reference; the matching discovery scenario confirms the skill
+  remains scoped to an existing Zola-site review.
+- Next: audit only other reference/checklist gaps that support implemented
+  workflows and can be backed by maintained sources.
 
 ## Deferred work
 

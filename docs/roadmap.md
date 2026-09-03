@@ -503,7 +503,7 @@ JavaScript, Rust, WebAssembly, runtime-service, or Zola-core guidance.
 Phase 5 may now start with a focused reference and release-checklist audit, not
 a speculative expansion of runtime scope.
 
-## Phase 5 — Focused references and checklists
+## Phase 5 — Focused references and checklists (in progress)
 
 Add only the references needed by the proven workflows first:
 
@@ -523,6 +523,23 @@ the primary skill monolithic.
 
 **Dependency:** Phase 5 documents and supports behavior already exercised by
 the earlier workflows and evaluation scenarios.
+
+### Phase 5 bounded release-review reference — complete
+
+`references/release-review.md` supplies progressive-disclosure guidance for an
+explicit pre-release static-site review of an existing Zola project. It collects
+version, configuration, output, generated-route, and escaping evidence; it
+distinguishes a full `zola check` from `--skip-external-links`; and it requires
+precise limits instead of deployment, accessibility-compliance, or full-security
+claims. `SKILL.md` and `workflows/modify-review.md` route to it only for that
+requested review mode.
+
+The source registry now records the official Zola internal-link behavior used by
+the reference: broken Markdown links are errors by default, while lowering the
+level to a warning can retain broken output. `tests/scenarios.md` includes a
+matching pre-release review prompt. This is the first Phase 5 slice; broader
+references remain deferred until they support an implemented workflow and have
+maintained source evidence.
 
 ## Phase 6 — Optional capabilities
 
