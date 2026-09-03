@@ -22,6 +22,10 @@ through Zola helpers when a link points to content; preserve `base_url`, active
 language behavior, and auto-escaping. Do not add a framework, browser runtime,
 or unrelated reorganization.
 
+For an authorized content-structure, front-matter, route, or co-located asset
+change, read [the content-model reference](../references/content-model.md)
+before changing a filename, `_index.md`, `index.md`, `slug`, or `path`.
+
 For an explicitly requested taxonomy or pagination change, verify the taxonomy
 is declared at the top level of the host configuration, then inspect the
 affected content front matter and taxonomy template. A taxonomy term has a

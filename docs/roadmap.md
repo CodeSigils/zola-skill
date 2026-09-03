@@ -560,6 +560,21 @@ or certification mode. The published package at commit `38917ef` installed
 successfully for Codex and Claude Code with the reference present; see the
 [release checklist](release-checklist.md) for commands and outcomes.
 
+### Phase 5 bounded content-model reference — complete
+
+`references/content-model.md` gives authorized existing-site changes a
+progressive-disclosure guide for page/section roles, front matter, generated
+routes, and co-located assets. It requires inspection before changing
+`_index.md`, `index.md`, filenames, `slug`, or `path`; preserves active
+languages and existing aliases; and validates generated routes and copied
+assets. It does not add a content architecture, search, feeds, taxonomy, or
+redirect policy without an explicit request.
+
+The source registry now records the official content overview, page, and
+section facts used by the reference. `tests/scenarios.md` includes a matching
+route-preserving co-located asset prompt. This supports the implemented
+modification workflow without expanding it into full content-model design.
+
 ## Phase 6 — Optional capabilities
 
 Add deployment templates, theme-research guidance, i18n depth, search,

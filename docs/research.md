@@ -205,6 +205,14 @@ runtime reference limits review findings to those observable conditions and
 states that it does not establish assistive-technology behavior or WCAG
 conformance.
 
+**Phase 5 bounded content-model reference (2026-09-03, Zola 0.23.4):** Zola's
+content overview distinguishes section `_index.md` files from pages and
+documents dedicated page directories for co-located assets. The page reference
+states that `path` overrides `slug` and the section-derived route, while the
+section reference documents settings that can affect direct pages. The runtime
+reference therefore requires route, template, language, and existing-link
+inspection before an authorized structural or front-matter change.
+
 ## Distribution and portability evidence
 
 **Checked:** 2026-09-02
