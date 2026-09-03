@@ -457,6 +457,10 @@ matching content front matter, and verified `paginator` use. It excludes search,
 feeds, browser tooling, and unrelated content-model changes. This begins Phase
 4; the remaining fixture categories are still outstanding.
 
+The published package at commit `c4fb90d` was installed successfully for both
+Codex and Claude Code with the expanded modification/review workflow present;
+see the [release checklist](release-checklist.md) for the commands and outcomes.
+
 ## Phase 5 — Focused references and checklists
 
 Add only the references needed by the proven workflows first:
