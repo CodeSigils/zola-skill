@@ -1,9 +1,9 @@
 # Zola Skill Roadmap
 
-**Status:** Phase 4 in progress — taxonomy/pagination coverage for the existing-site workflow
+**Status:** Phase 4 complete — broader fixture coverage and review evidence validated
 **Audience:** Skill maintainers and contributors  
 **Owner:** Project maintainers  
-**Last reviewed:** 2026-09-02
+**Last reviewed:** 2026-09-03
 
 This roadmap turns the [vision](vision.md) into a small, demonstrated skill.
 Do not implement advanced guidance merely because it appears in a planning
@@ -424,7 +424,7 @@ workflow is not complete until its research findings are recorded.
 **Dependency:** Phase 3 uses the triage, inspection, version, and validation
 contract established in Phase 1.
 
-## Phase 4 — Broader fixture coverage (in progress)
+## Phase 4 — Broader fixture coverage (complete)
 
 Create small fixture repositories or directories for:
 
@@ -443,7 +443,7 @@ security guidance are detectable without manual review.
 **Dependency:** Phase 4 evaluates the workflows delivered in Phase 3; fixtures
 are not created merely to demonstrate unimplemented guidance.
 
-### Phase 4 taxonomy/pagination slice — in progress
+### Phase 4 taxonomy/pagination slice — complete
 
 `taxonomy-pagination-site` exercises the existing modification/review workflow
 without introducing a new content-model mode. It declares a top-level `tags`
@@ -454,14 +454,15 @@ generated taxonomy list, canonical term route, first and second pager files,
 
 The modification/review workflow now limits advice to the declared taxonomy,
 matching content front matter, and verified `paginator` use. It excludes search,
-feeds, browser tooling, and unrelated content-model changes. This begins Phase
-4; the remaining fixture categories are still outstanding.
+feeds, browser tooling, and unrelated content-model changes. The other Phase 4
+categories are covered by the minimal, theme-override, non-root URL, and parser
+fixtures delivered in the earlier phases.
 
 The published package at commit `c4fb90d` was installed successfully for both
 Codex and Claude Code with the expanded modification/review workflow present;
 see the [release checklist](release-checklist.md) for the commands and outcomes.
 
-### Phase 4 unsafe-`safe` review slice — in progress
+### Phase 4 unsafe-`safe` review slice — complete
 
 `unsafe-safe-review` keeps an intentionally unsafe expression in an otherwise
 buildable local site: `config.extra.announcement | safe`. The runner proves the
@@ -471,12 +472,36 @@ the output or a claim of a complete security audit.
 
 The modification/review workflow now distinguishes arbitrary configuration/data
 from trusted rendered Zola Markdown, requires the expression and provenance in
-the finding, and prohibits a review-only repair. The remaining Phase 4 fixture
-categories are still outstanding.
+the finding, and prohibits a review-only repair. Together with the established
+core fixtures, this completes the Phase 4 coverage set.
 
 The published package at commit `54219d3` was installed successfully for both
 Codex and Claude Code with the expanded modification/review workflow present;
 see the [release checklist](release-checklist.md) for the commands and outcomes.
+
+### Phase 4 close-gate evidence — 2026-09-03
+
+The documentation index and its reading matrix were re-read before closing the
+phase. `ZOLA_BIN=/home/sand/.local/bin/zola tests/run.sh` passed with Zola
+0.23.4: valid, non-root URL, i18n, existing-site modification/review, theme
+override, taxonomy/pagination, unsafe-`safe` review, and creation fixtures
+passed their assertions; the intentionally broken template, configuration,
+front-matter, missing-translation, and unauthorized-language fixtures failed as
+expected. `npx --yes skills-ref validate skills/zola` reported `Valid skill:
+skills/zola`.
+
+`docs/README.md`, `vision.md`, this roadmap, `research.md`, the source registry,
+and the release checklist were re-read. Affected relative Markdown links were
+verified. The existing source registry remains sufficient for the implemented
+workflows; no external source or architecture decision was adopted in the close
+gate. Published-package installs for the two Phase 4 workflow changes already
+passed for Codex and Claude Code at commits `c4fb90d` and `54219d3`; the exact
+commands and outcomes remain in the [release checklist](release-checklist.md).
+`future-capabilities.md` is intentionally unchanged because Phase 4 adds no
+JavaScript, Rust, WebAssembly, runtime-service, or Zola-core guidance.
+
+Phase 5 may now start with a focused reference and release-checklist audit, not
+a speculative expansion of runtime scope.
 
 ## Phase 5 — Focused references and checklists
 

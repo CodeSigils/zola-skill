@@ -1,10 +1,10 @@
 # Zola Skill Vision
 
-**Status:** Phase 4 in progress — taxonomy/pagination coverage for the existing-site workflow
+**Status:** Phase 4 complete — broader fixture coverage and review evidence validated
 **Audience:** Skill maintainers and contributors  
 **Owner:** Project maintainers  
 **Review cadence:** Before a release, after a Zola upgrade, or every six months  
-**Last reviewed:** 2026-09-02
+**Last reviewed:** 2026-09-03
 
 ## Purpose
 
@@ -168,22 +168,41 @@ authoring requests must not activate automatically.
 
 ### Phase 4 taxonomy/pagination coverage
 
-- In progress: `workflows/modify-review.md` now directs an explicitly requested
+- Complete: `workflows/modify-review.md` directs an explicitly requested
   taxonomy/pagination change to top-level configuration, matching content front
   matter, and the relevant taxonomy template; it excludes unrelated search,
   feeds, and content-model changes.
-- In progress: `taxonomy-pagination-site` asserts a non-root taxonomy term
+- Complete: `taxonomy-pagination-site` asserts a non-root taxonomy term
   route, both first and second pager output, and a `paginator.next` URL beneath
   `/docs` under Zola 0.23.4.
 
 ### Phase 4 unsafe-`safe` review coverage
 
-- In progress: `workflows/modify-review.md` distinguishes trusted rendered
+- Complete: `workflows/modify-review.md` distinguishes trusted rendered
   Markdown from arbitrary configuration/data passed through `| safe`; it
   requires a bounded provenance-based finding rather than a generic audit.
-- In progress: `unsafe-safe-review` preserves an unescaped
+- Complete: `unsafe-safe-review` preserves an unescaped
   `config.extra.announcement` value and asserts its generated raw attribute so
   the review evidence remains reproducible under Zola 0.23.4.
+
+### Phase 4 close-gate evidence
+
+- Complete: on 2026-09-03, `ZOLA_BIN=/home/sand/.local/bin/zola tests/run.sh`
+  passed under Zola 0.23.4. It covered minimal, theme-override, taxonomy/
+  pagination, non-root URL, template/front-matter failure, and unsafe-`safe`
+  fixtures; intentional failure cases failed as expected.
+- Complete: `npx --yes skills-ref validate skills/zola` reported `Valid skill:
+  skills/zola`. Published-package installs for the two Phase 4 skill changes
+  passed for Codex and Claude Code at commits `c4fb90d` and `54219d3` and are
+  recorded in the [release checklist](release-checklist.md).
+- Complete: the documentation index, vision, roadmap, research, source
+  registry, release checklist, and affected relative links were re-read and
+  verified. `future-capabilities.md` remains intentionally unchanged because
+  Phase 4 adds no JavaScript, Rust, WebAssembly, runtime-service, or Zola-core
+  guidance.
+- Next: Phase 5 may assess focused reference and release-checklist additions
+  only where an implemented workflow and maintained source evidence justify
+  them.
 
 ## Deferred work
 

@@ -3,11 +3,11 @@
 This directory is the maintained source of truth for the Zola skill's design.
 Follow this selection matrix before changing the skill or these documents.
 
-Phase 3 is complete: its existing-site modification/review, site-creation,
-extended debug/build, and bounded theme-override slices passed the close gate.
-Phase 4 broader fixture coverage is in progress with taxonomy/pagination and
-unsafe-`safe` review slices; see [roadmap.md](roadmap.md). Planning documents
-are maintainer context, not future runtime context for the skill.
+Phase 4 is complete: its broader fixture coverage now includes taxonomy/
+pagination and unsafe-`safe` review slices alongside the prior core fixtures;
+the full delivery gate passed. Phase 5 can now begin with a focused reference
+and checklist audit; see [roadmap.md](roadmap.md). Planning documents are
+maintainer context, not future runtime context for the skill.
 
 ## Reading matrix
 
