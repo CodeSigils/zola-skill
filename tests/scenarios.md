@@ -66,6 +66,7 @@ remains reproducible. The scenario documents its minimal repair proposal.
 | “Prepare a bounded pre-release review of this Zola site's generated routes and template escaping; do not deploy it.” | Match `zola`: it requests an existing Zola-site review with static release evidence. | Match. |
 | “Review this existing Zola site's templates for heading structure, image alternatives, and link purpose; do not claim compliance.” | Match `zola`: it requests a bounded existing-template accessibility review. | Match. |
 | “Move this existing Zola page beside its assets without changing its public route.” | Match `zola`: it requests an authorized existing-site content-model change. | Match. |
+| “My Zola template renders raw HTML and the build error mentions an undefined variable; help me interpret it without changing escaping policy.” | Match `zola`: it requests interpretation of a Tera template construct, auto-escaping, or undefined-variable behavior in an existing site. | Match. |
 | “Create a small Zola documentation site in this new directory.” | Match `zola`: it requests a minimal Zola site creation workflow. | Match. |
 | “Create a polished marketing site in React.” | Do not match: general site creation and frontend work are outside v1. | Do not match. |
 | “Audit this CMS deployment pipeline.” | Do not match: CMS/deployment review is outside v1. | Do not match. |
