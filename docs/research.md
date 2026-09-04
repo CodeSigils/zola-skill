@@ -435,6 +435,32 @@ documentation over copied catalogues.
 | Zola skill plus MCP          | A skill that relies on a dedicated Zola service/tool surface.                                  | Could help with fleet inventory, route analysis, or governance.              | Higher build and maintenance cost; normal file/shell/docs workflows already cover v1. | Defer, consistent with the vision.                                         |
 | Opinionated publishing skill | A narrow companion for a specific CMS, Obsidian pipeline, or organization’s publishing policy. | Highly effective for repeated constrained work.                              | Not generalizable; embeds product and policy choices.                                 | Add only after a recurring workflow exists.                                |
 
+## Ecosystem CI patterns
+
+A survey of high-star agent-skill repositories (2026-09-03) found that **most
+skill repos skip CI entirely**. The official Anthropic skill collection
+(`anthropics/skills`) has no `.github/` directory: no CI, no CONTRIBUTING.md,
+no issue/PR templates, no branch protection.
+
+CI is concentrated in repos with **release automation and version-consistency
+gates** — for example, `alirezarezvani/claude-skills` (10 workflows including
+security scans, skill-quality review, and automated release from changelog).
+This aligns with the broader observation that polish concentrates at the
+*edges* (submission and release) rather than in the skill content files
+themselves.
+
+For a solo skill repo like `zola-skill`, a lightweight CI (skill-ref validate,
+`tests/run.sh`, docs link check) would be at the higher end of ecosystem norms
+but is entirely reasonable given the testing infrastructure already exists.
+
+**Decision:** No CI workflow for v1. The release process is manual and
+documented in the [release checklist](release-checklist.md); the published-
+package smoke tests are the release gate, not an automated pipeline.
+
+**Revisit when:** the release cadence or contributor count makes manual
+validation a bottleneck, or when a regression is caught by users that the
+existing test suite would have caught.
+
 ## Recommendations for this project
 
 1. Implement one routed, portable repository skill first at `skills/zola/`.
