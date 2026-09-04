@@ -578,6 +578,25 @@ published package at commit `a1b87af` installed successfully for Codex and
 Claude Code with the reference present; see the
 [release checklist](release-checklist.md) for commands and outcomes.
 
+### Phase 5 bounded Tera template-context reference — complete
+
+`references/tera-template-context.md` gives authorized existing-site Tera
+template work a progressive-disclosure guide to the template context available
+to templates (site/`config`, `page`, `section`, `term`, `taxonomy`, the active
+`lang`, and `current_url` / `current_path`) and to the base templates a
+`base.html` and template `extends` provide. Skill step 4 and the debug-build,
+modify-review, and theme-override workflows now route template-context
+questions to it instead of defaulting to generic web-frontend work. It is a
+seed for future template-authoring or theme-research depth, not an expansion
+into it.
+
+The reference commit and a matching validation-record commit are matched pairs
+in the repository history. A Tera discovery-check scenario is recorded in
+`tests/scenarios.md`, and the full test suite passes under Zola 0.23.4. The
+theme research pass in `docs/research.md` was widened from four to five rows
+with `thomasweitzel/zolarwind`, which adds a standalone-site compatibility
+result (both `check` and isolated `build` pass under the pinned version).
+
 ## Phase 6 — Optional capabilities
 
 Add deployment templates, theme-research guidance, i18n depth, search,

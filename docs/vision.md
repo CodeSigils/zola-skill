@@ -1,10 +1,10 @@
 # Zola Skill Vision
 
-**Status:** Phase 5 in progress — bounded release, accessibility, and content-model references
+**Status:** Phase 5 in progress — bounded release, accessibility, content-model, and Tera template-context references
 **Audience:** Skill maintainers and contributors  
 **Owner:** Project maintainers  
 **Review cadence:** Before a release, after a Zola upgrade, or every six months  
-**Last reviewed:** 2026-09-03
+**Last reviewed:** 2026-09-04
 
 ## Purpose
 
@@ -249,6 +249,22 @@ authoring requests must not activate automatically.
   [release checklist](release-checklist.md).
 - Next: consider only remaining focused troubleshooting gaps backed by an
   implemented workflow.
+
+### Phase 5 bounded Tera template-context reference
+
+- Complete: `references/tera-template-context.md` gives authorized existing-site
+  Tera template work a progressive-disclosure guide to the template context
+  (`config`, `page`, `section`, `term`, `taxonomy`, `lang`, and `current_url` /
+  `current_path`) available to templates, and to the selectable base templates
+  a `base.html` and template `extends` provide.
+- Complete: skill step 4 and the debug-build, modify-review, and theme-override
+  workflows now route Tera template-context questions to the reference, so a
+  maintenance request does not default to generic web-frontend work.
+- Complete: a Tera discovery-check scenario is recorded in
+  `tests/scenarios.md`; the full test suite passes under Zola 0.23.4.
+- Complete: `docs/research.md` theme research pass now includes
+  `thomasweitzel/zolarwind` (fifth row), which passes both `check` and isolated
+  `build` under the pinned Zola version.
 
 ## Deferred work
 
