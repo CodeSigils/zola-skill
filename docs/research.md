@@ -123,7 +123,9 @@ and `pushed_at` values are GitHub repository metadata captured on the checked
 date. A recent push is a maintenance signal, not a compatibility or quality
 guarantee. Theme repositories are pattern evidence only; official Zola
 documentation remains authoritative for installation, configuration, and
-template behavior.
+template behavior. New themes enter this pass only when they cover an archetype
+not already represented or add a compatibility signal, not merely because they
+are newly published.
 
 | Theme | Archetype and observed reusable pattern | License and maintenance signal | Pinned-version check and nonportable assumption |
 | --- | --- | --- | --- |
