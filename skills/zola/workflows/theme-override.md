@@ -25,7 +25,9 @@ theme example configuration, or author a complete theme.
 Make the smallest host-side template change that overrides a verified named
 block. Extend the installed template by its actual theme-qualified path; keep
 the configured theme, `base_url`, content model, escaping, and the theme files
-unchanged. Copy only a setting the observed template requires.
+unchanged. Copy only a setting the observed template requires. When interpreting
+the theme's `block`/`extends` or escaping, read the bounded
+[Tera template-context reference](../references/tera-template-context.md).
 
 Do not replace the host configuration with an example file, add a CSS build
 toolchain or browser JavaScript, or claim that the theme is generally

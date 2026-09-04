@@ -33,7 +33,9 @@ affected content front matter and taxonomy template. A taxonomy term has a
 search, feeds, or a new content model unless requested.
 
 For a review of `| safe`, distinguish rendered Zola Markdown from arbitrary
-configuration or data. Flag an unescaped `config.extra` or data value unless
+configuration or data. When interpreting auto-escaping or an undefined/missing
+variable, read the bounded
+[Tera template-context reference](../references/tera-template-context.md). Flag an unescaped `config.extra` or data value unless
 its trusted-HTML provenance and need are explicit. Report the expression and
 source as evidence; recommend removing `safe` or using a deliberately vetted
 rendering path. Do not label every existing `page.content | safe` use unsafe or

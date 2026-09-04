@@ -16,7 +16,10 @@ site with a build, rendering, template, or configuration failure.
 ## Verify and repair
 
 Use the source registry to open the official Zola CLI/configuration page or
-the official Tera documentation that matches the observed construct. Treat a
+the official Tera documentation that matches the observed construct. When the
+failure is a Tera template/rendering or escaping problem, first read the bounded
+[Tera template-context reference](../references/tera-template-context.md) to
+interpret the construct. Treat a
 theme or copied snippet as project evidence, not authority. Make the smallest
 change supported by the error and source. Do not add JavaScript, a framework,
 or `| safe` merely to suppress a rendering problem.

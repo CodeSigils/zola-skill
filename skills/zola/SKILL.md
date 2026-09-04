@@ -37,9 +37,12 @@ generic advice.
    [the accessibility-review reference](references/accessibility-review.md).
    For an authorized content-structure, front-matter, route, or co-located
    asset change, read [the content-model reference](references/content-model.md).
-   Consult the matching official entry in [the source
-   registry](references/source-registry.md) before relying on version-sensitive
-   behavior.
+   When interpreting a Tera template construct, its auto-escaping, or an
+   undefined/missing variable during a build, rendering, or escaping review,
+   read [the Tera template-context
+   reference](references/tera-template-context.md). Consult the matching
+   official entry in [the source registry](references/source-registry.md)
+   before relying on version-sensitive behavior.
 5. Report the likely cause, concrete evidence, smallest safe repair, competing
    hypothesis where relevant, and exact validation commands.
 
