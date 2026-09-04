@@ -501,6 +501,37 @@ Validation must include:
 - Dependency/license/security review for newly introduced packages.
 - A review of generated output to confirm no secrets or restricted content appear in `public/`.
 
+### 10. Observability, maintenance, and upgrade strategy
+
+Every extended site should have a maintenance plan that covers observability, dependency management, and upgrade paths.
+
+#### Observability
+
+- **Build-time metrics:** Record build duration, asset sizes, search index size, and warning counts in CI artifacts.
+- **Runtime signals:** If JavaScript or WASM is used, collect client-side errors (via `window.onerror`, unhandled rejection handlers) and performance marks (Navigation Timing, Resource Timing) into an opt-in endpoint.
+- **Content health:** Schedule periodic checks for broken links, missing alt text, stale front-matter dates, and taxonomy drift.
+- **Search quality:** If client-side search is deployed, log zero-result queries and latency percentiles to detect index gaps.
+
+#### Dependency management
+
+- **Rust toolchain:** Pin the Rust version in `rust-toolchain.toml` (or `rustup` override) and update on a scheduled cadence with `cargo update --dry-run` review first.
+- **JavaScript packages:** Pin exact versions in `package-lock.json` / `pnpm-lock.yaml`. Run `npm audit` / `pnpm audit` in CI and fail on high/critical findings without approved exceptions.
+- **Zola version:** Pin the Zola binary version in CI (e.g., `ZOLA_VERSION=0.23.4`) and test upgrades in a staging branch before promoting.
+- **WASM toolchain:** Pin `wasm-pack` / `cargo` versions used for WASM builds. Track `wasm-bindgen` and `web-sys` versions for browser compatibility.
+
+#### Upgrade strategy
+
+- **Zola upgrades:** Read release notes for breaking changes in Tera, Sass, front-matter parsing, or CLI flags. Run `zola check` and the full test suite (`tests/run.sh`) against the new version before merging.
+- **JavaScript bundler upgrades:** Upgrade bundler and major plugins one at a time. Verify output byte-for-byte stability for unchanged inputs where possible.
+- **Rust dependency upgrades:** Use `cargo upgrade --incompatible` to preview breaking changes. Run `cargo test --all` and the content-lint/search-index tools against a staging build.
+- **Rollback plan:** Keep the previous working `public/` artifact (or Docker image) for at least one release cycle. Document the exact commands to redeploy the prior version.
+
+#### Maintenance ownership
+
+- Assign a named owner for each extension category (JavaScript, Rust pre-build, WASM, search, dynamic API).
+- Document the owner's contact, escalation path, and review cadence in the site's `CONTRIBUTING.md` or `MAINTAINERS.md`.
+- Schedule quarterly "capability review" to assess whether each extension still justifies its cost and whether a simpler static alternative now exists.
+
 ### 11. When to change Zola itself
 
 The agent should consider changes to the Zola codebase only when all of the following are true:
