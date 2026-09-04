@@ -117,8 +117,9 @@ unauthorized `about.de.md` failed both commands.
 **Checked:** 2026-09-02 (default branches cloned at the listed GitHub
 repositories; Zola 0.23.4 for local checks)
 
-This bounded pass compares five non-archived themes across documentation,
-minimal-blog, accessible multilingual-blog, and portfolio archetypes. License
+This bounded pass compares six non-archived themes across documentation,
+minimal-blog, accessible multilingual-blog, portfolio, and standalone-site
+archetypes. License
 and `pushed_at` values are GitHub repository metadata captured on the checked
 date. A recent push is a maintenance signal, not a compatibility or quality
 guarantee. Theme repositories are pattern evidence only; official Zola
@@ -134,6 +135,7 @@ are newly published.
 | [welpo/tabi](https://github.com/welpo/tabi) | Accessible multilingual personal/blog site; template and config defaults expose theme settings through `[extra]`, while optional JavaScript remains feature-specific. | MIT; non-archived; last pushed 2026-09-01. | Its default branch failed both commands under 0.23.4 because the parser rejected `feed_utils::get_generate_feed()`. Treat its current default branch as incompatible with this fixture version unless a compatible revision is selected and tested. |
 | [awinterstein/zola-theme-project-portfolio](https://github.com/awinterstein/zola-theme-project-portfolio) | Portfolio; documents taxonomies, language/search setup, and inheriting `page`, `section`, or `index` templates to override named extension blocks. | MIT; non-archived; last pushed 2025-10-04. | The repository is a theme package without a root Zola config, so a direct check cannot establish compatibility. Its Tailwind CSS/DaisyUI design and optional JavaScript extension blocks are project-specific dependencies, not defaults for this skill. |
 | [thomasweitzel/zolarwind](https://github.com/thomasweitzel/zolarwind) | GDPR-friendly multilingual blog; `theme.toml` declares `min_version = 0.23.2` and Tailwind/KaTeX/Mermaid localization, while the root site config enables search index and feeds and sets up tag/series taxonomies. | MIT; non-archived; last pushed 2026-08-12. | Unlike the theme-only repositories, zolarwind ships a root `zola.toml`, so a direct pinned-version check is a genuine compatibility result: both `check --skip-external-links` and an isolated `build` passed under 0.23.4 (11 pages). Its search index, feeds, and multilingual defaults are site-specific features, not skill defaults. |
+| [tisgoud/zola-volks-typo-theme](https://gitlab.com/tisgoud/zola-volks-typo-theme) | Minimalist blog with bold industrial/bauhaus typography and an 8-point grid; a Zola port of the Astro Volks-Typo theme. Sass compiles at the repo root, and the demo config enables search (`search_json.html`, elasticlunr index) and categories/tags taxonomies. | MIT; non-archived; last pushed 2026-08-14. | It ships a root `config.toml` (the theme builds itself as the demo), so its pinned-version check is genuine: both `check --skip-external-links` and an isolated `build` passed under 0.23.4 (8 pages). Its search index, Sass toolchain, dark-mode toggling, and menu/sidebar defaults are site-specific features, not skill defaults. |
 
 The [official theme-creation guide](https://www.getzola.org/documentation/themes/creating-a-theme/)
 requires a `theme.toml` and recommends a buildable default site, documented
