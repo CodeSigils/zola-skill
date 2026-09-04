@@ -4,9 +4,9 @@ This directory is the maintained source of truth for the Zola skill's design.
 Follow this selection matrix before changing the skill or these documents.
 
 Phase 4 is complete. Phase 5 is in progress with bounded release, template
-accessibility-review, and content-model references for existing-site work; see
-[roadmap.md](roadmap.md). Planning documents are maintainer context, not future
-runtime context for the skill.
+accessibility-review, content-model, and Tera template-context references for
+existing-site work; see [roadmap.md](roadmap.md). Planning documents are
+maintainer context, not future runtime context for the skill.
 
 ## Reading matrix
 
