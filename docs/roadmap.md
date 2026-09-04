@@ -503,7 +503,7 @@ JavaScript, Rust, WebAssembly, runtime-service, or Zola-core guidance.
 Phase 5 may now start with a focused reference and release-checklist audit, not
 a speculative expansion of runtime scope.
 
-## Phase 5 — Focused references and checklists (in progress)
+## Phase 5 — Focused references and checklists (complete)
 
 Add only the references needed by the proven workflows first:
 
@@ -592,10 +592,32 @@ into it.
 
 The reference commit and a matching validation-record commit are matched pairs
 in the repository history. A Tera discovery-check scenario is recorded in
-`tests/scenarios.md`, and the full test suite passes under Zola 0.23.4. The
-theme research pass in `docs/research.md` was widened from four to five rows
-with `thomasweitzel/zolarwind`, which adds a standalone-site compatibility
-result (both `check` and isolated `build` pass under the pinned version).
+`tests/scenarios.md`, and the full test suite passes under Zola 0.23.4.
+
+### Phase 5 close-gate evidence — 2026-09-04
+
+Phase 5 delivered four bounded references, each discovered only for authorized
+existing-site work and validated as a matched reference/validation commit pair:
+
+- `references/release-review.md` — bounded pre-release review.
+- `references/template-accessibility.md` — bounded template accessibility
+  review.
+- `references/content-model.md` — route-preserving content-structure changes.
+- `references/tera-template-context.md` — template context and inherited base
+  templates.
+
+The theme research pass in `docs/research.md` grew from the original four to
+seven rows. It records two genuine standalone-site compatibility results that
+build under the pinned Zola 0.23.4 (`thomasweitzel/zolarwind` and
+`RiPetitor/devlab-theme`), a second passing minimal-blog theme
+(`tisgoud/zola-volks-typo-theme`), and the first Codeberg and GitLab-hosted
+rows. The compatible themes are pattern evidence only; the skill-implemented
+decision remains a fixture-owned minimal theme rather than adopting any of them.
+
+Review dates were bumped to 2026-09-04 where evidence was rechecked. All
+affected planning documents (`docs/README.md`, `vision.md`, `roadmap.md`,
+`research.md`) were updated; no planning document was intentionally left
+unchanged. Relative links across the affected documents resolve.
 
 ## Phase 6 — Optional capabilities
 
