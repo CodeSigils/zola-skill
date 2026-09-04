@@ -1,6 +1,6 @@
 # Zola Skill Vision
 
-**Status:** Phase 5 in progress — bounded release, accessibility, content-model, and Tera template-context references
+**Status:** Phase 5 complete — bounded release, accessibility, content-model, and Tera template-context references delivered
 **Audience:** Skill maintainers and contributors  
 **Owner:** Project maintainers  
 **Review cadence:** Before a release, after a Zola upgrade, or every six months  
