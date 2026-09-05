@@ -71,9 +71,16 @@ installation. Keep the matrix and commands versioned in the
 [release checklist](release-checklist.md).
 
 Before public release, select and add a repository license, then declare the
-same license (or a reference to it) in `SKILL.md`. The repository uses MIT:
-the full terms are in [`LICENSE`](../LICENSE), and `skills/zola/SKILL.md`
-declares `license: MIT`.
+same license (or a reference to it) in `SKILL.md`. The repository uses MIT: the
+full terms are in [`LICENSE`](../LICENSE), and `skills/zola/SKILL.md` declares
+`license: MIT`.
+
+Release versioning uses git tags plus `CHANGELOG.md`, the ecosystem norm for
+agent skill repositories. Before a public release, update `CHANGELOG.md` and
+cut a semver `v*` git tag; do not add a `version` field to `SKILL.md`
+frontmatter. Tags `phase-1`..`phase-5` already mark roadmap phase deliveries;
+the validation runner's pinned Zola version is the tool version the skill is
+validated against and is independent of skill releases.
 
 ## Phase 1 — Debug-build vertical slice
 

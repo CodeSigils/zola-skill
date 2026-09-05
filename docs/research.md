@@ -499,6 +499,24 @@ a distinct trigger or reference corpus.
 **Revisit when:** theme work, deployment, or a publishing pipeline regularly
 needs independent discovery, different tools, or a large body of guidance.
 
+**Decision (2026-09-05):** Adopt the ecosystem versioning convention — version
+via git tags plus `CHANGELOG.md`; `SKILL.md` declares no skill self-version (no
+top-level `version:`; `metadata.version` stays the pinned Zola tool version,
+not a skill release).
+
+**Rationale:** The 2026-09-03 skill-repo git-polish survey (study note
+`2026-09-05-SYNTHESIS-ecosystem-conform-zola-skill.md`) shows surveyed
+high-star skill repositories version via tags plus changelog, with 0/19
+Anthropic skills carrying `version:`; inline self-versioning plus a consistency
+gate was the documented root cause of repo-health-and-sync-skill's v0.4.0
+chicken-and-egg release failure. The agentskills.io spec validates only
+`name`, `description`, `license`, `compatibility`, and `metadata`; the
+`compatibility` declaration moves to the top-level spec field and
+`metadata.version` stays an opaque custom key (the spec's own example shape).
+
+**Revisit when:** a consumer needs a machine-readable skill release version or
+the repository grows a multi-maintainer release process.
+
 ## Adoption and provenance rule
 
 Treat third-party skills as pattern evidence, not copy sources. Before adopting

@@ -13,6 +13,9 @@ checks that cannot be meaningfully run against the local source tree.
   skills/zola`.
 - [x] `tests/run.sh` passed with Zola 0.23.4: valid site and non-root URL
   checks passed; the broken-template check and build failed as expected.
+- [ ] `CHANGELOG.md` reflects the release and a matching semver `v*` git tag
+  exists (versioning via git tags + changelog; existing tags
+  `phase-1`..`phase-5`).
 
 ## Published-package smoke matrix
 
