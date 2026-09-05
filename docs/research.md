@@ -332,7 +332,7 @@ skill was listed for its selected host. Details are in the
 `zola`; retain `zola-skill` only as the source repository name. This gives the
 skill a concise domain-specific discovery name while preserving an unambiguous
 repository identity. The expected skills.sh form is
-`<owner>/zola-skill@zola`.
+`CodeSigils/zola-skill@zola`.
 
 Sources: [Agent Skills specification](https://agentskills.io/specification),
 [skills.sh CLI documentation](https://www.skills.sh/docs/cli), and
