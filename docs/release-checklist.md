@@ -203,3 +203,18 @@ The published-package install for this reference was not separately run: the
 matrix rows require the package to be publicly resolvable. Run the matching
 matrix row for `references/tera-template-context.md` during the public-release
 smoke pass and record the observed install path and pass/fail result here.
+
+### 2026-09-05 published-package smoke-matrix results
+
+The package is publicly resolvable at `CodeSigils/zola-skill@zola` (branch
+`main`, commit `37c0488`). The full eleven-file smoke matrix above was run for
+both hosts from fresh temporary directories; the `tera-template-context` gap
+recorded on 2026-09-04 is now closed. Skills CLI: `1.5.23`.
+
+| Host | Observed install path | Result |
+| --- | --- | --- |
+| Codex | `.agents/skills/zola` | Passed: all eleven files existed (`SKILL.md`, all five workflows, all five references including `tera-template-context.md`); `npx skills ls -a codex` listed `zola`; security scans: Gen Safe, Socket 0 alerts, Snyk Low Risk (https://skills.sh/CodeSigils/zola-skill). |
+| Claude Code | `.claude/skills/zola` | Passed: all eleven files existed (`SKILL.md`, all five workflows, all five references including `tera-template-context.md`); `npx skills ls -a claude-code` listed `zola`; security scans: Gen Safe, Socket 0 alerts, Snyk Low Risk (https://skills.sh/CodeSigils/zola-skill). |
+
+Each row ran in a separately created `mktemp -d` directory, and the directory
+was removed after verification.
