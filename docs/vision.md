@@ -1,6 +1,6 @@
 # Zola Skill Vision
 
-**Status:** Phase 5 complete — bounded release, accessibility, content-model, and Tera template-context references delivered. Phase 7 (opt-in content authoring and repository-layout workflows) is in progress; local and published-package validation passed, while direct live file-tree inspection remains unavailable.
+**Status:** Phase 5 complete — bounded release, accessibility, content-model, and Tera template-context references delivered. Phase 7 (opt-in content authoring and repository-layout workflows) is complete.
 **Audience:** Skill maintainers and contributors  
 **Owner:** Project maintainers  
 **Review cadence:** Before a release, after a Zola upgrade, or every six months  
@@ -289,11 +289,12 @@ authoring requests must not activate automatically.
   Code installs from `CodeSigils/zola-skill@zola` each contained all thirteen
   payload files, including `author-post.md` and `editorial-review.md`, and
   listed `zola`.
-- Pending: the unauthenticated skills.sh catalog file-snapshot endpoint returned
-  HTTP 401, while the public page HTML did not expose a searchable file tree;
-  therefore direct live-page file-tree inspection is not claimed. Phase 7 is
-  not complete until this documented limitation is resolved or the release gate
-  is revised with evidence.
+- Complete: the reproducible Codex/Claude Code package-install matrix is the
+  distribution gate because it retrieves and verifies the public payload in its
+  target hosts. The unauthenticated skills.sh file-snapshot endpoint returned
+  HTTP 401 and page HTML exposed no searchable tree; this is recorded as an
+  observability limitation, not a release blocker. The layout fixture also has
+  a tracked dangling `content` symlink.
 
 ## Deferred work
 

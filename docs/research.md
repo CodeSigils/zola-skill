@@ -583,6 +583,14 @@ shortcodes, or remote Git workflow was copied. The local fixture runner passed
 under Zola 0.23.4. Package validation remains pending rather than inferred from
 the local result.
 
+**Distribution-gate decision (2026-09-05):** The Codex/Claude Code clean
+package-install matrix is the authoritative Phase 7 distribution proof because
+it fetches the public source and verifies the full payload in each target host.
+The public page did not expose a searchable file tree and its unauthenticated
+catalog file-snapshot endpoint returned HTTP 401. Treat that as an observability
+limitation, not a reason to replace the reproducible install check with a UI
+assertion.
+
 ## Adoption and provenance rule
 
 Treat third-party skills as pattern evidence, not copy sources. Before adopting
