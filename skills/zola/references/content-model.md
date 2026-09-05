@@ -51,3 +51,12 @@ front-matter shape and validate the rendered page after an authorized change.
 Use the content overview, page, and section rows in the
 [source registry](source-registry.md). Recheck them when the installed Zola
 version differs from the verified version.
+
+## Related review workflows
+
+- [Modify/review workflow](../workflows/modify-review.md) for content-structure,
+  front-matter, and route changes affecting generated output.
+- [Release review](../references/release-review.md) when content-model changes
+  affect a pre-release review scope.
+- [Editorial review](../references/editorial-review.md) when content changes
+  involve article-quality considerations or authorship disclosures.

@@ -19,10 +19,26 @@ links whose purpose is unclear in surrounding prose. Apply a language, tone,
 voice, SEO formula, rhetorical quota, or shortcode rule only when the target
 repository documents it.
 
+## Related review workflows
+
+- [Modify/review workflow](../workflows/modify-review.md) for the required
+  finding format and authorization boundary.
+- [Accessibility review](../references/accessibility-review.md) when review
+  scope includes template accessibility alongside content.
+- [Release review](../references/release-review.md) when content review
+  accompanies a pre-release static-site review.
+
 ## Report bounded findings
 
-For each finding, give severity, path, evidence, impact, remediation, and
-validation. Mark a claim as unverified when its source cannot be checked; do
-not invent a source or rewrite an opinion as fact. Do not modify content during
-a review-only request. For an authorized revision, preserve the article's
-observed front-matter and route unless the request explicitly changes them.
+Report each finding as:
+
+`severity | path | evidence | impact | remediation | validation`
+
+Use `blocker` for a factual error, unsupported claim, or broken content link;
+`warning` for a readability or citation risk; and `note` for a bounded
+improvement. Mark a claim as unverified when its source cannot be checked; do
+not invent a source or rewrite an opinion as fact. Tie every finding to
+repository evidence. Include passing checks and remaining limits, but do not
+modify content during a review-only request. For an authorized revision,
+preserve the article's observed front-matter and route unless the request
+explicitly changes them.

@@ -35,3 +35,12 @@ unless the request and evidence specifically cover them.
 
 Use the W3C WAI rows in the [source registry](source-registry.md). They support
 these static checks, not a universal ARIA pattern or a compliance certification.
+
+## Related review workflows
+
+- [Modify/review workflow](../workflows/modify-review.md) for the required
+  finding format and authorization boundary.
+- [Release review](../references/release-review.md) when a template
+  accessibility review accompanies a pre-release review.
+- [Editorial review](../references/editorial-review.md) when review scope
+  includes rendered article content alongside templates.
