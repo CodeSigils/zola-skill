@@ -24,8 +24,8 @@ project-scoped skills under `.agents/skills/` and `.claude/skills/`.
 
 | Host | Install and verify | Pass condition |
 | --- | --- | --- |
-| Codex | `release_dir="$(mktemp -d)" && cd "$release_dir" && npx skills add <owner>/zola-skill@zola --agent codex --copy --yes && test -f .agents/skills/zola/SKILL.md && test -f .agents/skills/zola/workflows/debug-build.md && test -f .agents/skills/zola/workflows/i18n.md && test -f .agents/skills/zola/workflows/modify-review.md && test -f .agents/skills/zola/workflows/create-site.md && test -f .agents/skills/zola/workflows/theme-override.md && test -f .agents/skills/zola/references/source-registry.md && test -f .agents/skills/zola/references/accessibility-review.md && test -f .agents/skills/zola/references/content-model.md && test -f .agents/skills/zola/references/release-review.md && test -f .agents/skills/zola/references/tera-template-context.md && npx skills ls -a codex` | The installed `zola` skill is listed and all eleven files exist. |
-| Claude Code | `release_dir="$(mktemp -d)" && cd "$release_dir" && npx skills add <owner>/zola-skill@zola --agent claude-code --copy --yes && test -f .claude/skills/zola/SKILL.md && test -f .claude/skills/zola/workflows/debug-build.md && test -f .claude/skills/zola/workflows/i18n.md && test -f .claude/skills/zola/workflows/modify-review.md && test -f .claude/skills/zola/workflows/create-site.md && test -f .claude/skills/zola/workflows/theme-override.md && test -f .claude/skills/zola/references/source-registry.md && test -f .claude/skills/zola/references/accessibility-review.md && test -f .claude/skills/zola/references/content-model.md && test -f .claude/skills/zola/references/release-review.md && test -f .claude/skills/zola/references/tera-template-context.md && npx skills ls -a claude-code` | The installed `zola` skill is listed and all eleven files exist. |
+| Codex | `release_dir="$(mktemp -d)" && cd "$release_dir" && npx skills add CodeSigils/zola-skill@zola --agent codex --copy --yes && test -f .agents/skills/zola/SKILL.md && test -f .agents/skills/zola/workflows/debug-build.md && test -f .agents/skills/zola/workflows/i18n.md && test -f .agents/skills/zola/workflows/modify-review.md && test -f .agents/skills/zola/workflows/create-site.md && test -f .agents/skills/zola/workflows/theme-override.md && test -f .agents/skills/zola/references/source-registry.md && test -f .agents/skills/zola/references/accessibility-review.md && test -f .agents/skills/zola/references/content-model.md && test -f .agents/skills/zola/references/release-review.md && test -f .agents/skills/zola/references/tera-template-context.md && npx skills ls -a codex` | The installed `zola` skill is listed and all eleven files exist. |
+| Claude Code | `release_dir="$(mktemp -d)" && cd "$release_dir" && npx skills add CodeSigils/zola-skill@zola --agent claude-code --copy --yes && test -f .claude/skills/zola/SKILL.md && test -f .claude/skills/zola/workflows/debug-build.md && test -f .claude/skills/zola/workflows/i18n.md && test -f .claude/skills/zola/workflows/modify-review.md && test -f .claude/skills/zola/workflows/create-site.md && test -f .claude/skills/zola/workflows/theme-override.md && test -f .claude/skills/zola/references/source-registry.md && test -f .claude/skills/zola/references/accessibility-review.md && test -f .claude/skills/zola/references/content-model.md && test -f .claude/skills/zola/references/release-review.md && test -f .claude/skills/zola/references/tera-template-context.md && npx skills ls -a claude-code` | The installed `zola` skill is listed and all eleven files exist. |
 
 After recording each result, remove the exact temporary directory created for
 that row, for example `rm -rf "$release_dir"`. Do not run the command from a
@@ -182,3 +182,21 @@ Skills CLI: `1.5.23`.
 
 Each check ran in a separately created `/tmp/zola-skill-content-*` directory and
 the directory was removed after the command completed.
+
+### 2026-09-04 Phase 5 bounded Tera template-context reference status
+
+Package install not yet smoke-tested; see the note below.
+
+Reference: `references/tera-template-context.md` was added at commit `9197fcd`
+with its validation record at `0c10bde` (the matched reference/validation commit
+pair recorded by the Phase 5 close-gate). It is one of the eleven files in the
+smoke matrix above.
+
+Result: local validation passed under Zola 0.23.4 (full test suite plus the
+Tera discovery-check scenario recorded in `tests/scenarios.md`); the phase-close
+gate in `docs/roadmap.md` and `docs/vision.md` records the work as complete.
+
+The published-package install for this reference was not separately run: the
+matrix rows require the package to be publicly resolvable. Run the matching
+matrix row for `references/tera-template-context.md` during the public-release
+smoke pass and record the observed install path and pass/fail result here.
