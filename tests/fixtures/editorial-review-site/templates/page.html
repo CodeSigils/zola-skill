@@ -1,0 +1,5 @@
+<!doctype html>
+<title>{{ page.title }}</title>
+<meta name="description" content="{{ page.description }}">
+<p>{{ page.content | safe }}</p>
+{% if page.extra.ai_assistance %}<p>{{ page.extra.ai_assistance }}</p>{% endif %}

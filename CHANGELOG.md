@@ -16,6 +16,8 @@ future releases.
   (blocker/warning/note) with explicit definitions
 - Changed: related review workflow sections added to all reference files
   for improved discoverability and consistency
+- Added: editorial-review-site fixture exercising bounded article-quality review
+  with evidence gaps, broken links, and ambiguous claims.
 - Added: opt-in existing-site post authoring, editorial-quality review,
   disclosure-aware content-model guidance, and submodule/symlink layout
   diagnosis, with repository-layout and authoring fixtures.
