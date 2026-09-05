@@ -75,12 +75,11 @@ same license (or a reference to it) in `SKILL.md`. The repository uses MIT: the
 full terms are in [`LICENSE`](../LICENSE), and `skills/zola/SKILL.md` declares
 `license: MIT`.
 
-Release versioning uses git tags plus `CHANGELOG.md`, the ecosystem norm for
-agent skill repositories. Before a public release, update `CHANGELOG.md` and
-cut a semver `v*` git tag; do not add a `version` field to `SKILL.md`
-frontmatter. Tags `phase-1`..`phase-5` already mark roadmap phase deliveries;
-the validation runner's pinned Zola version is the tool version the skill is
-validated against and is independent of skill releases.
+Publish changes from `main` and record notable updates in `CHANGELOG.md`; do
+not require GitHub Releases or semver tags. Do not add a `version` field to
+`SKILL.md` frontmatter. Tags `phase-1`..`phase-5` are historical roadmap
+milestones; the validation runner's pinned Zola version is the tool version the
+skill is validated against and is independent of a skill release identity.
 
 ## Phase 1 — Debug-build vertical slice
 
@@ -644,7 +643,7 @@ Phase 7 is a bounded expansion of the existing `zola` skill, informed by the
 inspected `jim60105/blog` `blog-post` skill and the 2026-09-05 skill-repository
 standards study. It adopts reusable workflow shapes, not GPL-3.0 source text
 or site-specific policies. It remains one routed skill with conditional
-resources, tag-plus-changelog release practice, and the existing manual
+resources, changelog-on-main change record, and the existing manual
 validation model; do not create a second publishing skill, add a CI gate stack,
 or add a skill self-version.
 

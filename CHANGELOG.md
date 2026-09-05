@@ -1,10 +1,11 @@
 # Changelog
 
-Versioning follows the agent-skill ecosystem convention: releases are recorded
-as git tags plus this changelog. `SKILL.md` frontmatter declares no skill
-self-version; `metadata.version` is the pinned Zola tool version the skill is
-validated against, not a skill release number. Tags `phase-1`..`phase-5` mark
-the roadmap phase deliveries; future releases use semver `v*` tags.
+This changelog records notable changes on `main`; this repository does not use
+GitHub Releases or semver tags as a distribution requirement. `SKILL.md`
+declares no skill self-version; `metadata.version` is the pinned Zola tool
+version the skill is validated against, not a skill release number. Existing
+`phase-1`..`phase-5` tags are historical roadmap milestones, not a policy for
+future releases.
 
 ## [Unreleased]
 
@@ -13,8 +14,8 @@ the roadmap phase deliveries; future releases use semver `v*` tags.
   diagnosis, with repository-layout and authoring fixtures.
 - Changed: `compatibility` moved from a nested `metadata` object to the
   top-level Agent Skills spec field in `skills/zola/SKILL.md`.
-- Changed: versioning convention recorded — release versioning via git tags
-  and this changelog; no inline skill self-version.
+- Changed: release policy records changes on `main` without requiring a GitHub
+  Release or semver tag; no inline skill self-version.
 
 ## [phase-5] - 2026-09-04
 

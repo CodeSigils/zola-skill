@@ -13,7 +13,9 @@ It routes to the appropriate workflow and reference documentation automatically.
 The shipped payload is one file — no agent-specific commands or paths — so it works
 with any terminal-capable coding agent. It is agentskills.io-compatible.
 
-**Compatibility status:** Hermes Agent 0.4.x is the only verified agent target.
+**Compatibility status:** Codex and Claude Code are verified through the
+published-package smoke matrix. Hermes external-directory setup is documented
+but not part of that matrix.
 
 ---
 
