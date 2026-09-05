@@ -163,6 +163,7 @@ Pair it with a deployment skill for those capabilities.
 ## See Also
 
 - [AGENTS.md](AGENTS.md) — Repository instructions and documentation contract
+- [CHANGELOG.md](CHANGELOG.md) — Version history
 - [Planning Documentation](docs/README.md) — Design source of truth
 - [Skill Specification](skills/zola/SKILL.md) — Runtime skill definition
 - [SECURITY.md](SECURITY.md) — Security policy and reporting
