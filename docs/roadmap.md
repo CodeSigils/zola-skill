@@ -1,6 +1,6 @@
 # Zola Skill Roadmap
 
-**Status:** Phase 5 complete; Phase 6 remains optional; Phase 7 (opt-in content authoring and repository-layout workflows) is in progress
+**Status:** Phase 5 complete; Phase 6 remains optional; Phase 7 (opt-in content authoring and repository-layout workflows) is complete
 **Audience:** Skill maintainers and contributors  
 **Owner:** Project maintainers  
 **Last reviewed:** 2026-09-05
@@ -720,8 +720,10 @@ passed under Zola 0.23.4.
 `npx --yes skills-ref validate skills/zola` reported `Valid skill: skills/zola`.
 Commit `ffdc3ae` was pushed to `main`; clean Codex and Claude Code installs
 from `CodeSigils/zola-skill@zola` each contained all thirteen payload files,
-including `author-post.md` and `editorial-review.md`, and listed `zola`. The phase remains in progress because
-the public skills.sh page HTML did not expose a searchable file tree and its
-unauthenticated catalog file-snapshot endpoint returned HTTP 401. Do not mark
-Phase 7 complete until that live-page requirement is verified or its release
-gate is revised with evidence.
+including `author-post.md` and `editorial-review.md`, and listed `zola`. The
+package-install matrix is the authoritative, reproducible distribution proof:
+it retrieves the public package and verifies its files in each supported host.
+The public page HTML/file-snapshot API is not an equivalent usable release gate
+(no searchable tree; HTTP 401 unauthenticated), so it is recorded as an
+observability limitation rather than a blocker. The layout fixture now also
+contains a tracked dangling `content` symlink. Phase 7 is complete.

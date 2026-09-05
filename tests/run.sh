@@ -68,6 +68,8 @@ test -f "$run_root/valid-site-output/index.html"
 printf 'layout-submodule-site: empty content is observable without state-changing repair\n'
 run_check_and_build layout-submodule-site
 test -f "$fixture_root/layout-submodule-site/.gitmodules"
+[[ -L "$fixture_root/layout-submodule-site/content" ]]
+[[ ! -e "$fixture_root/layout-submodule-site/content" ]]
 [[ ! -d "$run_root/layout-submodule-site-output/blog" ]]
 
 printf 'authoring-site: authored page preserves route, metadata, and explicit disclosure\n'

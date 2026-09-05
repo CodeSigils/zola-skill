@@ -40,9 +40,10 @@ project-scoped published-package check.
 For the Phase 7 release candidate, extend each matching matrix command with
 the host-specific checks for `workflows/author-post.md` and
 `references/editorial-review.md`, and require all thirteen payload files
-(`SKILL.md`, six workflows, and six references). Then open the live
-skills.sh detail page and confirm its file tree includes both new files before
-recording a pass. This check cannot run against an uncommitted local payload.
+(`SKILL.md`, six workflows, and six references). This reproducible package
+install is the release gate. A live skills.sh file-tree check is supplemental
+only: the unauthenticated file-snapshot endpoint may be unavailable. This check
+cannot run against an uncommitted local payload.
 
 ### 2026-09-05 Phase 7 published-package results
 
