@@ -9,6 +9,13 @@ future releases.
 
 ## [Unreleased]
 
+- Added: cross-references between review reference workflows in
+  accessibility-review.md, content-model.md, editorial-review.md,
+  release-review.md, and tera-template-context.md
+- Changed: editorial-review.md standardized severity classifications
+  (blocker/warning/note) with explicit definitions
+- Changed: related review workflow sections added to all reference files
+  for improved discoverability and consistency
 - Added: opt-in existing-site post authoring, editorial-quality review,
   disclosure-aware content-model guidance, and submodule/symlink layout
   diagnosis, with repository-layout and authoring fixtures.
