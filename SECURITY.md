@@ -14,7 +14,6 @@ This repository ships a single methodology skill file (`skills/zola/SKILL.md`) a
 
 - Malicious modifications to the skill methodology that could mislead users into unsafe practices
 - Supply chain integrity of the skill payload itself (the markdown files under `skills/zola/`)
-- CI workflow integrity (GitHub Actions)
 
 This repo does **not** contain:
 - Credentials, secrets, or API keys
@@ -31,18 +30,19 @@ This repo does **not** contain:
 
 The runtime payload is the `skills/zola/` directory containing:
 - 1 SKILL.md frontmatter + markdown body
-- 5 workflow markdown files
+- 6 workflow markdown files
 - 6 reference markdown files
 
-Total: 12 markdown files, ~150KB. No scripts, no config files, no dependencies. Users copy only `skills/zola/` to their agent's skill directory.
+Total: 13 markdown files, ~150KB. No scripts, no config files, no dependencies. Users copy only `skills/zola/` to their agent's skill directory.
 
 ## Last Reviewed
 
-Last reviewed: 2026-09-04.
+Last reviewed: 2026-09-05.
 
-## CI Requirements
+## Manual validation
 
-This repo enforces documentation and portability checks via CI. The SECURITY.md must preserve these literal substrings for CI validation:
-- `skills/zola/` — shipped payload path
-- `no runtime scripts` — payload boundary
-- `GitHub Security Advisories` — reporting channel
+This repository has no CI workflow at present. Before a release, follow the
+manual checks in [docs/release-checklist.md](docs/release-checklist.md):
+validate the skill with `skills-ref`, run `bash tests/run.sh`, and perform the
+published-package smoke matrix. Revisit automation only if the documented
+manual process becomes a demonstrated maintenance bottleneck.

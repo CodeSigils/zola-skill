@@ -581,8 +581,10 @@ gate stack.
 as a conditional authoring workflow, bounded editorial reference, local
 disclosure guidance, and repository-layout inspection; no blog text, scripts,
 shortcodes, or remote Git workflow was copied. The local fixture runner passed
-under Zola 0.23.4. Package validation remains pending rather than inferred from
-the local result.
+under Zola 0.23.4. The clean Codex and Claude Code package-install matrix then
+passed; its commands, source commit, payload assertions, and outcomes are
+recorded in the [release checklist](release-checklist.md). The published result
+is distinct from, rather than inferred from, the local fixture result.
 
 **Distribution-gate decision (2026-09-05):** The Codex/Claude Code clean
 package-install matrix is the authoritative Phase 7 distribution proof because

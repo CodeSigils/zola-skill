@@ -4,6 +4,21 @@ Use this checklist only after the `zola-skill` repository is publicly
 resolvable at its final owner/repository path. It records the Phase 1 release
 checks that cannot be meaningfully run against the local source tree.
 
+## Release policy
+
+1. Merge reviewed changes to `main` and record notable user-facing changes in
+   [`CHANGELOG.md`](../CHANGELOG.md).
+2. Before announcing an updated published skill, complete the manual checks in
+   this document: run `bash tests/run.sh` with Zola 0.23.4, validate the skill
+   with `skills-ref`, and run clean published-package installs for Codex and
+   Claude Code.
+3. Record the source commit, tool versions, commands, and results for each
+   published-package check below.
+4. Do not add a skill self-version, version-consistency gate, or release
+   automation at the current maintenance scale.
+5. GitHub Releases and semver tags are not required. Add an immutable tag only
+   when consumers need a stable, machine-addressable release point.
+
 ## Pre-publish
 
 - [x] Published source resolves as `CodeSigils/zola-skill@zola`.
