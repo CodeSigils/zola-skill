@@ -58,7 +58,7 @@ requirement.
 
 This `skills/` layout is discoverable by skills.sh. Validate the published
 repository with its intended install form, such as
-`npx skills add <owner>/zola-skill@zola --agent <host>`, rather than documenting
+`npx skills add CodeSigils/zola-skill@zola --agent <host>`, rather than documenting
 manual copies into a particular host's directory. A Codex-only
 `agents/openai.yaml` may be added later as optional UI metadata; the skill must
 remain correct when a host ignores it.
