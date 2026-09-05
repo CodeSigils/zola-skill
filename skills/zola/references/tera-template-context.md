@@ -46,3 +46,13 @@ Use the Tera row and the Zola template-overview row in the
 rows, for the constructs the workflows actually exercise. Recheck them when the
 installed Zola version differs from the verified version, and do not claim a
 Tera feature that is not present in those sources.
+
+## Related review workflows
+
+- [Modify/review workflow](../workflows/modify-review.md) for `| safe`
+  provenance review and finding format during template work.
+- [Debug-build workflow](../workflows/debug-build.md) when a Tera
+  diagnostic requires separating template errors from content or
+  configuration errors.
+- [Theme override workflow](../workflows/theme-override.md) when interpreting
+  a theme's `block`/`extends` or escaping in an authorized override.

@@ -34,3 +34,13 @@ accessibility, security, external-link, browser, or deployment claim.
 Use the CLI, linking, configuration, and Tera rows in the
 [source registry](source-registry.md). Recheck those official sources when the
 installed Zola version differs from the verified version.
+
+## Related review workflows
+
+- [Modify/review workflow](../workflows/modify-review.md) for content change
+  authorization and finding format when a release review accompanies an
+  existing-site modification.
+- [Accessibility review](../references/accessibility-review.md) when the
+  release scope includes an explicit template accessibility review request.
+- [Editorial review](../references/editorial-review.md) when the release
+  review overlaps with an article-quality review request.
