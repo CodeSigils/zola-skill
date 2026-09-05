@@ -1,0 +1,3 @@
+base_url = "https://example.test/docs"
+title = "Authoring fixture"
+taxonomies = [{ name = "tags" }]

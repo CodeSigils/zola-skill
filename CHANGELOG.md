@@ -8,6 +8,9 @@ the roadmap phase deliveries; future releases use semver `v*` tags.
 
 ## [Unreleased]
 
+- Added: opt-in existing-site post authoring, editorial-quality review,
+  disclosure-aware content-model guidance, and submodule/symlink layout
+  diagnosis, with repository-layout and authoring fixtures.
 - Changed: `compatibility` moved from a nested `metadata` object to the
   top-level Agent Skills spec field in `skills/zola/SKILL.md`.
 - Changed: versioning convention recorded — release versioning via git tags

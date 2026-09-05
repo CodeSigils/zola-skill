@@ -65,6 +65,17 @@ printf 'valid-site: check and isolated build\n'
 run_check_and_build valid-site
 test -f "$run_root/valid-site-output/index.html"
 
+printf 'layout-submodule-site: empty content is observable without state-changing repair\n'
+run_check_and_build layout-submodule-site
+test -f "$fixture_root/layout-submodule-site/.gitmodules"
+[[ ! -d "$run_root/layout-submodule-site-output/blog" ]]
+
+printf 'authoring-site: authored page preserves route, metadata, and explicit disclosure\n'
+run_check_and_build authoring-site
+rg -F 'href="https://example.test/docs/blog/new-post/">New post</a>' "$run_root/authoring-site-output/index.html"
+rg -F '<meta name="description" content="A checked Zola authoring fixture.">' "$run_root/authoring-site-output/blog/new-post/index.html"
+rg -F 'AI assistance was factually disclosed by the editor.' "$run_root/authoring-site-output/blog/new-post/index.html"
+
 printf 'broken-template: expected template failure\n'
 expect_check_and_build_failure broken-template 'template|parse|endif|unexpected'
 
@@ -130,4 +141,4 @@ run_check_and_build created-site
 rg -F '<title>Starter site</title>' "$run_root/created-site-output/index.html"
 rg -F '<p>Welcome to the starter site.</p>' "$run_root/created-site-output/index.html"
 
-printf 'PASS: debug-build, i18n, existing-site, theme override, taxonomy pagination, unsafe-review, and creation fixtures passed expected assertions.\n'
+printf 'PASS: debug-build, repository-layout, authoring, i18n, existing-site, theme override, taxonomy pagination, unsafe-review, and creation fixtures passed expected assertions.\n'

@@ -7,6 +7,11 @@ site with a build, rendering, template, or configuration failure.
 
 - Capture the exact error and command. Reproduce only with a command that does
   not risk overwriting the project's configured output.
+- Before treating an empty or missing content tree as a Zola failure, inspect
+  tracked `.gitmodules`, whether `content`, `config.toml`, or `zola.toml` is a
+  symlink, the resolved target, and whether expected content is present. A
+  missing submodule or dangling link is a hypothesis to evidence, not permission
+  to initialize, switch, update, or replace repository state.
 - Read the applicable configuration (`zola.toml` takes precedence over the
   legacy `config.toml`), the failing template or content file, templates it
   extends/includes, and the theme configuration or local override relationship.

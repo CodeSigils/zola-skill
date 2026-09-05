@@ -1,0 +1,3 @@
+[submodule "content"]
+	path = content
+	url = https://example.test/content.git

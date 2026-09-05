@@ -1,9 +1,9 @@
 # Zola Skill Roadmap
 
-**Status:** Phase 4 complete — broader fixture coverage and review evidence validated
+**Status:** Phase 5 complete; Phase 6 remains optional; Phase 7 (opt-in content authoring and repository-layout workflows) is in progress
 **Audience:** Skill maintainers and contributors  
 **Owner:** Project maintainers  
-**Last reviewed:** 2026-09-03
+**Last reviewed:** 2026-09-05
 
 This roadmap turns the [vision](vision.md) into a small, demonstrated skill.
 Do not implement advanced guidance merely because it appears in a planning
@@ -637,3 +637,89 @@ ordinary repository access, shell commands, and documentation lookup.
 
 **Done when:** each addition has a user need, ownership model, validation plan,
 and maintenance rationale.
+
+## Phase 7 — Opt-in content authoring and repository-layout workflows (planned)
+
+Phase 7 is a bounded expansion of the existing `zola` skill, informed by the
+inspected `jim60105/blog` `blog-post` skill and the 2026-09-05 skill-repository
+standards study. It adopts reusable workflow shapes, not GPL-3.0 source text
+or site-specific policies. It remains one routed skill with conditional
+resources, tag-plus-changelog release practice, and the existing manual
+validation model; do not create a second publishing skill, add a CI gate stack,
+or add a skill self-version.
+
+### Scope and sequence
+
+1. **Repository-layout diagnosis.** Extend debug-build inspection to detect
+   `.gitmodules`, symlinked content/configuration, and unexpectedly empty
+   content before concluding that Zola itself is at fault. The workflow reports
+   the observed target/state and proposes a minimal authorized repair; it does
+   not initialize submodules, switch sites, update repositories, or replace
+   links by default.
+2. **Post-authoring workflow.** Add a conditional workflow for an explicit
+   request to prepare or edit a post in an existing Zola repository. It first
+   discovers the site's content location, section, front-matter, taxonomy,
+   language, shortcode, asset, draft, and validation conventions. It creates
+   or changes only the authorized content and preserves routes, translations,
+   and established metadata.
+3. **Editorial-quality review.** Add a reference for an explicit article
+   review. It evaluates evidence/citation traceability, factual qualification,
+   link/source accuracy, readability, and repository-specific editorial rules.
+   It does not impose a language, voice, SEO formula, rhetorical-device quota,
+   or a generic custom-shortcode catalog.
+4. **Disclosure-aware content model.** Extend the content-model reference only
+   when the target repository already has, or the user explicitly requests, an
+   authorship or AI-assistance disclosure convention. The workflow records only
+   factually supplied disclosures and never infers a claim from agent use.
+
+Git commits, branch creation, push, pull-request creation, reviewer requests,
+or publication are outside the default workflow. They require separate explicit
+authorization and must use the target repository's observed conventions.
+
+### Required evidence and acceptance gate
+
+Before any Phase 7 runtime guidance ships:
+
+- Add discovery checks for explicit post-authoring/editorial-review prompts and
+  negative prompts for generic copywriting, CMS work, and automatic publishing.
+- Add a fixture for a repository-layout failure with tracked evidence of a
+  missing submodule or dangling symlink, a deterministic repair proposal, and
+  a check that no state-changing Git/submodule/site-switch action is suggested
+  without authorization.
+- Add an authoring fixture with existing content conventions, a new or edited
+  page, a route/link assertion beneath a non-root `base_url`, and the smallest
+  applicable `zola check` plus isolated build.
+- Add review scenarios showing a bounded editorial finding and a provenance
+  disclosure that is preserved only when it is an explicit repository/user
+  fact. Do not test personal style rules copied from another site.
+- Record official Zola content/front-matter facts in the source registry;
+  record third-party provenance, license, and adaptation rationale in
+  `research.md`, not in runtime instructions.
+- Validate the completed payload with `skills-ref validate`, the full fixture
+  runner, and the existing Codex/Claude Code published-package smoke matrix.
+
+**Done when:** an explicitly requested authoring, editorial-review, or
+repository-layout diagnosis can be routed, evidenced, and validated without
+inventing repository policy, initiating remote Git actions, or broadening the
+skill into a general writing/CMS/publishing product.
+
+**Dependency:** Phase 7 builds on the content-model, modify/review, and
+debug-build workflows already delivered. It does not close Phase 6 or authorize
+its unrelated optional capabilities.
+
+### Phase 7 implementation checkpoint — 2026-09-05
+
+The local payload now includes `workflows/author-post.md`,
+`references/editorial-review.md`, disclosure-aware content-model guidance, and
+debug-build inspection for `.gitmodules` and symlinked content/configuration.
+`layout-submodule-site` proves the empty-content symptom without a state-changing
+repair; `authoring-site` proves an existing section, taxonomy, non-root route,
+description, and explicit disclosure survive an isolated build. `tests/run.sh`
+passed under Zola 0.23.4.
+
+The phase remains in progress. `npx --yes skills-ref validate skills/zola` did
+not return a usable result in this environment, and the updated thirteen-file
+Codex/Claude Code published-package smoke matrix requires a committed, publicly
+pushed source. Do not mark Phase 7 complete or update its release record until
+those checks, link verification, and the mandatory documentation close gate
+finish.
