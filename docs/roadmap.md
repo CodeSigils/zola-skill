@@ -727,3 +727,15 @@ The public page HTML/file-snapshot API is not an equivalent usable release gate
 (no searchable tree; HTTP 401 unauthenticated), so it is recorded as an
 observability limitation rather than a blocker. The layout fixture now also
 contains a tracked dangling `content` symlink. Phase 7 is complete.
+
+### Phase 7 forward-test evidence — 2026-09-05
+
+Three isolated temporary sites exercised the released workflow beyond fixture
+assertions. The authoring test preserved the observed Blog section, front
+matter, taxonomy, explicit disclosure, and non-root generated URL. The
+review-only test rendered a deliberately unsupported absolute claim and suspect
+source link, producing bounded evidence-based findings without changing the
+page. The layout test combined `.gitmodules` evidence with a dangling `content`
+symlink; Zola built zero content pages, confirming that repository layout must
+be diagnosed before generator behavior is blamed. All three checks and isolated
+builds passed under Zola 0.23.4.
