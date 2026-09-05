@@ -2,14 +2,10 @@
 name: zola
 description: Create a minimal Zola site or diagnose, modify, review, or make a bounded existing-theme override for a Zola or Tera site with build, template, configuration, or static multilingual (i18n) failures. Use for Zola site setup, supplied errors, or authorized existing-site changes/reviews; not for general frontend, CMS, backend, or full theme authoring.
 license: MIT
+compatibility: "Requires filesystem and shell access; Zola required for build validation; network needed only for live documentation and external link validation."
 metadata:
   about: "A reusable skill for Zola static-site-generator and Tera template work. Provides debug-build, i18n, site modification/review, minimal site creation, and bounded existing-theme override workflows with version-aware diagnosis and minimal fixes."
   keywords: ["zola", "tera", "static-site-generator", "debug-build", "i18n", "template", "frontmatter", "content-model", "accessibility"]
-  compatibility:
-    filesystem: true
-    shell: true
-    zola: "required for build validation"
-    network: "needed only for live documentation and external link validation"
   version: "0.23.4"
   maintainers: ["Project maintainers"]
   repository: "CodeSigils/zola-skill@zola"
