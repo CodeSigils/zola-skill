@@ -328,6 +328,15 @@ modification/review workflow, content-model reference, and source registry; the
 skill was listed for its selected host. Details are in the
 [release checklist](release-checklist.md).
 
+**Phase 5 bounded tera-template-context published-package validation
+(2026-09-05):** The package at commit `37c0488` was installed successfully for
+Codex and Claude Code with skills CLI `1.5.23` in the full eleven-file
+smoke-matrix run. Both installed copies included the entrypoint, all five
+workflows, all five references including tera-template-context, and the source
+registry; the skill was listed for its selected host, and the security scans
+reported Gen Safe, Socket 0 alerts, and Snyk Low Risk. Details are in the
+[release checklist](release-checklist.md).
+
 **Naming decision:** publish the skill as **Zola** with the machine identifier
 `zola`; retain `zola-skill` only as the source repository name. This gives the
 skill a concise domain-specific discovery name while preserving an unambiguous
