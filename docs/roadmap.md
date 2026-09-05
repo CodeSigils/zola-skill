@@ -717,9 +717,11 @@ repair; `authoring-site` proves an existing section, taxonomy, non-root route,
 description, and explicit disclosure survive an isolated build. `tests/run.sh`
 passed under Zola 0.23.4.
 
-The phase remains in progress. `npx --yes skills-ref validate skills/zola` did
-not return a usable result in this environment, and the updated thirteen-file
-Codex/Claude Code published-package smoke matrix requires a committed, publicly
-pushed source. Do not mark Phase 7 complete or update its release record until
-those checks, link verification, and the mandatory documentation close gate
-finish.
+`npx --yes skills-ref validate skills/zola` reported `Valid skill: skills/zola`.
+Commit `ffdc3ae` was pushed to `main`; clean Codex and Claude Code installs
+from `CodeSigils/zola-skill@zola` each contained all thirteen payload files,
+including `author-post.md` and `editorial-review.md`, and listed `zola`. The phase remains in progress because
+the public skills.sh page HTML did not expose a searchable file tree and its
+unauthenticated catalog file-snapshot endpoint returned HTTP 401. Do not mark
+Phase 7 complete until that live-page requirement is verified or its release
+gate is revised with evidence.

@@ -44,6 +44,21 @@ the host-specific checks for `workflows/author-post.md` and
 skills.sh detail page and confirm its file tree includes both new files before
 recording a pass. This check cannot run against an uncommitted local payload.
 
+### 2026-09-05 Phase 7 published-package results
+
+Source: `CodeSigils/zola-skill@zola` on `main`, commit `ffdc3ae`. Skills CLI:
+`1.5.23`.
+
+| Host | Observed install path | Result |
+| --- | --- | --- |
+| Codex | `.agents/skills/zola` | Passed: all thirteen payload files existed, including `workflows/author-post.md` and `references/editorial-review.md`; `npx skills ls -a codex` listed `zola`. |
+| Claude Code | `.claude/skills/zola` | Passed: all thirteen payload files existed, including `workflows/author-post.md` and `references/editorial-review.md`; `npx skills ls -a claude-code` listed `zola`. |
+
+Each row ran in a fresh temporary directory that was removed after
+verification. The public page returned no searchable file-tree text, and the
+unauthenticated catalog file-snapshot endpoint returned HTTP 401; direct
+live-page file-tree verification is pending.
+
 ## Record
 
 For each host, record the date, published source/ref, `skills` CLI version,

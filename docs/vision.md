@@ -1,6 +1,6 @@
 # Zola Skill Vision
 
-**Status:** Phase 5 complete — bounded release, accessibility, content-model, and Tera template-context references delivered. Phase 7 (opt-in content authoring and repository-layout workflows) is in progress; local validation passed and package/distribution validation remains pending.
+**Status:** Phase 5 complete — bounded release, accessibility, content-model, and Tera template-context references delivered. Phase 7 (opt-in content authoring and repository-layout workflows) is in progress; local and published-package validation passed, while direct live file-tree inspection remains unavailable.
 **Audience:** Skill maintainers and contributors  
 **Owner:** Project maintainers  
 **Review cadence:** Before a release, after a Zola upgrade, or every six months  
@@ -284,10 +284,16 @@ authoring requests must not activate automatically.
   The authoring fixture proves a non-root generated route, description, and
   explicit disclosure; the layout fixture proves a zero-page build without a
   state-changing repair.
-- Pending: `skills-ref validate` did not return a usable result in this
-  environment, and the updated Codex/Claude Code published-package smoke matrix
-  cannot run until this source change is committed and publicly pushed. Phase 7
-  is not complete until those checks and its documentation close gate pass.
+- Complete: `npx --yes skills-ref validate skills/zola` reported `Valid skill:
+  skills/zola`. Commit `ffdc3ae` was pushed to `main`; clean Codex and Claude
+  Code installs from `CodeSigils/zola-skill@zola` each contained all thirteen
+  payload files, including `author-post.md` and `editorial-review.md`, and
+  listed `zola`.
+- Pending: the unauthenticated skills.sh catalog file-snapshot endpoint returned
+  HTTP 401, while the public page HTML did not expose a searchable file tree;
+  therefore direct live-page file-tree inspection is not claimed. Phase 7 is
+  not complete until this documented limitation is resolved or the release gate
+  is revised with evidence.
 
 ## Deferred work
 
