@@ -4,7 +4,7 @@
 [![agentskills.io](https://img.shields.io/badge/agentskills.io-v1-blue)](https://agentskills.io/specification)
 [![skills.sh](https://skills.sh/b/codesigils/zola-skill)](https://skills.sh/codesigils/zola-skill)
 
-**Zola Skill** — A reusable skill for Zola static-site-generator and Tera template work. Provides debug-build, i18n, site modification/review, minimal site creation, and bounded existing-theme override workflows with version-aware diagnosis and minimal fixes.
+**Zola Skill** — A reusable skill for Zola static-site-generator and Tera template work. Provides debug-build, repository-layout diagnosis, post authoring/editorial review, i18n, site modification/review, minimal site creation, and bounded existing-theme override workflows with version-aware diagnosis and minimal fixes.
 
 Load `zola` when you need to diagnose build failures, configure a multilingual site,
 review or modify an existing Zola/Tera project, or create a minimal site from scratch.
@@ -94,6 +94,8 @@ and routes to the appropriate workflow:
 | "Configure multilingual" / i18n setup | Static i18n configuration |
 | "Review / modify existing Zola site" | Modification/review workflow |
 | "Override one theme template" | Bounded theme override |
+| "Draft/edit a post in this Zola site" | Bounded post authoring |
+| "Review this Zola article's claims and links" | Bounded editorial review |
 
 The skill reads version-aware source registries and reference documents to ensure
 diagnosis and fixes align with the Zola version in use.
@@ -110,6 +112,7 @@ skills/
 └── zola/
     ├── SKILL.md                         # skill router and workflow routing
     ├── workflows/
+    │   ├── author-post.md               # explicit existing-site post authoring
     │   ├── create-site.md               # minimal site creation
     │   ├── debug-build.md               # build/template failure diagnosis
     │   ├── i18n.md                      # static multilingual configuration
@@ -120,7 +123,8 @@ skills/
         ├── release-review.md            # pre-release static-site review
         ├── accessibility-review.md      # template accessibility review
         ├── content-model.md             # content structure and front-matter
-        └── tera-template-context.md     # Tera template constructs and escaping
+        ├── tera-template-context.md     # Tera template constructs and escaping
+        └── editorial-review.md          # bounded article-quality review
 ```
 
 What users receive:
@@ -156,6 +160,8 @@ The skill is scoped to Zola static-site work. It does **not** handle:
 - Automatic content translation
 - Browser locale detection
 - Search indexing
+- Generic blog-post writing, editorial rules not present in the target
+  repository, or publishing automation
 
 Pair it with a deployment skill for those capabilities.
 

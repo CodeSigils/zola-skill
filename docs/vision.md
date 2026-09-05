@@ -1,10 +1,10 @@
 # Zola Skill Vision
 
-**Status:** Phase 5 complete — bounded release, accessibility, content-model, and Tera template-context references delivered
+**Status:** Phase 5 complete — bounded release, accessibility, content-model, and Tera template-context references delivered. Phase 7 (opt-in content authoring and repository-layout workflows) is in progress; local validation passed and package/distribution validation remains pending.
 **Audience:** Skill maintainers and contributors  
 **Owner:** Project maintainers  
 **Review cadence:** Before a release, after a Zola upgrade, or every six months  
-**Last reviewed:** 2026-09-04
+**Last reviewed:** 2026-09-05
 
 ## Purpose
 
@@ -269,6 +269,26 @@ authoring requests must not activate automatically.
   `thomasweitzel/zolarwind` (fifth row), which passes both `check` and isolated
   `build` under the pinned Zola version.
 
+### Phase 7 local implementation evidence
+
+- Complete locally: `workflows/author-post.md` is selected only for an explicit
+  draft/edit request in an existing Zola repository. It discovers local content
+  and metadata conventions before changing authorized content; it neither
+  invents provenance fields nor performs remote Git/publishing actions.
+- Complete locally: `workflows/debug-build.md` checks `.gitmodules` and
+  symlinked content/configuration as evidence before diagnosing an empty-content
+  build; `references/editorial-review.md` and the disclosure guidance in
+  `references/content-model.md` keep review and authorship claims bounded.
+- Complete locally: `layout-submodule-site` and `authoring-site` fixtures,
+  their scenarios, and the full runner passed under Zola 0.23.4 on 2026-09-05.
+  The authoring fixture proves a non-root generated route, description, and
+  explicit disclosure; the layout fixture proves a zero-page build without a
+  state-changing repair.
+- Pending: `skills-ref validate` did not return a usable result in this
+  environment, and the updated Codex/Claude Code published-package smoke matrix
+  cannot run until this source change is committed and publicly pushed. Phase 7
+  is not complete until those checks and its documentation close gate pass.
+
 ## Deferred work
 
 Theme authoring/research, deployment patterns, advanced i18n, search,
@@ -285,6 +305,31 @@ inheritance, content-model features (taxonomies, pagination, feeds, and
 search), and accessibility/release checks. See
 [future capabilities](future-capabilities.md) for JavaScript, Rust, WASM, and
 runtime-service guidance.
+
+## Planned Phase 7: opt-in content authoring and repository layouts
+
+Phase 7 extends the existing routed `zola` skill; it does not create a
+publishing-specific skill or turn ordinary technical requests into editorial
+work. It is selected only for an explicit request to prepare, edit, review, or
+publish content in an existing Zola repository, or to diagnose a repository
+whose content/configuration is demonstrably supplied by a submodule or
+symlinked site layout.
+
+The planned workflow will inspect the repository's section, naming,
+front-matter, taxonomy, language, shortcode, and validation conventions before
+creating or changing a post. It may prepare a draft, preserve established
+metadata and disclosure fields, perform a bounded source/evidence/readability
+review, and run the smallest applicable Zola validation. Git commits, pushes,
+pull requests, publishing, and changes outside the authorized repository remain
+separate, explicitly authorized actions.
+
+It must not inherit site-specific voice rules, mandated languages, rhetorical
+quotas, custom shortcode catalogs, author identities, SEO formulas, branch
+names, signoffs, remote repositories, or bootstrap/clone instructions from an
+example site. It must not fabricate dates, authorship, AI-use disclosures,
+licenses, taxonomy values, source citations, or layout policy. A missing
+submodule or dangling symlink is evidence to diagnose, not permission to
+initialize, switch, or update repository state.
 
 ## Quality rules for all released workflows
 

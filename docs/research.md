@@ -4,7 +4,7 @@
 **Audience:** Skill maintainers and contributors  
 **Owner:** Project maintainers  
 **Review cadence:** Before a release, after a Zola upgrade, or every six months  
-**Last reviewed:** 2026-09-03
+**Last reviewed:** 2026-09-05
 **Purpose:** Inform the design of the Zola skill before implementation. This is
 not a specification or a source of runtime instructions.
 
@@ -530,7 +530,7 @@ the repository grows a multi-maintainer release process.
 
 Inspected the listed skill page on skills.sh and the cloned repository at
 github.com/jim60105/blog (`.github/skills/blog-post/SKILL.md`, 309 lines, plus
-the repository `AGENTS.md`). The repository is a dual-site Zola blog (琳.tw
+the repository `AGENTS.md` and `LICENSE`). The repository is a dual-site Zola blog (琳.tw
 technical, 聆.tw AI-dialogue) sharing themes, templates, Sass, and static
 assets, deployed via Cloudflare Workers, with each site's content stored in an
 external repository as a git submodule and activated with a per-site
@@ -550,17 +550,38 @@ submodule.
 Evidence labels: ✅ Confirmed by inspection — the standalone validation command
 matches this skill's own validation rule, an independent confirmation of the
 primitive as industry practice; the frontmatter is `name` + `description` only,
-matching the ecosystem convention recorded in Decision 2026-09-05. 🔶 Inferred —
-112 installs versus 4 GitHub stars suggests directory-level discovery and
-telemetry-driven ranking rather than popularity transfer; a missing content
-submodule yields empty content and a 0-page build, the same observable this
-skill's valid-site fixture prints.
+matching the ecosystem convention recorded in Decision 2026-09-05; the
+repository is licensed under GPL-3.0. 🔶 Inferred — 112 installs versus 4
+GitHub stars suggests directory-level discovery and telemetry-driven ranking
+rather than popularity transfer. A missing content submodule can yield empty
+content and a 0-page build; this is a diagnosis hypothesis that Phase 7 must
+demonstrate with its own fixture before relying on it.
 
 Candidate capabilities surfaced, deliberately bounded and stripped of personal
 details: a portable post-authoring workflow; a submodule and symlinked-content
 diagnosis reference for debug-build; an AI-disclosure content-model pattern;
-and a bounded editorial-quality review slice. Each is recorded as deferred in
-`future-capabilities.md`; none is scheduled until a concrete workflow needs it.
+and a bounded editorial-quality review slice. The maintainers selected these
+for the planned Phase 7, with the portable boundaries recorded in
+`vision.md`, `roadmap.md`, and `future-capabilities.md`.
+
+**Adaptation decision (2026-09-05):** Keep one routed `zola` skill and add a
+conditional workflow/reference only after the planned fixtures demonstrate it.
+Adopt repository-first convention discovery, explicit build validation, and
+the distinction between content work and remote publication. Do not copy the
+GPL-3.0 skill text, writing guide, scripts, custom shortcodes, editorial voice,
+or GitHub workflow; rewrite any adopted guidance from first principles. The
+three latest `agent-concepts-study` notes reinforce this choice: the Agent
+Skills schema and ecosystem favor concise portable frontmatter, progressive
+disclosure, tag-plus-changelog releases, and a consciously lightweight
+maintenance model rather than a second, highly opinionated skill or a new CI
+gate stack.
+
+**Implementation result (2026-09-05):** The adopted patterns were implemented
+as a conditional authoring workflow, bounded editorial reference, local
+disclosure guidance, and repository-layout inspection; no blog text, scripts,
+shortcodes, or remote Git workflow was copied. The local fixture runner passed
+under Zola 0.23.4. Package validation remains pending rather than inferred from
+the local result.
 
 ## Adoption and provenance rule
 

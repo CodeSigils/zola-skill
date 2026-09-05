@@ -557,26 +557,32 @@ The skill should help users build sites that are **static by default, dynamic by
 
 JavaScript should provide progressive convenience. Rust should strengthen deterministic build-time quality, content automation, and specialized computation. WebAssembly and runtime services should be reserved for needs that genuinely require them. This preserves the primary benefits of Zola: simple deployment, resilient delivery, strong performance potential, low operational overhead, and transparent source-controlled publishing.
 
-### 13. Deferred content-authoring and workflow capabilities
+### 13. Planned Phase 7 content-authoring and repository-layout capabilities
 
-These capabilities sit outside the type-state v1 scope of the skill: they
-expand what the skill accomplishes (authoring and editorial work) rather than
-the technical extension stack in sections 1-12. Surface them only when a
-concrete workflow or evaluation scenario demonstrates the need; per the Phase 6
-rule, each addition requires a user need, ownership model, validation plan, and
-maintenance rationale. Source evidence: the 2026-09-05 external-skill review in
+These capabilities sit outside the v1 technical scope: they expand what the
+skill accomplishes (authoring and editorial work) rather than the extension
+stack in sections 1-12. The maintainers selected them as the planned Phase 7
+vertical slice. The local runtime workflow and fixtures now exist, but public
+package/distribution validation remains pending. Each remains subject to the
+Phase 6 rule: a user need,
+ownership model, validation plan, and maintenance rationale. Source evidence
+and GPL-safe adaptation boundary: the 2026-09-05 external-skill review in
 `research.md`.
 
 1. **Portable post-authoring workflow.** Generalize the inspected `blog-post`
    pipeline into an optional workflow: slug and front-matter conventions, UTC
    timestamps via `date -u`, taxonomy and AI-disclosure front-matter fields, an
-   SEO title/description rewrite, an editorial check gate, and a commit/PR
-   handoff. Trigger: a user asks the skill to write or publish a post.
+   SEO title/description review, an editorial check gate, and a proposed Git
+   handoff. It must discover each convention from the target repository and
+   must not fabricate metadata or publish remotely. Trigger: an explicit
+   request to prepare, edit, review, or publish a post in an existing Zola
+   repository.
 2. **Submodule and symlinked-content diagnosis.** Recognize site layouts whose
    content lives in git submodules or behind per-site symlink-swapping scripts;
-   a missing submodule produces empty content and a 0-page build. Trigger: a
-   debug-build request on a site root showing `.gitmodules` or symlinked
-   content/config.
+   a missing submodule or dangling link is a hypothesis to verify through the
+   project's tracked layout and build evidence, not a state-changing repair.
+   Trigger: a debug-build request on a site root showing `.gitmodules` or
+   symlinked content/config.
 3. **Bounded editorial-quality review slice.** Generalize the editorial
    constraint checklist (device quotas, evidence per claim, URL truthfulness,
    overlong-sentence repair) as a review reference beside release-review and
@@ -584,5 +590,7 @@ maintenance rationale. Source evidence: the 2026-09-05 external-skill review in
    quality rather than template or release concerns.
 4. **AI-disclosure and provenance content-model pattern.** Add an optional
    front-matter pattern for disclosed AI-assisted authorship to the
-   content-model reference. Trigger: a content-model change where the site's
-   taxonomy or front-matter conventions include authorship/disclosure fields.
+   content-model reference. Preserve existing site policy and require an
+   explicit factual disclosure; never infer one from the use of an agent.
+   Trigger: a content-model change where the site's taxonomy or front-matter
+   conventions include authorship/disclosure fields.

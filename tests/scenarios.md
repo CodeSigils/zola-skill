@@ -9,6 +9,19 @@
 The runner intentionally leaves `broken-template` broken so the failure path
 remains reproducible. The scenario documents its minimal repair proposal.
 
+## Phase 7 repository-layout and authoring scenarios
+
+| Fixture | Realistic prompt | Repository evidence | Expected diagnosis or outcome | Prohibited advice | Expected patch or report | Validation outcome |
+| --- | --- | --- | --- | --- | --- | --- |
+| `layout-submodule-site` | “Zola builds no pages after I cloned this site; diagnose it, but do not change Git state.” | Root `.gitmodules` declares `content`; its checked-out fixture has no content pages. | Treat uninitialized/missing submodule content as a layout hypothesis; report the observed empty content and request authorization before any submodule action. | Blame Zola, initialize/update the submodule, switch sites, or replace a link without authorization. | Explain the inspected `.gitmodules` evidence and propose the authorized repository-layout repair. | Check and isolated build pass with zero content pages and no generated `blog/` route. |
+| `authoring-site` | “Draft this approved post in the existing Blog section and preserve its route, tags, description, and supplied AI-assistance disclosure.” | Existing section, co-located `index.md`, tag taxonomy, non-root base URL, and explicit `extra.ai_assistance`. | Create the requested page without inventing fields or altering the site's content model. | Create a branch/PR, claim publication, invent authorship/date/disclosure, or hard-code a root-relative URL. | Author the page in its existing section and preserve observed front matter. | Check and isolated build pass; generated home link retains `/docs/blog/new-post/`, output contains description and explicit disclosure. |
+
+### Phase 7 editorial-review scenario
+
+| Prompt | Expected selection result | Expected finding boundary |
+| --- | --- | --- |
+| “Review this Zola article for unsupported claims, inaccurate links, and unclear sentences; do not edit it.” | Match `zola`: explicit article-quality review in an existing Zola site. | Report concrete, evidence-based findings with severity, path, evidence, impact, remediation, and validation; do not impose a language/voice quota or invent sources. |
+
 ## Phase 3 extended debug/build scenarios
 
 | Fixture | Realistic prompt | Repository evidence | Expected diagnosis | Prohibited unsafe advice | Expected patch or proposal | Validation outcome |
@@ -68,5 +81,8 @@ remains reproducible. The scenario documents its minimal repair proposal.
 | “Move this existing Zola page beside its assets without changing its public route.” | Match `zola`: it requests an authorized existing-site content-model change. | Match. |
 | “My Zola template renders raw HTML and the build error mentions an undefined variable; help me interpret it without changing escaping policy.” | Match `zola`: it requests interpretation of a Tera template construct, auto-escaping, or undefined-variable behavior in an existing site. | Match. |
 | “Create a small Zola documentation site in this new directory.” | Match `zola`: it requests a minimal Zola site creation workflow. | Match. |
+| “Draft a post in this existing Zola Blog section and preserve its front matter and route.” | Match `zola`: explicit Zola post authoring in an existing repository. | Match. |
+| “Review this existing Zola article for claim evidence and source links; do not edit it.” | Match `zola`: explicit bounded editorial review. | Match. |
 | “Create a polished marketing site in React.” | Do not match: general site creation and frontend work are outside v1. | Do not match. |
 | “Audit this CMS deployment pipeline.” | Do not match: CMS/deployment review is outside v1. | Do not match. |
+| “Write a generic blog post and publish it everywhere.” | Do not match: generic writing and automatic publishing are outside the skill. | Do not match. |

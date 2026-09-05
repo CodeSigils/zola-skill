@@ -35,6 +35,15 @@ that row, for example `rm -rf "$release_dir"`. Do not run the command from a
 working repository and do not use a global install: the intent is a clean,
 project-scoped published-package check.
 
+### Phase 7 package additions — pending public source
+
+For the Phase 7 release candidate, extend each matching matrix command with
+the host-specific checks for `workflows/author-post.md` and
+`references/editorial-review.md`, and require all thirteen payload files
+(`SKILL.md`, six workflows, and six references). Then open the live
+skills.sh detail page and confirm its file tree includes both new files before
+recording a pass. This check cannot run against an uncommitted local payload.
+
 ## Record
 
 For each host, record the date, published source/ref, `skills` CLI version,

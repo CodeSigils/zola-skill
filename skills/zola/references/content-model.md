@@ -37,6 +37,15 @@ external Markdown-link checking was skipped. For a route or structure change,
 report the old and new observed paths and any remaining redirect or translation
 assumption.
 
+## Authorship and AI-assistance disclosures
+
+Treat authorship, provider, and AI-assistance fields as site-specific content
+policy. Inspect comparable pages and documented conventions before preserving or
+adding one. Record only a factual disclosure explicitly supplied by the user or
+already established by the repository; agent use alone does not establish a
+disclosure, author, provider, date, or license. Preserve the existing
+front-matter shape and validate the rendered page after an authorized change.
+
 ## Source boundary
 
 Use the content overview, page, and section rows in the

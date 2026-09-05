@@ -1,11 +1,11 @@
 ---
 name: zola
-description: Create a minimal Zola site or diagnose, modify, review, or make a bounded existing-theme override for a Zola or Tera site with build, template, configuration, or static multilingual (i18n) failures. Use for Zola site setup, supplied errors, or authorized existing-site changes/reviews; not for general frontend, CMS, backend, or full theme authoring.
+description: Create a minimal Zola site; diagnose Zola/Tera build, layout, template, configuration, or static multilingual (i18n) failures; or make an authorized existing-site, post-authoring, or bounded-theme change/review. Use for explicit Zola content authoring or editorial review in an existing site; not general writing, CMS, backend, or full theme authoring.
 license: MIT
 compatibility: "Requires filesystem and shell access; Zola required for build validation; network needed only for live documentation and external link validation."
 metadata:
   about: "A reusable skill for Zola static-site-generator and Tera template work. Provides debug-build, i18n, site modification/review, minimal site creation, and bounded existing-theme override workflows with version-aware diagnosis and minimal fixes."
-  keywords: ["zola", "tera", "static-site-generator", "debug-build", "i18n", "template", "frontmatter", "content-model", "accessibility"]
+  keywords: ["zola", "tera", "static-site-generator", "debug-build", "i18n", "template", "frontmatter", "content-model", "post-authoring", "editorial-review", "accessibility"]
   version: "0.23.4"
   maintainers: ["Project maintainers"]
   repository: "CodeSigils/zola-skill@zola"
@@ -13,12 +13,14 @@ metadata:
 
 # Zola
 
-Use this skill only for minimal site creation, debug-build, static multilingual,
-existing-site modification/review, and bounded existing-theme override
+Use this skill only for minimal site creation, debug-build (including an
+observed submodule or symlinked repository layout), static multilingual,
+explicit existing-site post authoring/editorial review, existing-site
+modification/review, and bounded existing-theme override
 workflows. If explicitly invoked for theme selection, full theme authoring,
 deployment, automatic translation, browser locale detection, search indexing,
-or unrelated web work, say that mode is not implemented; do not substitute
-generic advice.
+generic writing, CMS work, or automatic publishing, say that mode is not
+implemented; do not substitute generic advice.
 
 ## Diagnose first
 
@@ -33,7 +35,9 @@ generic advice.
 4. Read [the creation workflow](workflows/create-site.md) for a new minimal
    site, [the debug-build workflow](workflows/debug-build.md) for a build or
    template failure, [the i18n workflow](workflows/i18n.md) for language
-   configuration, translated content, or language-aware URL failures, or [the
+   configuration, translated content, or language-aware URL failures, [the
+   post-authoring workflow](workflows/author-post.md) for an explicit post
+   draft/edit request, or [the
    modification/review workflow](workflows/modify-review.md) for an existing
    site's authorized change or review, or [the theme override
    workflow](workflows/theme-override.md) for one verified existing-theme
@@ -43,6 +47,9 @@ generic advice.
    [the accessibility-review reference](references/accessibility-review.md).
    For an authorized content-structure, front-matter, route, or co-located
    asset change, read [the content-model reference](references/content-model.md).
+   For an explicit article-quality review, read [the editorial-review
+   reference](references/editorial-review.md). For an authoring or disclosure
+   change, also read [the content-model reference](references/content-model.md).
    When interpreting a Tera template construct, its auto-escaping, or an
    undefined/missing variable during a build, rendering, or escaping review,
    read [the Tera template-context
