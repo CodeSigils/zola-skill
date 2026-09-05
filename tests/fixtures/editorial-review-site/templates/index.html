@@ -1,0 +1,5 @@
+<!doctype html>
+<title>{{ section.title }}</title>
+{% for page in section.pages %}
+<a href="{{ get_url(path=page.path) }}">{{ page.title }}</a>
+{% endfor %}

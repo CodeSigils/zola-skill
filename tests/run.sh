@@ -135,6 +135,14 @@ run_check_and_build unsafe-safe-review
 rg -F '{{ config.extra.announcement | safe }}' "$fixture_root/unsafe-safe-review/templates/index.html"
 rg -F '<img src="x" onerror="alert(1)">' "$run_root/unsafe-safe-review-output/index.html"
 
+printf 'editorial-review-site: article with evidence gaps, broken links, and ambiguous claims\n'
+run_check_and_build editorial-review-site
+rg -F 'The architecture is widely regarded as the fastest available' "$run_root/editorial-review-site-output/articles/first-post/index.html"
+rg -F 'https://example.test/missing-page/' "$run_root/editorial-review-site-output/articles/first-post/index.html"
+rg -F 'Recent studies show a 90% improvement' "$run_root/editorial-review-site-output/articles/first-post/index.html"
+rg -F 'Zola is a static site generator written in Rust' "$run_root/editorial-review-site-output/articles/first-post/index.html"
+rg -F 'This article was reviewed for factual accuracy' "$run_root/editorial-review-site-output/articles/first-post/index.html"
+
 printf 'created-site: init scaffold and minimal-site output\n'
 (cd "$run_root" && printf 'https://example.test/docs\nn\nn\n' | "$zola_bin" init created-with-init)
 test -f "$run_root/created-with-init/zola.toml"
@@ -143,4 +151,4 @@ run_check_and_build created-site
 rg -F '<title>Starter site</title>' "$run_root/created-site-output/index.html"
 rg -F '<p>Welcome to the starter site.</p>' "$run_root/created-site-output/index.html"
 
-printf 'PASS: debug-build, repository-layout, authoring, i18n, existing-site, theme override, taxonomy pagination, unsafe-review, and creation fixtures passed expected assertions.\n'
+printf 'PASS: debug-build, repository-layout, authoring, i18n, existing-site, theme override, taxonomy pagination, unsafe-review, editorial review, and creation fixtures passed expected assertions.\n'
