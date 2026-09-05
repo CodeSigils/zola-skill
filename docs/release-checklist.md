@@ -13,9 +13,9 @@ checks that cannot be meaningfully run against the local source tree.
   skills/zola`.
 - [x] `tests/run.sh` passed with Zola 0.23.4: valid site and non-root URL
   checks passed; the broken-template check and build failed as expected.
-- [ ] `CHANGELOG.md` reflects the release and a matching semver `v*` git tag
-  exists (versioning via git tags + changelog; existing tags
-  `phase-1`..`phase-5`).
+- [x] `CHANGELOG.md` records the published change on `main`; no GitHub Release
+  or semver tag is required. Existing `phase-1`..`phase-5` tags are historical
+  roadmap milestones.
 
 ## Published-package smoke matrix
 
@@ -27,15 +27,15 @@ project-scoped skills under `.agents/skills/` and `.claude/skills/`.
 
 | Host | Install and verify | Pass condition |
 | --- | --- | --- |
-| Codex | `release_dir="$(mktemp -d)" && cd "$release_dir" && npx skills add CodeSigils/zola-skill@zola --agent codex --copy --yes && test -f .agents/skills/zola/SKILL.md && test -f .agents/skills/zola/workflows/debug-build.md && test -f .agents/skills/zola/workflows/i18n.md && test -f .agents/skills/zola/workflows/modify-review.md && test -f .agents/skills/zola/workflows/create-site.md && test -f .agents/skills/zola/workflows/theme-override.md && test -f .agents/skills/zola/references/source-registry.md && test -f .agents/skills/zola/references/accessibility-review.md && test -f .agents/skills/zola/references/content-model.md && test -f .agents/skills/zola/references/release-review.md && test -f .agents/skills/zola/references/tera-template-context.md && npx skills ls -a codex` | The installed `zola` skill is listed and all eleven files exist. |
-| Claude Code | `release_dir="$(mktemp -d)" && cd "$release_dir" && npx skills add CodeSigils/zola-skill@zola --agent claude-code --copy --yes && test -f .claude/skills/zola/SKILL.md && test -f .claude/skills/zola/workflows/debug-build.md && test -f .claude/skills/zola/workflows/i18n.md && test -f .claude/skills/zola/workflows/modify-review.md && test -f .claude/skills/zola/workflows/create-site.md && test -f .claude/skills/zola/workflows/theme-override.md && test -f .claude/skills/zola/references/source-registry.md && test -f .claude/skills/zola/references/accessibility-review.md && test -f .claude/skills/zola/references/content-model.md && test -f .claude/skills/zola/references/release-review.md && test -f .claude/skills/zola/references/tera-template-context.md && npx skills ls -a claude-code` | The installed `zola` skill is listed and all eleven files exist. |
+| Codex | `release_dir="$(mktemp -d)" && cd "$release_dir" && npx skills add CodeSigils/zola-skill@zola --agent codex --copy --yes && test "$(find .agents/skills/zola -type f -name '*.md' | wc -l)" -eq 13 && test -f .agents/skills/zola/workflows/author-post.md && test -f .agents/skills/zola/references/editorial-review.md && npx skills ls -a codex` | The installed `zola` skill is listed and all thirteen payload files exist. |
+| Claude Code | `release_dir="$(mktemp -d)" && cd "$release_dir" && npx skills add CodeSigils/zola-skill@zola --agent claude-code --copy --yes && test "$(find .claude/skills/zola -type f -name '*.md' | wc -l)" -eq 13 && test -f .claude/skills/zola/workflows/author-post.md && test -f .claude/skills/zola/references/editorial-review.md && npx skills ls -a claude-code` | The installed `zola` skill is listed and all thirteen payload files exist. |
 
 After recording each result, remove the exact temporary directory created for
 that row, for example `rm -rf "$release_dir"`. Do not run the command from a
 working repository and do not use a global install: the intent is a clean,
 project-scoped published-package check.
 
-### Phase 7 package additions — pending public source
+### Phase 7 package additions
 
 For the Phase 7 release candidate, extend each matching matrix command with
 the host-specific checks for `workflows/author-post.md` and
@@ -43,7 +43,8 @@ the host-specific checks for `workflows/author-post.md` and
 (`SKILL.md`, six workflows, and six references). This reproducible package
 install is the release gate. A live skills.sh file-tree check is supplemental
 only: the unauthenticated file-snapshot endpoint may be unavailable. This check
-cannot run against an uncommitted local payload.
+cannot run against an uncommitted local payload. The current matrix above
+already includes these Phase 7 assertions.
 
 ### 2026-09-05 Phase 7 published-package results
 

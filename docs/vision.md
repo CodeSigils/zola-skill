@@ -61,9 +61,10 @@ frontmatter with a lowercase, hyphen-safe `name` and a discriminating
 metadata may be added only when it does not affect the portable workflow. Do
 not rely on experimental `allowed-tools` metadata for v1. A public release also
 needs an explicit maintainer-selected license; do not declare one until its
-terms are present in the repository. Release versioning follows the ecosystem
-convention: git tags plus a changelog; SKILL.md declares no skill self-version,
-and `metadata.version` is the pinned Zola tool version the skill is validated
+terms are present in the repository. Changes are published from `main` and
+recorded in `CHANGELOG.md`; this repository does not require GitHub Releases or
+semver tags. `SKILL.md` declares no skill self-version, and
+`metadata.version` is the pinned Zola tool version the skill is validated
 against, not a skill release number.
 
 Because the workflow inspects local repositories and runs Zola commands, v1
