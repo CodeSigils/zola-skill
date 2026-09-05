@@ -526,6 +526,42 @@ chicken-and-egg release failure. The agentskills.io spec validates only
 **Revisit when:** a consumer needs a machine-readable skill release version or
 the repository grows a multi-maintainer release process.
 
+## External skill evidence — jim60105/blog `blog-post` (2026-09-05)
+
+Inspected the listed skill page on skills.sh and the cloned repository at
+github.com/jim60105/blog (`.github/skills/blog-post/SKILL.md`, 309 lines, plus
+the repository `AGENTS.md`). The repository is a dual-site Zola blog (琳.tw
+technical, 聆.tw AI-dialogue) sharing themes, templates, Sass, and static
+assets, deployed via Cloudflare Workers, with each site's content stored in an
+external repository as a git submodule and activated with a per-site
+symlink-swapping script.
+
+The `blog-post` skill is a single-maintainer, end-to-end post-authoring and
+publishing pipeline for 聆.tw: clone and submodule initialization, per-site
+symlink switch, section selection, post front matter (including `providers`
+and `withAI` AI-disclosure fields), opinionated editorial and voice rules
+(zh-TW, inverted pyramid, CJK spacing, banned phrases, rhetorical-device
+quotas), color and chat shortcodes, an SEO title/description rewrite step, a
+must-not-skip constraint checklist verified with text search, a build gate
+using the same `zola check --skip-external-links` command this skill ships,
+and a branch/commit/signoff/`gh pr create` handoff performed inside the content
+submodule.
+
+Evidence labels: ✅ Confirmed by inspection — the standalone validation command
+matches this skill's own validation rule, an independent confirmation of the
+primitive as industry practice; the frontmatter is `name` + `description` only,
+matching the ecosystem convention recorded in Decision 2026-09-05. 🔶 Inferred —
+112 installs versus 4 GitHub stars suggests directory-level discovery and
+telemetry-driven ranking rather than popularity transfer; a missing content
+submodule yields empty content and a 0-page build, the same observable this
+skill's valid-site fixture prints.
+
+Candidate capabilities surfaced, deliberately bounded and stripped of personal
+details: a portable post-authoring workflow; a submodule and symlinked-content
+diagnosis reference for debug-build; an AI-disclosure content-model pattern;
+and a bounded editorial-quality review slice. Each is recorded as deferred in
+`future-capabilities.md`; none is scheduled until a concrete workflow needs it.
+
 ## Adoption and provenance rule
 
 Treat third-party skills as pattern evidence, not copy sources. Before adopting
