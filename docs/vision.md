@@ -295,6 +295,12 @@ authoring requests must not activate automatically.
   HTTP 401 and page HTML exposed no searchable tree; this is recorded as an
   observability limitation, not a release blocker. The layout fixture also has
   a tracked dangling `content` symlink.
+- Complete: three isolated forward tests on 2026-09-05 passed: authoring
+  preserved a site's section, front matter, explicit disclosure, and non-root
+  route; editorial review identified an unsupported absolute claim and suspect
+  source URL without changing content; layout diagnosis detected `.gitmodules`
+  plus a dangling `content` link before treating the zero-page build as Zola
+  behavior.
 
 ## Deferred work
 
