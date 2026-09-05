@@ -10,8 +10,9 @@ Load `zola` when you need to diagnose build failures, configure a multilingual s
 review or modify an existing Zola/Tera project, or create a minimal site from scratch.
 It routes to the appropriate workflow and reference documentation automatically.
 
-The shipped payload is one file — no agent-specific commands or paths — so it works
-with any terminal-capable coding agent. It is agentskills.io-compatible.
+The shipped payload is one portable skill directory with no agent-specific
+runtime commands or paths, so it works with any terminal-capable coding agent.
+It is agentskills.io-compatible.
 
 **Compatibility status:** Codex and Claude Code are verified through the
 published-package smoke matrix. Hermes external-directory setup is documented
