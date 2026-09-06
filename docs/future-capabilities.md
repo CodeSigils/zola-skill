@@ -14,6 +14,10 @@ part of the v1 operational skill.
 - [vision.md](vision.md) defines the core Zola skill and its v1 boundary.
 - [roadmap.md](roadmap.md) identifies when deferred capabilities may be
   reconsidered.
+- [research.md](research.md) records Zola, Agent Skills, comparable-skill, and
+  distribution evidence that should inform capability proposals.
+- [release-checklist.md](release-checklist.md) defines the reproducible package
+  and fixture checks required before publishing a changed payload.
 
 ## Extending Zola with JavaScript and Rust
 
@@ -74,6 +78,56 @@ add deployment automation, an MCP, WASM, or broad theme support without a
 specific workflow, fixture, source evidence, and named maintenance owner.
 Re-evaluate this ordering only when new user evidence or a repeated failure
 shows that the current boundary is no longer effective.
+
+### Zola-oriented capability wording
+
+Use the following boundaries when describing future capabilities:
+
+- **Native Zola/Tera:** Prefer documented, version-verified behavior that
+  preserves static output, existing routes, `base_url`, and the site's content
+  model.
+- **Search:** Prefer a generated static index with progressive client-side
+  enhancement; require a usable no-JavaScript path and measure index size and
+  build cost.
+- **Deployment:** Treat deployment as an external workflow, not an inherent
+  Zola capability; require provider-specific ownership, credentials, rollback,
+  and post-deploy validation.
+- **Themes:** Support only bounded overrides in an identified existing theme;
+  do not imply general theme compatibility from one passing fixture or theme
+  inspection.
+- **Internationalization:** Preserve configured languages, translated routes,
+  fallback behavior, and language-specific front matter; never infer a site's
+  translation policy.
+- **External services:** Use them only when state, identity, or real-time
+  behavior is essential; document privacy, credentials, failure, and outage
+  behavior.
+- **Rust/WASM:** Require a measured workload where native Zola, build-time
+  tooling, or JavaScript is inadequate; record artifact size and toolchain
+  maintenance cost.
+- **MCP:** Consider it only after repeated, demonstrated friction with normal
+  repository access and a clearly bounded tool contract.
+
+For every proposal, state the Zola boundary (build-time, template-time,
+browser-time, or external runtime), the static fallback, versioned source
+evidence, route/content-model impact, authorization boundary, operational cost,
+fixture and failure coverage, and named maintenance owner. Do not call a
+capability “supported” until its implemented workflow and validation evidence
+exist.
+
+### Evidence map for future proposals
+
+Read the matching evidence before proposing a capability:
+
+| Proposal area | Maintainer evidence |
+| --- | --- |
+| Zola/Tera behavior, version limits, routes, i18n, themes, content models | [research.md](research.md) and [vision.md](vision.md) |
+| Phase sequencing, acceptance criteria, and scope boundaries | [roadmap.md](roadmap.md) |
+| Fixtures, expected failures, and workflow-selection scenarios | [tests/scenarios.md](../tests/scenarios.md) |
+| Package layout, Agent Skills conformance, and release validation | [release-checklist.md](release-checklist.md) and [research.md](research.md) |
+| JavaScript, Rust, WASM, runtime services, or Zola-core changes | This document's extension strategy and [future-capabilities.md](future-capabilities.md) |
+
+The map is a reading aid, not runtime skill context. Update the linked source
+document when new evidence changes a capability decision.
 
 ### 1. Decision framework
 
