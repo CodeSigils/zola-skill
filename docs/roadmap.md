@@ -3,7 +3,7 @@
 **Status:** Phase 5 complete; Phase 6 remains optional; Phase 7 (opt-in content authoring and repository-layout workflows) is complete
 **Audience:** Skill maintainers and contributors  
 **Owner:** Project maintainers  
-**Last reviewed:** 2026-09-05
+**Last reviewed:** 2026-09-06
 
 This roadmap turns the [vision](vision.md) into a small, demonstrated skill.
 Do not implement advanced guidance merely because it appears in a planning
@@ -709,22 +709,22 @@ authorization and must use the target repository's observed conventions.
 
 The Phase 7 runtime guidance shipped only after:
 
-- Add discovery checks for explicit post-authoring/editorial-review prompts and
+- Discovery checks cover explicit post-authoring/editorial-review prompts and
   negative prompts for generic copywriting, CMS work, and automatic publishing.
-- Add a fixture for a repository-layout failure with tracked evidence of a
+- A fixture covers a repository-layout failure with tracked evidence of a
   missing submodule or dangling symlink, a deterministic repair proposal, and
   a check that no state-changing Git/submodule/site-switch action is suggested
   without authorization.
-- Add an authoring fixture with existing content conventions, a new or edited
+- An authoring fixture covers existing content conventions, a new or edited
   page, a route/link assertion beneath a non-root `base_url`, and the smallest
   applicable `zola check` plus isolated build.
-- Add review scenarios showing a bounded editorial finding and a provenance
+- Review scenarios show a bounded editorial finding and a provenance
   disclosure that is preserved only when it is an explicit repository/user
   fact. Do not test personal style rules copied from another site.
-- Record official Zola content/front-matter facts in the source registry;
-  record third-party provenance, license, and adaptation rationale in
+- Official Zola content/front-matter facts are recorded in the source registry;
+  third-party provenance, license, and adaptation rationale are recorded in
   `research.md`, not in runtime instructions.
-- Validate the completed payload with `skills-ref validate`, the full fixture
+- The completed payload was validated with `skills-ref validate`, the full fixture
   runner, and the existing Codex/Claude Code published-package smoke matrix.
 
 **Done when:** an explicitly requested authoring, editorial-review, or
