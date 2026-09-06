@@ -631,6 +631,11 @@ Add deployment templates, theme-research guidance, i18n depth, search,
 JavaScript enhancement, Rust tooling, and WASM guidance only when a concrete
 workflow or evaluation scenario needs them.
 
+Apply the [native Zola/Tera capability gate](future-capabilities.md#native-zolatera-capability-gate)
+before opening any Phase 6 work. This keeps the decision evidence, fixture,
+scope, and maintenance-owner requirements in the canonical future-capabilities
+document.
+
 Reconsider a dedicated MCP only after repeated, demonstrated friction with
 ordinary repository access, shell commands, and documentation lookup.
 
