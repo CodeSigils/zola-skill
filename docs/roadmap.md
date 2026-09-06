@@ -637,9 +637,23 @@ ordinary repository access, shell commands, and documentation lookup.
 **Done when:** each addition has a user need, ownership model, validation plan,
 and maintenance rationale.
 
-## Phase 7 — Opt-in content authoring and repository-layout workflows (planned)
+## Maintenance follow-up — selection evaluation (not a roadmap phase)
 
-Phase 7 is a bounded expansion of the existing `zola` skill, informed by the
+The fixture suite validates rendered Zola behavior, while the discovery tables
+state expected skill selection. After a material change to `SKILL.md` trigger
+language or workflow routing, run a manual Codex/Claude Code selection review
+with 8–12 existing positive, negative, and ambiguous prompts. Record the skill
+commit, client/model versions, expected and observed selection/workflow,
+reference use, outcome, and any false positive or negative in the relevant
+research or release record.
+
+This is evidence gathering, not a new runtime capability, CI workflow, release
+gate, or prerequisite for Phase 6. Escalate only if observed routing failures
+make repeated manual evaluation necessary.
+
+## Phase 7 — Opt-in content authoring and repository-layout workflows (complete)
+
+Phase 7 is a completed bounded expansion of the existing `zola` skill, informed by the
 inspected `jim60105/blog` `blog-post` skill and the 2026-09-05 skill-repository
 standards study. It adopts reusable workflow shapes, not GPL-3.0 source text
 or site-specific policies. It remains one routed skill with conditional
@@ -675,9 +689,9 @@ Git commits, branch creation, push, pull-request creation, reviewer requests,
 or publication are outside the default workflow. They require separate explicit
 authorization and must use the target repository's observed conventions.
 
-### Required evidence and acceptance gate
+### Completed evidence and acceptance gate
 
-Before any Phase 7 runtime guidance ships:
+The Phase 7 runtime guidance shipped only after:
 
 - Add discovery checks for explicit post-authoring/editorial-review prompts and
   negative prompts for generic copywriting, CMS work, and automatic publishing.
