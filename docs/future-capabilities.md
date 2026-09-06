@@ -657,14 +657,14 @@ The skill should help users build sites that are **static by default, dynamic by
 
 JavaScript should provide progressive convenience. Rust should strengthen deterministic build-time quality, content automation, and specialized computation. WebAssembly and runtime services should be reserved for needs that genuinely require them. This preserves the primary benefits of Zola: simple deployment, resilient delivery, strong performance potential, low operational overhead, and transparent source-controlled publishing.
 
-### 13. Planned Phase 7 content-authoring and repository-layout capabilities
+### 13. Implemented Phase 7 content-authoring and repository-layout capabilities
 
 These capabilities sit outside the v1 technical scope: they expand what the
 skill accomplishes (authoring and editorial work) rather than the extension
-stack in sections 1-12. The maintainers selected them as the planned Phase 7
-vertical slice. The local runtime workflow and fixtures now exist, but public
-package/distribution validation remains pending. Each remains subject to the
-Phase 6 rule: a user need,
+stack in sections 1-12. The maintainers selected and implemented them as the
+Phase 7 vertical slice, with local fixtures and public package validation
+recorded in the release checklist. Future changes remain subject to the Phase
+6 rule: a user need,
 ownership model, validation plan, and maintenance rationale. Source evidence
 and GPL-safe adaptation boundary: the 2026-09-05 external-skill review in
 `research.md`.

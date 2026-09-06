@@ -623,7 +623,7 @@ Candidate capabilities surfaced, deliberately bounded and stripped of personal
 details: a portable post-authoring workflow; a submodule and symlinked-content
 diagnosis reference for debug-build; an AI-disclosure content-model pattern;
 and a bounded editorial-quality review slice. The maintainers selected these
-for the planned Phase 7, with the portable boundaries recorded in
+for the implemented Phase 7, with the portable boundaries recorded in
 `vision.md`, `roadmap.md`, and `future-capabilities.md`.
 
 **Adaptation decision (2026-09-05):** Keep one routed `zola` skill and add a

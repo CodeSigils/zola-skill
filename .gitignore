@@ -31,6 +31,8 @@ claude_desktop_config.json
 continue.yaml
 .mcp/
 .agent/
+.agents/
+.claude/
 
 # Build artifacts
 public/
