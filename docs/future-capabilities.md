@@ -51,6 +51,28 @@ JavaScript, external services, Rust, WASM, or an MCP. Do not add a capability
 solely because Zola supports it; add it when the recorded workflow and fixture
 show that it solves a real need without broadening the skill's boundaries.
 
+### Default prioritization and pitfalls
+
+Remain in maintenance mode until a concrete user request or observed
+regression justifies opening Phase 6. When a capability is justified, evaluate
+it in this order:
+
+1. Native Zola/Tera behavior.
+2. Semantic HTML/CSS.
+3. Deterministic build-time generation or validation.
+4. A small progressive JavaScript enhancement.
+5. An external service only when the workflow needs state, identity, or
+   real-time behavior.
+6. Rust or WebAssembly only when measurable benefits outweigh their build,
+   dependency, and maintenance cost.
+
+Static search and build-time content/index validation are the most plausible
+first Phase 6 candidates because they preserve the static-site model. Do not
+add deployment automation, an MCP, WASM, or broad theme support without a
+specific workflow, fixture, source evidence, and named maintenance owner.
+Re-evaluate this ordering only when new user evidence or a repeated failure
+shows that the current boundary is no longer effective.
+
 ### 1. Decision framework
 
 Before recommending JavaScript, Rust, WebAssembly, a serverless function, or a Zola core modification, the agent must classify the capability.
