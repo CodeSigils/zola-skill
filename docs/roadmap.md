@@ -651,6 +651,22 @@ This is evidence gathering, not a new runtime capability, CI workflow, release
 gate, or prerequisite for Phase 6. Escalate only if observed routing failures
 make repeated manual evaluation necessary.
 
+## Future compatibility evidence — Claude Code (not a roadmap phase)
+
+The payload follows Claude Code's documented project layout:
+`.claude/skills/<skill-name>/SKILL.md`, standard Agent Skills frontmatter, and
+relative supporting-file references. This supports a structural compatibility
+claim, but does not prove Claude Code selection or workflow-following behavior.
+
+If Claude becomes an actively supported host, run one clean target-specific
+review from a Claude Code environment: install the public package, verify all
+thirteen payload files, exercise representative positive/negative/ambiguous
+prompts, and record the Claude Code/model versions, source commit, selected
+workflow, and outcome in the release checklist and research record. Until that
+evidence exists, keep Claude described as structurally compatible with host
+verification pending. Do not add Claude-only metadata, a second payload, CI, or
+a release gate solely to make the claim.
+
 ## Phase 7 — Opt-in content authoring and repository-layout workflows (complete)
 
 Phase 7 is a completed bounded expansion of the existing `zola` skill, informed by the
