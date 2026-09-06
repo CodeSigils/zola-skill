@@ -1,6 +1,8 @@
 # Zola Skill Vision
 
-**Status:** Phase 5 complete — bounded release, accessibility, content-model, and Tera template-context references delivered. Phase 7 (opt-in content authoring and repository-layout workflows) is complete.
+**Status:** Phase 5 and Phase 7 complete — bounded release, accessibility,
+content-model, Tera template-context, authoring, editorial-review, and
+repository-layout guidance delivered.
 **Audience:** Skill maintainers and contributors  
 **Owner:** Project maintainers  
 **Review cadence:** Before a release, after a Zola upgrade, or every six months  
@@ -80,13 +82,12 @@ workflow/reference files.
 
 ## Implemented workflows: debug, build, and static multilingual confidence
 
-The released skill supports two complete workflows in a local repository:
-diagnosing a Zola build or template failure, and diagnosing a static
-multilingual configuration, content, or language-aware template-link failure.
-It also supports bounded existing-site modification/review, minimal
-site-creation, and existing-theme template-override workflows. Its discovery
-description must target those workflows only; theme selection and full theme
-authoring requests must not activate automatically.
+The released skill supports complete, bounded workflows in a local repository:
+debug/build diagnosis, static multilingual configuration, existing-site
+modification/review, minimal site creation, existing-theme template override,
+post authoring, editorial review, and repository-layout diagnosis. Its
+discovery description must target those workflows only; theme selection and
+full theme authoring requests must not activate automatically.
 
 ### Required v1 behavior
 
@@ -306,21 +307,13 @@ authoring requests must not activate automatically.
 ## Deferred work
 
 Theme authoring/research, deployment patterns, advanced i18n, search,
-accessibility/release checklists, JavaScript enhancement, Rust pre-build tools,
-WASM, and MCP work are valuable but are **not v1 runtime promises**. Add each
-only after a concrete user workflow, evaluation scenario, source evidence, and
-maintenance owner exist. i18n is the first planned post-v1 enrichment because
-language configuration, translated content paths, template URL generation, and
-fallback behavior require a cohesive, testable workflow. It must not promise
-machine translation, locale selection, or browser-runtime behavior.
-
-Next, prioritize existing-site modification and review, theme overrides and
-inheritance, content-model features (taxonomies, pagination, feeds, and
-search), and accessibility/release checks. See
+JavaScript enhancement, Rust pre-build tools, WASM, and MCP work remain
+optional capabilities. Add each only after a concrete user workflow,
+evaluation scenario, source evidence, and maintenance owner exist. See
 [future capabilities](future-capabilities.md) for JavaScript, Rust, WASM, and
 runtime-service guidance.
 
-## Planned Phase 7: opt-in content authoring and repository layouts
+## Phase 7 — opt-in content authoring and repository layouts (complete)
 
 Phase 7 extends the existing routed `zola` skill; it does not create a
 publishing-specific skill or turn ordinary technical requests into editorial
@@ -329,7 +322,7 @@ publish content in an existing Zola repository, or to diagnose a repository
 whose content/configuration is demonstrably supplied by a submodule or
 symlinked site layout.
 
-The planned workflow will inspect the repository's section, naming,
+The implemented workflows inspect the repository's section, naming,
 front-matter, taxonomy, language, shortcode, and validation conventions before
 creating or changing a post. It may prepare a draft, preserve established
 metadata and disclosure fields, perform a bounded source/evidence/readability
@@ -365,6 +358,14 @@ fix. A long reference catalogue or untested plan does not demonstrate
 readiness. Each roadmap phase must also pass the mandatory phase-close
 documentation gate in [AGENTS.md](../AGENTS.md) and the
 [planning documentation index](README.md) before it is reported complete.
+
+The discovery scenarios in `tests/scenarios.md` are a design oracle, not proof
+that every supported host selected the skill and followed its intended route.
+After a material trigger-description or router change, maintainers should run
+the manual two-host selection review described in [research.md](research.md).
+It records cross-host routing evidence without becoming a CI requirement,
+runtime dependency, or release blocker unless repeated observed failures
+justify that escalation.
 
 ## Related documents
 

@@ -476,6 +476,41 @@ package smoke tests are the release gate, not an automated pipeline.
 validation a bottleneck, or when a regression is caught by users that the
 existing test suite would have caught.
 
+## Quality benchmark against strong skill repositories (2026-09-05)
+
+This is a qualitative comparison of the current `zola` payload and repository
+against the Agent Skills specification, the public `anthropics/skills`
+collection, and the surveyed high-polish `claude-skills` repository. It is not
+a claim of comparable user volume, production adoption, or model behavior.
+
+| Dimension | Assessment | Repository evidence and limit |
+| --- | --- | --- |
+| Scope, routing, and safety boundaries | Strong | The 69-line entrypoint names concrete Zola/Tera triggers, directs conditional workflow/reference reads, and excludes adjacent CMS, deployment, generic-writing, and full-theme work. |
+| Progressive disclosure | Strong | `SKILL.md` delegates detailed behavior to six workflows and six focused references, matching the specification's directory and on-demand resource model. |
+| Executable domain validation | Strong | `tests/run.sh` exercises 17 isolated Zola fixtures, including rendered-output assertions and expected failures, under the pinned Zola 0.23.4. |
+| Distribution and maintenance | Strong for a lightweight model | `skills-ref` validation, a documented manual release gate, and recorded clean Codex/Claude Code package installs give reproducible evidence without creating a CI or release-automation stack. |
+| Cross-host selection behavior | Incomplete evidence | `tests/scenarios.md` specifies positive, negative, and workflow-selection expectations, but it does not retain repeatable Codex/Claude transcripts showing that each host selected `zola`, followed the intended route, and avoided near misses. |
+
+**Conclusion:** The repository is upper-tier for a focused single-domain skill:
+it is materially stronger than a documentation-only skill because its claimed
+Zola behavior is executable and bounded. It is not yet comparable to a
+production-scale skill pack's behavioral evidence, because routing and
+instruction-following have not been measured across target hosts.
+
+**Next evidence, deliberately lightweight:** after a material change to the
+trigger description or workflow router, run a manual two-host selection review
+using 8–12 prompts from `tests/scenarios.md`: positive, negative, and ambiguous
+cases. Record the skill commit, Codex/Claude Code and model versions, expected
+selection/workflow, observed selection/reference use, outcome, and any false
+positive or negative. This is maintainership evidence, not a release gate and
+not a reason to add CI, scripts, a second skill, or a version-consistency
+mechanism. Promote it only if observed routing misses justify recurring work.
+
+Sources: [Agent Skills specification](https://agentskills.io/specification),
+[Agent Skills best practices](https://agentskills.io/skill-creation/best-practices),
+[Anthropic skills](https://github.com/anthropics/skills), and the
+[claude-skills format guide](https://github.com/alirezarezvani/claude-skills/wiki/Skill-Format).
+
 ## Recommendations for this project
 
 1. Implement one routed, portable repository skill first at `skills/zola/`.
