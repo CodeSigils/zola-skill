@@ -22,6 +22,7 @@ not future runtime context for the skill.
 | Roadmap phase, dependency, or release-gate change                   | [roadmap.md](roadmap.md), [vision.md](vision.md)                                                   |
 | External pattern, source, license, or architecture-decision change  | [research.md](research.md), [vision.md](vision.md), [roadmap.md](roadmap.md)                       |
 | Distribution layout, Agent Skills compatibility, or skills.sh release change | [vision.md](vision.md), [roadmap.md](roadmap.md), [research.md](research.md)                 |
+| Future Zola capability or Phase 6 proposal                      | [future-capabilities.md](future-capabilities.md), [vision.md](vision.md), [roadmap.md](roadmap.md), [research.md](research.md) |
 | JavaScript, Rust, WebAssembly, runtime-service, or Zola-core change | [future-capabilities.md](future-capabilities.md), [vision.md](vision.md), [roadmap.md](roadmap.md) |
 | Editorial change to one planning document only                      | The target document and every document whose decision, scope, or link changes                      |
 
