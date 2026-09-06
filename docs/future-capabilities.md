@@ -29,6 +29,28 @@ The default priority order is:
 6. Rust/WASM client-side modules only when their unique benefits justify their delivery and maintenance cost.
 7. A custom Zola fork or upstream contribution only when no safer extension boundary is viable.
 
+### Native Zola/Tera capability gate
+
+Before adding a native Zola or Tera workflow, maintainers must record:
+
+- a concrete user workflow and the capability boundary;
+- official, versioned Zola/Tera documentation or source evidence;
+- the supported Zola version (currently `0.23.4`);
+- a bounded workflow or focused reference with no unnecessary runtime
+  dependency;
+- a deterministic fixture covering the useful result and relevant failure
+  behavior;
+- preservation of existing routes, content models, configuration, and user
+  authorization; and
+- a named maintenance owner and the validation commands used to recheck it.
+
+The minimum validation is `zola check --skip-external-links`, an isolated
+`zola build`, and `skills-ref validate skills/zola`. Prefer native Zola/Tera,
+semantic HTML/CSS, or deterministic build-time generation before proposing
+JavaScript, external services, Rust, WASM, or an MCP. Do not add a capability
+solely because Zola supports it; add it when the recorded workflow and fixture
+show that it solves a real need without broadening the skill's boundaries.
+
 ### 1. Decision framework
 
 Before recommending JavaScript, Rust, WebAssembly, a serverless function, or a Zola core modification, the agent must classify the capability.
