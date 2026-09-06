@@ -14,9 +14,12 @@ The shipped payload is one portable skill directory with no agent-specific
 runtime commands or paths, so it works with any terminal-capable coding agent.
 It is agentskills.io-compatible.
 
-**Compatibility status:** Codex and Claude Code are verified through the
-published-package smoke matrix. Hermes external-directory setup is documented
-but not part of that matrix.
+**Compatibility status:** Codex is verified through the current
+published-package smoke check. The payload follows Claude Code's documented
+`.claude/skills/<name>/SKILL.md` structure and has historical package evidence,
+but a target-specific Claude Code install still needs to be rerun from a Claude
+Code host. Hermes external-directory setup is documented but not part of the
+verification matrix.
 
 ---
 
