@@ -76,6 +76,17 @@ verification. The public page returned no searchable file-tree text, and the
 unauthenticated catalog file-snapshot endpoint returned HTTP 401; direct
 live-page file-tree verification is pending.
 
+### 2026-09-06 current-main validation
+
+Source: `CodeSigils/zola-skill@main`, commit `d978227`. Skills CLI: `1.5.23`.
+The pinned `skills-ref` validator and `bash tests/run.sh` passed locally before
+the package checks.
+
+| Host | Result |
+| --- | --- |
+| Codex | Passed from a clean temporary directory: 13 Markdown payload files, including `author-post.md` and `editorial-review.md`, were installed under `.agents/skills/zola`; `skills ls -a codex` listed `zola`. |
+| Claude Code | Pending target-specific verification. In the current Codex host, `skills add --agent claude-code` auto-detected Codex and installed under `.agents/skills/zola`, so this run is not evidence for `.claude/skills/zola`. Re-run the documented row from a Claude Code host before the next release. |
+
 ## Record
 
 For each host, record the date, published source/ref, `skills` CLI version,
