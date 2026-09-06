@@ -37,7 +37,7 @@ Total: 13 markdown files, ~150KB. No scripts, no config files, no dependencies. 
 
 ## Last Reviewed
 
-Last reviewed: 2026-09-05.
+Last reviewed: 2026-09-06.
 
 ## Manual validation
 

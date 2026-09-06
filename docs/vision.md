@@ -6,7 +6,7 @@ repository-layout guidance delivered.
 **Audience:** Skill maintainers and contributors  
 **Owner:** Project maintainers  
 **Review cadence:** Before a release, after a Zola upgrade, or every six months  
-**Last reviewed:** 2026-09-05
+**Last reviewed:** 2026-09-06
 
 ## Purpose
 
