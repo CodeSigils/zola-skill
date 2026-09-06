@@ -5,9 +5,21 @@ license: MIT
 compatibility: "Requires filesystem and shell access; Zola required for build validation; network needed only for live documentation and external link validation."
 metadata:
   about: "A reusable skill for Zola static-site-generator and Tera template work. Provides debug-build, i18n, site modification/review, minimal site creation, and bounded existing-theme override workflows with version-aware diagnosis and minimal fixes."
-  keywords: ["zola", "tera", "static-site-generator", "debug-build", "i18n", "template", "frontmatter", "content-model", "post-authoring", "editorial-review", "accessibility"]
+  keywords:
+    - zola
+    - tera
+    - static-site-generator
+    - debug-build
+    - i18n
+    - template
+    - frontmatter
+    - content-model
+    - post-authoring
+    - editorial-review
+    - accessibility
   version: "0.23.4"
-  maintainers: ["Project maintainers"]
+  maintainers:
+    - Project maintainers
   repository: "CodeSigils/zola-skill@zola"
 ---
 
