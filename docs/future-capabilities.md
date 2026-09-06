@@ -60,7 +60,9 @@ it in this order:
 1. Native Zola/Tera behavior.
 2. Semantic HTML/CSS.
 3. Deterministic build-time generation or validation.
-4. A small progressive JavaScript enhancement.
+4. A small progressive JavaScript enhancement, only after evaluating bundle
+   size, runtime cost, accessibility, failure behavior, and whether the site
+   remains fully usable without JavaScript.
 5. An external service only when the workflow needs state, identity, or
    real-time behavior.
 6. Rust or WebAssembly only when measurable benefits outweigh their build,
