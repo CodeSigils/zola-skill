@@ -24,7 +24,8 @@ checks that cannot be meaningfully run against the local source tree.
 - [x] Published source resolves as `CodeSigils/zola-skill@zola`.
 - [x] Confirmed [`LICENSE`](../LICENSE) contains MIT terms and
   `skills/zola/SKILL.md` declares `license: MIT`.
-- [x] `uvx --from git+https://github.com/agentskills/agentskills.git@69ef37e9424c0a7ea9dd2293b559e43ec8176379#subdirectory=skills-ref skills-ref validate skills/zola` reported `Valid skill: skills/zola`.
+- [x] `uvx --from git+https://github.com/agentskills/agentskills.git@69ef37e9424c0a7ea9dd2293b559e43ec8176379#subdirectory=skills-ref skills-ref validate skills/zola`
+  reported `Valid skill: skills/zola`.
 - [x] `tests/run.sh` passed with Zola 0.23.4: valid site and non-root URL
   checks passed; the broken-template check and build failed as expected.
 - [x] `CHANGELOG.md` records the published change on `main`; no GitHub Release
