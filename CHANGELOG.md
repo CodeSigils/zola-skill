@@ -9,6 +9,12 @@ future releases.
 
 ## [Unreleased]
 
+- Fixed: normalized `SKILL.md` frontmatter so the official pinned
+  `skills-ref` validator accepts the payload.
+- Added: documented Claude Code structural compatibility and kept host-level
+  Claude verification explicitly pending.
+- Changed: reconciled Phase 7 roadmap status and recorded current Codex
+  published-package validation.
 - Added: cross-references between review reference workflows in
   accessibility-review.md, content-model.md, editorial-review.md,
   release-review.md, and tera-template-context.md
