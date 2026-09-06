@@ -606,7 +606,7 @@ Phase 5 delivered four bounded references, each discovered only for authorized
 existing-site work and validated as a matched reference/validation commit pair:
 
 - `references/release-review.md` — bounded pre-release review.
-- `references/template-accessibility.md` — bounded template accessibility
+- `references/accessibility-review.md` — bounded template accessibility
   review.
 - `references/content-model.md` — route-preserving content-structure changes.
 - `references/tera-template-context.md` — template context and inherited base

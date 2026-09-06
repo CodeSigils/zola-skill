@@ -511,6 +511,32 @@ Sources: [Agent Skills specification](https://agentskills.io/specification),
 [Anthropic skills](https://github.com/anthropics/skills), and the
 [claude-skills format guide](https://github.com/alirezarezvani/claude-skills/wiki/Skill-Format).
 
+## Claude Code compatibility structure (2026-09-06)
+
+The official Claude Code documentation describes skills as directories with a
+required `SKILL.md` containing YAML frontmatter and Markdown instructions. A
+project skill is discovered at `.claude/skills/<skill-name>/SKILL.md`; personal
+skills use `~/.claude/skills/<skill-name>/SKILL.md`. The directory name becomes
+the slash-command name, while `description` is used for automatic selection.
+Supporting files may sit beside `SKILL.md` and are loaded on demand. Claude
+also supports optional extensions such as invocation controls, dynamic context,
+subagent execution, and `allowed-tools`, but these are not required for a
+portable skill and may reduce cross-client compatibility.
+
+**Assessment for this repository:** the shipped `skills/zola/` directory has
+the expected entrypoint, matching `name: zola`, concise discriminating
+description, relative one-level-deep workflow/reference links, and no
+Claude-only frontmatter. It is therefore structurally compatible with Claude
+Code to a reasonable, evidence-backed approximation. This does not establish
+that Claude selects the skill correctly or follows every workflow: that still
+requires a real Claude Code host test. The current Codex environment cannot
+serve as that test because the Skills CLI auto-detects Codex even when a
+Claude target is requested.
+
+Sources: [Claude Code skills documentation](https://code.claude.com/docs/en/slash-commands),
+[Claude Agent SDK skills](https://code.claude.com/docs/en/agent-sdk/skills), and
+the [Agent Skills specification](https://agentskills.io/specification).
+
 ## Recommendations for this project
 
 1. Implement one routed, portable repository skill first at `skills/zola/`.
