@@ -22,6 +22,9 @@ future releases.
   (blocker/warning/note) with explicit definitions
 - Changed: related review workflow sections added to all reference files
   for improved discoverability and consistency
+- Changed: broadened accessibility review from explicitly requested templates
+  to content, media, generated pages, CSS, and theme overrides; added WCAG,
+  media, and accessible-name source evidence.
 - Added: editorial-review-site fixture exercising bounded article-quality review
   with evidence gaps, broken links, and ambiguous claims.
 - Added: opt-in existing-site post authoring, editorial-quality review,

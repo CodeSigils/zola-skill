@@ -1,13 +1,13 @@
-# Bounded template accessibility review
+# Bounded accessibility review
 
-Read this only for an explicitly requested accessibility review of an existing
-Zola site's templates or generated pages. It supports concrete static findings;
-it does not establish WCAG conformance, test assistive technology, or authorize
-a redesign.
+Read this for an accessibility review of an existing Zola site's content,
+templates, generated pages, media, CSS, or theme overrides. It supports
+concrete static findings; it does not establish WCAG conformance, test
+assistive technology, or authorize a redesign.
 
 ## Inspect source and generated output
 
-1. Inspect the templates and rendered pages in scope. Identify meaningful page
+1. Inspect the source and rendered pages in scope. Identify meaningful page
    regions using semantic elements where the page has navigation, main content,
    headers, or footers; do not add ARIA roles without a repository-specific
    need.
@@ -21,20 +21,31 @@ a redesign.
 4. Check that each in-scope link communicates its destination or action through
    its text or directly associated context. Do not call a short link defective
    when the rendered context demonstrably supplies its purpose.
+5. For video/audio/iframes, check a descriptive iframe title, controls,
+   captions, transcripts or equivalent alternatives, and a fallback when an
+   external provider is unavailable. For CSS/theme changes, inspect focus,
+   contrast, zoom/reflow, color independence, and reduced-motion behavior when
+   the evidence permits.
 
 ## Report limits precisely
 
 Use the review finding format from
 [the modification/review workflow](../workflows/modify-review.md). Include the
 rendered path and exact markup as evidence, plus the validation used after a
-repair. State that keyboard behavior, focus treatment, contrast, responsive
-layout, assistive-technology behavior, and conformance level were not assessed
-unless the request and evidence specifically cover them.
+repair. State which of keyboard behavior, focus treatment, contrast, responsive
+layout, media alternatives, assistive-technology behavior, and conformance
+level were not assessed unless the request and evidence specifically cover
+them.
 
 ## Source boundary
 
-Use the W3C WAI rows in the [source registry](source-registry.md). They support
-these static checks, not a universal ARIA pattern or a compliance certification.
+Use the W3C WAI and WCAG rows in the [source registry](source-registry.md).
+Prefer native HTML and visible names before ARIA; these sources support bounded
+checks, not a universal ARIA pattern or a compliance certification.
+
+Accessible structure and useful text alternatives can also improve discoverability
+and user experience, but accessibility review is not an SEO audit and must not
+be reduced to keyword or ranking advice.
 
 ## Related review workflows
 

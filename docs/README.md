@@ -4,7 +4,7 @@ This directory is the maintained source of truth for the Zola skill's design.
 Follow this selection matrix before changing the skill or these documents.
 
 Phase 4 and Phase 5 are complete. Phase 5 added the bounded release,
-template accessibility-review, content-model, and Tera template-context
+cross-cutting accessibility-review, content-model, and Tera template-context
 references for existing-site work; see [roadmap.md](roadmap.md). Phase 6
 (optional capabilities) remains open. Phase 7 is complete: opt-in content
 authoring and repository-layout workflows passed local and published-package
