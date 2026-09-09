@@ -30,8 +30,9 @@ The skill must:
   design preferences as such.
 - Preserve an existing project's architecture unless a concrete problem
   justifies a change.
-- Centralize repeated semantic configuration values when they should change
-  together, while keeping illustrative examples readable.
+- Consider repeated semantic configuration values as duplication/drift signals;
+  centralize them only when the values should change together and the trade-off
+  improves maintainability without harming clarity.
 - Prefer semantic HTML, CSS, Zola/Tera, front matter, and build-time work
   before browser JavaScript, external services, Rust tooling, or WASM.
 - Treat accessibility as a cross-cutting review concern for content, media,
