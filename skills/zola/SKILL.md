@@ -41,10 +41,11 @@ implemented; do not substitute generic advice.
 2. Inspect the supplied error and relevant repository evidence: `zola.toml` or
    `config.toml`, templates/content involved, theme relationship, dependencies,
    existing commands, and configured `output_dir`.
-   Notice repeated semantic values in workflows, scripts, and documentation;
-   when a value appears more than twice and should change together, preserve or
-   introduce the repository's visible canonical variable rather than copying
-   it. Do not extract incidental examples or prose.
+   Notice repeated semantic values in CI, scripts, repository Python, and
+   documentation as possible duplication or drift smells. Recommend
+   centralization only when the values should change together and the benefit
+   outweighs the loss of local clarity; do not mechanically extract examples or
+   prose.
 3. Run `zola --version` if available. If it is unavailable or differs from the
    fixture version, state that limitation and do not claim unverified
    version-specific behavior.
