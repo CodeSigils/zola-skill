@@ -1,6 +1,6 @@
 # Zola Skill Vision
 
-**Status:** Phase 5 and Phase 7 complete — bounded release, accessibility,
+**Status:** Phase 5 and Phase 7 complete — bounded release, cross-cutting accessibility,
 content-model, Tera template-context, authoring, editorial-review, and
 repository-layout guidance delivered.
 **Audience:** Skill maintainers and contributors  
@@ -32,6 +32,9 @@ The skill must:
   justifies a change.
 - Prefer semantic HTML, CSS, Zola/Tera, front matter, and build-time work
   before browser JavaScript, external services, Rust tooling, or WASM.
+- Treat accessibility as a cross-cutting review concern for content, media,
+  templates, CSS, and themes. Prefer native semantics before ARIA and do not
+  claim WCAG conformance from a build.
 - Give recommendation, reason, trade-off, and validation step for material
   choices.
 - State assumptions and uncertainty instead of inventing configuration keys,

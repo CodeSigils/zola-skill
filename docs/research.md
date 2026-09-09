@@ -655,6 +655,17 @@ catalog file-snapshot endpoint returned HTTP 401. Treat that as an observability
 limitation, not a reason to replace the reproducible install check with a UI
 assertion.
 
+**Accessibility scope correction (2026-09-09):** The existing
+`accessibility-review.md` was not missing, but it was framed as an explicitly
+requested template review. Broaden it to a cross-cutting review for Zola
+content, media, generated pages, CSS, and theme overrides. Use WCAG 2.2 and WAI
+sources for bounded checks such as purposeful `alt` text, accessible names,
+iframe titles, captions/transcripts, keyboard/focus behavior, contrast, and
+responsive reflow. A Zola build remains evidence about generated output, not a
+WCAG conformance claim. Accessibility can support discoverability through
+crawlable structure, descriptive alternatives, and usable content, but it is a
+quality and inclusion goal rather than an SEO shortcut.
+
 ## Adoption and provenance rule
 
 Treat third-party skills as pattern evidence, not copy sources. Before adopting

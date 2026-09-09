@@ -55,8 +55,9 @@ implemented; do not substitute generic advice.
    workflow](workflows/theme-override.md) for one verified existing-theme
    template override. For an explicitly requested pre-release static-site
    review, also read [the release-review reference](references/release-review.md).
-   For an explicitly requested existing-template accessibility review, read
-   [the accessibility-review reference](references/accessibility-review.md).
+   For an accessibility review affecting content, media, templates, generated
+   pages, CSS, or theme overrides, read [the accessibility-review
+   reference](references/accessibility-review.md).
    For an authorized content-structure, front-matter, route, or co-located
    asset change, read [the content-model reference](references/content-model.md).
    For an explicit article-quality review, read [the editorial-review
