@@ -26,6 +26,8 @@ future releases.
   to content, media, generated pages, CSS, and theme overrides; added WCAG,
   media, and accessible-name source evidence.
 - Added: lightweight commit-message checker and curated changelog policy.
+- Added: repeated-value awareness for versions, runners, paths, SHAs, ports,
+  operating systems, and feature flags when copies should change together.
 - Added: editorial-review-site fixture exercising bounded article-quality review
   with evidence gaps, broken links, and ambiguous claims.
 - Added: opt-in existing-site post authoring, editorial-quality review,

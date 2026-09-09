@@ -19,6 +19,11 @@ checks that cannot be meaningfully run against the local source tree.
 5. GitHub Releases and semver tags are not required. Add an immutable tag only
    when consumers need a stable, machine-addressable release point.
 
+6. Before release, review repeated semantic values (versions, runners, OS
+   names, paths, SHAs, ports, and feature flags). Centralize values repeated
+   more than twice when they should change together, and document intentional
+   copies.
+
 ## Pre-publish
 
 - [x] Published source resolves as `CodeSigils/zola-skill@zola`.
