@@ -31,6 +31,10 @@ checks that cannot be meaningfully run against the local source tree.
 - [x] `CHANGELOG.md` records the published change on `main`; no GitHub Release
   or semver tag is required. Existing `phase-1`..`phase-5` tags are historical
   roadmap milestones.
+- [ ] `python3 scripts/check_commit_messages.py <release-range>` passes, with
+  concise subjects and non-empty `what:` and `why:` fields.
+- [ ] `CHANGELOG.md` contains only user-visible or maintainer-significant
+  changes; detailed rationale remains in commits and research/decision notes.
 
 ## Published-package smoke matrix
 

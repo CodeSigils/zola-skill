@@ -25,6 +25,7 @@ future releases.
 - Changed: broadened accessibility review from explicitly requested templates
   to content, media, generated pages, CSS, and theme overrides; added WCAG,
   media, and accessible-name source evidence.
+- Added: lightweight commit-message checker and curated changelog policy.
 - Added: editorial-review-site fixture exercising bounded article-quality review
   with evidence gaps, broken links, and ambiguous claims.
 - Added: opt-in existing-site post authoring, editorial-quality review,

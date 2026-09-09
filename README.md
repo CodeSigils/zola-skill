@@ -14,6 +14,9 @@ The shipped payload is one portable skill directory with no agent-specific
 runtime commands or paths, so it works with any terminal-capable coding agent.
 It is agentskills.io-compatible.
 
+Repository commits follow a checked `what:`/`why:` body policy. The changelog is
+curated and does not duplicate the full commit history.
+
 **Compatibility status:** Codex is verified through the current
 published-package smoke check. The payload follows Claude Code's documented
 `.claude/skills/<name>/SKILL.md` structure and has historical package evidence,
