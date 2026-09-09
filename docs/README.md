@@ -25,6 +25,7 @@ not future runtime context for the skill.
 | Future Zola capability or Phase 6 proposal                      | [future-capabilities.md](future-capabilities.md), [vision.md](vision.md), [roadmap.md](roadmap.md), [research.md](research.md) |
 | JavaScript, Rust, WebAssembly, runtime-service, or Zola-core change | [future-capabilities.md](future-capabilities.md), [vision.md](vision.md), [roadmap.md](roadmap.md) |
 | Editorial change to one planning document only                      | The target document and every document whose decision, scope, or link changes                      |
+| Repeated values or centralization                                   | `AGENTS.md`, `vision.md`, `roadmap.md`, `release-checklist.md`                            |
 | Commit or changelog policy                                          | `AGENTS.md`, `README.md`, `release-checklist.md`, `CHANGELOG.md`                           |
 
 ## Update rules
