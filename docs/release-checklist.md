@@ -20,9 +20,9 @@ checks that cannot be meaningfully run against the local source tree.
    when consumers need a stable, machine-addressable release point.
 
 6. Before release, review repeated semantic values (versions, runners, OS
-   names, paths, SHAs, ports, and feature flags). Centralize values repeated
-   more than twice when they should change together, and document intentional
-   copies.
+   names, paths, SHAs, ports, and feature flags) as possible duplication/drift
+   smells. Centralize only when the values should change together and the
+   trade-off improves clarity; document intentional copies.
 
 ## Pre-publish
 
