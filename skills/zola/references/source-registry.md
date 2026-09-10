@@ -5,7 +5,7 @@ implemented Zola workflows; they are not a copied reference manual.
 
 | URL | Topic | Verified Zola version | Verified date | Caveat |
 | --- | --- | --- | --- | --- |
-| https://www.getzola.org/documentation/getting-started/cli-usage/ | `init`, `check`, and `build`; `--output-dir` and `--force` semantics | 0.23.4 | 2026-09-02 | `init` prompts for initial choices; use `--force` only with explicit authorization for the exact non-empty target. `check` fetches external Markdown links unless `--skip-external-links` is supplied. |
+| https://www.getzola.org/documentation/getting-started/cli-usage/ | `init`, `check`, and `build`; `--output-dir` and `--force` semantics | 0.23.4 | 2026-09-10 | `init` prompts for initial choices; use `--force` only with explicit authorization for the exact non-empty target. `check` fetches external Markdown links unless `--skip-external-links` is supplied. |
 | https://www.getzola.org/documentation/getting-started/configuration/ | `zola.toml`, legacy `config.toml` fallback, `base_url`, and `output_dir` | 0.23.4 | 2026-09-02 | Configuration options are version-sensitive; inspect the project's file before changing it. |
 | https://www.getzola.org/documentation/content/overview/ | Content directory structure, `_index.md` sections, routes, and co-located assets | 0.23.4 | 2026-09-03 | `index.md` is a page while `_index.md` is a section; use a dedicated page directory for co-located assets. |
 | https://www.getzola.org/documentation/content/page/ | Page filenames, `index.md`, `slug`, `path`, aliases, and front matter | 0.23.4 | 2026-09-03 | A page `path` overrides both `slug` and the section-derived path; inspect existing generated links before changing it. |
