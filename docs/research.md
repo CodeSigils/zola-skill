@@ -352,6 +352,15 @@ full terms are in [`LICENSE`](../LICENSE), and the distributed skill declares
 the matching `license: MIT` frontmatter value. This records a maintainer choice
 for this repository; it is not provenance for third-party material.
 
+## CLI source freshness check (2026-09-10)
+
+The official Zola CLI documentation and the upstream latest-release page were
+rechecked. Zola `0.23.4` remains the latest release, and the CLI reference
+still documents the four commands (`init`, `build`, `serve`, and `check`) plus
+the `--output-dir`, `--force`, and `--skip-external-links` behavior used by the
+runtime skill. The source-registry CLI row was therefore re-dated without
+changing workflow scope, fixture version, or release policy.
+
 ### Evidence labels
 
 - **Direct source inspected:** the source instructions were read during this
