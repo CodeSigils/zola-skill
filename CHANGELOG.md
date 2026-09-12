@@ -9,8 +9,15 @@ future releases.
 
 ## [Unreleased]
 
-- Fixed: normalized `SKILL.md` frontmatter so the official pinned
-  `skills-ref` validator accepts the payload.
+- Added: a verified-change handoff that offers a focused, validated Git diff
+  for commit without inferring commit, push, pull-request, publishing, or
+  deployment authorization.
+- Clarified: `skills/zola/` is canonical; installed copies and active host
+  sessions can lag behind source commits and are refreshed only when needed.
+- Fixed: moved the portable environment-requirements declaration to
+  `metadata.compatibility`, which the current structural validator accepts.
+- Clarified how to use a disposable writable UV cache for pinned validation in
+  restricted environments without committing or publishing cache state.
 - Added: documented Claude Code structural compatibility and kept host-level
   Claude verification explicitly pending.
 - Changed: reconciled Phase 7 roadmap status and recorded current Codex
@@ -34,8 +41,8 @@ future releases.
 - Added: opt-in existing-site post authoring, editorial-quality review,
   disclosure-aware content-model guidance, and submodule/symlink layout
   diagnosis, with repository-layout and authoring fixtures.
-- Changed: `compatibility` moved from a nested `metadata` object to the
-  top-level Agent Skills spec field in `skills/zola/SKILL.md`.
+- Changed: removed stale auto-generated Open-Mem activity from `AGENTS.md` so
+  maintainers load the repository contract rather than a dated discovery log.
 - Changed: release policy records changes on `main` without requiring a GitHub
   Release or semver tag; no inline skill self-version.
 

@@ -24,6 +24,13 @@ checks that cannot be meaningfully run against the local source tree.
    smells. Centralize only when the values should change together and the
    trade-off improves clarity; document intentional copies.
 
+If the default UV cache is not writable, set `UV_CACHE_DIR` to a writable
+temporary directory for the pinned `skills-ref` command. The cache is local
+tool state, not a repository artifact: do not commit or publish it, and remove
+the exact temporary directory after validation. This changes only where `uvx`
+stores downloads and temporary files; it does not change the pinned validator
+source or the payload being checked.
+
 ## Pre-publish
 
 - [x] Published source resolves as `CodeSigils/zola-skill@zola`.

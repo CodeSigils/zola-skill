@@ -226,11 +226,23 @@ inspection before an authorized structural or front-matter change.
 The Agent Skills specification requires a `SKILL.md` file with YAML frontmatter
 and Markdown instructions. `name` and `description` are required; the name must
 match the parent directory and use lowercase letters, digits, and hyphens.
-`license`, `compatibility`, and `metadata` are optional. `allowed-tools` is
-experimental and support varies, so it is not suitable as a portability
-requirement. The specification recommends concise entrypoints, progressive
-disclosure, relative file references, and `skills-ref validate` for frontmatter
-validation.
+`license` and `metadata` are optional. `allowed-tools` is experimental and
+support varies, so it is not suitable as a portability requirement. The
+specification recommends concise entrypoints, progressive disclosure, relative
+file references, and `skills-ref validate` for frontmatter validation.
+
+**Validator reconciliation (2026-09-11):** The current local structural
+validator rejected the formerly top-level `compatibility` field, although the
+pinned `skills-ref` validator had historically accepted it. Moving the same
+declaration to `metadata.compatibility` made both validators pass; the full
+Zola `0.23.4` fixture suite also passed. This is a conservative payload-shape
+repair, not evidence that every agent consumes compatibility metadata.
+
+The pinned validator initially failed in the restricted local sandbox because
+`uvx` could read but not create temporary files under the default user cache.
+Using a writable temporary `UV_CACHE_DIR` is a safe execution workaround: the
+cache is disposable local tool state and is not part of the repository or
+published payload.
 
 skills.sh discovers skill directories in standard locations, including
 `skills/<name>/SKILL.md` and `.agents/skills/<name>/SKILL.md`, and installs them
@@ -240,6 +252,11 @@ install form supports selecting a host agent with `--agent`. Distribution
 verification should distinguish local Agent Skills validation from a
 published-package installation smoke test, since the latter requires a public,
 resolvable repository and a specific host integration.
+
+Installed copies are distribution artifacts rather than a second source of
+truth. A source commit does not prove that an active host session has reloaded
+the payload; compare or refresh an installation only when active-host use or
+release evidence requires it.
 
 **Release-checklist update (2026-09-02):** The current skills CLI documentation
 lists `codex` and `claude-code` as agent identifiers; their project-scoped
@@ -589,10 +606,11 @@ identity out of skill frontmatter. Current direct inspection shows
 `anthropics/skills` has no GitHub Releases, so an immutable-release policy is
 not required for this repository. Inline self-versioning plus a consistency gate
 was the documented root cause of repo-health-and-sync-skill's v0.4.0
-chicken-and-egg release failure. The agentskills.io spec validates only
-`name`, `description`, `license`, `compatibility`, and `metadata`; the
-`compatibility` declaration moves to the top-level spec field and
-`metadata.version` stays an opaque custom key (the spec's own example shape).
+chicken-and-egg release failure. A current structural validation on 2026-09-11
+rejected the top-level `compatibility` field that an earlier pinned validator
+had accepted. The repository therefore uses the conservative
+`metadata.compatibility` shape, while `metadata.version` stays an opaque custom
+key for the pinned Zola tool version.
 
 **Revisit when:** a consumer needs an immutable, machine-readable release point
 or the repository grows a multi-maintainer release process.
