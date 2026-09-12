@@ -50,8 +50,8 @@ Use **Zola** as the public display name and `zola` as the machine identifier.
 The source repository remains `zola-skill`; do not name the packaged skill
 `zola-skill` or create a second alias.
 
-Include a concise portable `compatibility` field because this workflow has real
-environment requirements: filesystem and shell access; Zola for build
+Include a concise portable `metadata.compatibility` value because this workflow
+has real environment requirements: filesystem and shell access; Zola for build
 validation; and network access only for live documentation or full external-link
 checking. Do not add host-specific tool names or make network access a blanket
 requirement.
@@ -62,6 +62,10 @@ repository with its intended install form, such as
 manual copies into a particular host's directory. A Codex-only
 `agents/openai.yaml` may be added later as optional UI metadata; the skill must
 remain correct when a host ignores it.
+
+`skills/zola/` remains the only canonical payload. Installed copies and running
+host sessions can lag behind a source commit, so refresh or compare one only
+when active-host use or release/install evidence requires it.
 
 The release matrix is **Codex** and **Claude Code**. Run published-package
 installation checks with the skills.sh agent identifiers `codex` and

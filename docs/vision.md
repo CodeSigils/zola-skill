@@ -63,6 +63,11 @@ installed into each host agent's own skill location. Do not maintain copies
 under `.agents/skills/`, `.claude/skills/`, or other agent-specific directories:
 the installer or the host's configuration selects the destination.
 
+Installed copies are distribution artifacts, not a second source of truth. A
+source commit does not refresh an installed skill or a running host session;
+verify or refresh an installation only when active-host use or release evidence
+requires it.
+
 The released skill must use the Agent Skills `SKILL.md` contract: YAML
 frontmatter with a lowercase, hyphen-safe `name` and a discriminating
 `description`, followed by Markdown instructions. Optional host-specific
@@ -76,11 +81,11 @@ semver tags. `SKILL.md` declares no skill self-version, and
 against, not a skill release number.
 
 Because the workflow inspects local repositories and runs Zola commands, v1
-must declare its real environment requirements in the portable
-`compatibility` field: filesystem and shell access are required; Zola is needed
-for build validation; network access is needed only for live documentation and
-full external-link validation. The wording must not imply that a diagnosis is
-impossible when Zola or network access is unavailable.
+records its real environment requirements in `metadata.compatibility`:
+filesystem and shell access are required; Zola is needed for build validation;
+network access is needed only for live documentation and full external-link
+validation. The wording must not imply that a diagnosis is impossible when
+Zola or network access is unavailable.
 
 Planning documents under `docs/` guide maintainers. They are not runtime skill
 context. The runtime skill must remain concise and route to conditional

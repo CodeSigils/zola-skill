@@ -2,8 +2,8 @@
 name: zola
 description: Create a minimal Zola site; diagnose Zola/Tera build, layout, template, configuration, or static multilingual (i18n) failures; or make an authorized existing-site, post-authoring, or bounded-theme change/review. Use for explicit Zola content authoring or editorial review in an existing site; not general writing, CMS, backend, or full theme authoring.
 license: MIT
-compatibility: "Requires filesystem and shell access; Zola required for build validation; network needed only for live documentation and external link validation."
 metadata:
+  compatibility: "Requires filesystem and shell access; Zola required for build validation; network needed only for live documentation and external link validation."
   about: "A reusable skill for Zola static-site-generator and Tera template work. Provides debug-build, i18n, site modification/review, minimal site creation, and bounded existing-theme override workflows with version-aware diagnosis and minimal fixes."
   keywords:
     - zola
@@ -84,4 +84,7 @@ default. For a fixture or other safe isolated run, use `--output-dir` with a
 new empty directory. Validate with `zola check --skip-external-links` and
 `zola build`; explain that the former omits external Markdown-link coverage.
 Run a rendered-page smoke check for template changes when the repository makes
-one feasible. Preserve escaping: `safe` is not a generic fix.
+one feasible. Preserve escaping: `safe` is not a generic fix. When an
+authorized edit leaves a focused, validated Git diff, identify it as ready to
+commit and offer that next step; do not infer authorization to commit, push,
+open a pull request, publish, or deploy.
