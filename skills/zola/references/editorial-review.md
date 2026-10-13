@@ -19,6 +19,36 @@ links whose purpose is unclear in surrounding prose. Apply a language, tone,
 voice, SEO formula, rhetorical quota, or shortcode rule only when the target
 repository documents it.
 
+## Optional human-voice pass
+
+Use this pass only when the user explicitly asks for voice or tone feedback and
+the target repository's editorial guidance permits it. First identify the
+draft's observed voice traits worth preserving, such as its register, rhythm,
+punctuation, or genuine warmth. Improve that voice; do not replace it with a
+house style.
+
+Look for clusters rather than isolated wording: unnecessary scene-setting,
+headings or transitions that announce their own significance, emphasis without
+new evidence, invented maxims, inflated moral stakes, exhaustive lists of what
+something is not, precision that does not affect the reader's decision, or
+forced all-or-nothing conclusions. Recommend a more direct statement only
+where it preserves the author's meaning, evidence, and useful distinctions.
+
+Generic documentation-template prose is a concern only when it displaces an
+author's observation, reasoning, or relevant reader context. Direct,
+conventional prose is often the better choice for reference material and fast
+retrieval. Likewise, retain a contrast, measurement, or strong judgment when
+it does factual or argumentative work. Do not treat a single phrase as proof,
+rewrite quoted or titled language, fabricate personality or experience, or
+turn this review into an automatic rewrite or publication gate.
+
+For an article, field note, narrative technical guide, or explainer, also
+consider whether a major transition leaves the reader without context. Suggest
+one or two voice-consistent orienting sentences only when a new section changes
+the reader's task, system layer, risk, or mode of work and the surrounding
+prose does not already make that connection. Do not add connective prose to a
+reference page merely to make it warmer.
+
 ## Related review workflows
 
 - [Modify/review workflow](../workflows/modify-review.md) for the required

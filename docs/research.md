@@ -682,6 +682,24 @@ passed; its commands, source commit, payload assertions, and outcomes are
 recorded in the [release checklist](release-checklist.md). The published result
 is distinct from, rather than inferred from, the local fixture result.
 
+## Human-tone review pattern — CodeSigils/zensical-skill (2026-10-13)
+
+Reviewed the MIT-licensed
+[article-review reference](https://github.com/CodeSigils/zensical-skill/blob/2580e8089c76c4514689c80c2964523255aa200a/zensical/references/article-review.md)
+at commit `2580e80`. It is pattern evidence, not a source of Zola behavior: its
+useful boundary is an explicit, author-led human-tone pass that characterizes
+the draft's existing voice, treats formulaic or generic prose as a
+cluster-level observation, and preserves direct reference prose when fast
+retrieval is the page's purpose.
+
+**Adaptation decision (2026-10-13):** Add this boundary in newly written,
+Zola-specific language to the existing editorial-review reference. Do not copy
+Zensical text or import its generic site/publishing guidance, a de-slop-skill
+dependency, phrase bans, a fixed prose rubric, or automated checks. The change
+needs no Zola-version research and does not alter routing, fixtures, release
+validation, or the source registry; it only improves an already explicit
+article-quality review.
+
 **Distribution-gate decision (2026-09-05):** The Codex/Claude Code clean
 package-install matrix is the authoritative Phase 7 distribution proof because
 it fetches the public source and verifies the full payload in each target host.
