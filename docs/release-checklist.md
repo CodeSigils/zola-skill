@@ -61,6 +61,8 @@ source or the payload being checked.
 - [x] `v1.0.0` is an annotated tag at `6b279b3`, the payload commit validated
   by the 2026-10-13 Codex and Claude Code smoke matrix. It does not have a
   GitHub Release or changelog.
+- [x] `v1.0.1` is an annotated tag at `95f046d`, the compatible human-voice
+  review refinement. It does not have a GitHub Release or changelog.
 
 ## Published-package smoke matrix
 
@@ -127,6 +129,20 @@ the package checks.
 | --- | --- |
 | Codex | Passed from a clean temporary directory: 13 Markdown payload files, including `author-post.md` and `editorial-review.md`, were installed under `.agents/skills/zola`; `skills ls -a codex` listed `zola`. |
 | Claude Code | Passed from a clean temporary directory: 13 Markdown payload files, including `author-post.md` and `editorial-review.md`, were installed under `.claude/skills/zola`; `skills ls -a claude-code` listed `zola`. |
+
+### 2026-10-13 v1.0.1 release validation
+
+Source: `CodeSigils/zola-skill@zola` on `main`, commit `95f046d`, which matches
+the peeled `v1.0.1` tag. Skills CLI: `1.7.2`. The installer selector `@zola`
+names the skill rather than a Git ref, so the matching main/tag commit is the
+evidence that these clean installs contain the immutable release payload. Each
+row also checked for the `Optional human-voice pass` heading in the installed
+editorial-review reference.
+
+| Host | Result |
+| --- | --- |
+| Codex | Passed from a clean temporary directory: 13 Markdown payload files, including `author-post.md` and `editorial-review.md`, were installed under `.agents/skills/zola`; the human-voice reference was present and `skills ls -a codex` listed `zola`. |
+| Claude Code | Passed from a clean temporary directory: 13 Markdown payload files, including `author-post.md` and `editorial-review.md`, were installed under `.claude/skills/zola`; the human-voice reference was present and `skills ls -a claude-code` listed `zola`. |
 
 ## Record
 
