@@ -36,7 +36,8 @@ def main() -> int:
             text=True,
             capture_output=True,
         ).stdout.strip()
-        lines = body.splitlines()
+        normalized_body = body.replace("\\n", "\n")
+        lines = normalized_body.splitlines()
         subject = lines[0].strip() if lines else ""
         if not subject:
             errors.append(f"{commit[:12]}: empty subject")
@@ -45,7 +46,7 @@ def main() -> int:
         elif subject.endswith("."):
             errors.append(f"{commit[:12]}: subject must not end with a period")
 
-        lower = body.lower()
+        lower = normalized_body.lower()
         for field in ("what:", "why:"):
             if field not in lower:
                 errors.append(f"{commit[:12]}: missing {field} field")
