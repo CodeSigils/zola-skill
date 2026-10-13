@@ -21,6 +21,7 @@ remains reproducible. The scenario documents its minimal repair proposal.
 | Prompt | Expected selection result | Expected finding boundary |
 | --- | --- | --- |
 | “Review this Zola article for unsupported claims, inaccurate links, and unclear sentences; do not edit it.” | Match `zola`: explicit article-quality review in an existing Zola site. | Report concrete, evidence-based findings with severity, path, evidence, impact, remediation, and validation; do not impose a language/voice quota or invent sources. |
+| “Give this Zola field note human-voice feedback, but preserve its technical tone and do not edit it.” | Match `zola`: explicit article-quality review in an existing Zola site. | Characterize the observed voice and report clusters of generic or performative prose only when local editorial guidance permits; keep direct reference prose and load-bearing distinctions, and do not impose a house style or phrase ban. |
 
 ## Phase 3 extended debug/build scenarios
 

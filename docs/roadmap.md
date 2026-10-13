@@ -714,7 +714,10 @@ commit-message check, or add a skill self-version.
    review. It evaluates evidence/citation traceability, factual qualification,
    link/source accuracy, readability, and repository-specific editorial rules.
    It does not impose a language, voice, SEO formula, rhetorical-device quota,
-   or a generic custom-shortcode catalog.
+   or a generic custom-shortcode catalog. An explicitly requested human-voice
+   pass preserves the observed voice and reports only clusters of generic or
+   performative prose; direct reference writing, load-bearing distinctions, and
+   authorial judgment remain legitimate.
 4. **Disclosure-aware content model.** Extend the content-model reference only
    when the target repository already has, or the user explicitly requests, an
    authorship or AI-assistance disclosure convention. The workflow records only

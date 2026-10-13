@@ -345,6 +345,12 @@ review, and run the smallest applicable Zola validation. Git commits, pushes,
 pull requests, publishing, and changes outside the authorized repository remain
 separate, explicitly authorized actions.
 
+An explicitly requested human-voice pass is a narrow part of the existing
+editorial review: it preserves the observed voice, reports clusters of generic
+or performative prose only when repository guidance permits the review, and
+keeps direct reference writing where it serves retrieval. It does not create a
+house voice, phrase ban, automatic rewrite, or publication gate.
+
 It must not inherit site-specific voice rules, mandated languages, rhetorical
 quotas, custom shortcode catalogs, author identities, SEO formulas, branch
 names, signoffs, remote repositories, or bootstrap/clone instructions from an
