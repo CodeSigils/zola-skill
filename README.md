@@ -25,7 +25,7 @@ Reviewers treat repeated semantic values—such as versions, runners, paths, and
 SHAs—as possible duplication or drift smells. Centralization is recommended
 only when the values should change together and the trade-off improves clarity.
 
-**Compatibility status:** The current published source (`6b279b3`, checked
+**Compatibility status:** The immutable `v1.0.0` tag (`6b279b3`, checked
 2026-10-13) passed the copied-package smoke matrix for Codex and Claude Code
 with Skills CLI 1.7.2. Hermes external-directory setup is documented but not
 part of the verification matrix.

@@ -18,8 +18,11 @@ checks that cannot be meaningfully run against the local source tree.
    published-package check below.
 4. Do not add a skill self-version, version-consistency gate, or release
    automation at the current maintenance scale.
-5. GitHub Releases and semver tags are not required. Add an immutable tag only
-   when consumers need a stable, machine-addressable release point.
+5. Keep releases event-driven. After a runtime-payload change passes this
+   checklist, create one annotated immutable semver tag: major for a breaking
+   scope/routing removal, minor for a backward-compatible workflow expansion,
+   or patch for a compatible correction. Do not tag documentation-only or
+   CI-only changes. GitHub Releases are not required.
 
 6. Before release, review repeated semantic values (versions, runners, OS
    names, paths, SHAs, ports, and feature flags) as possible duplication/drift
@@ -52,6 +55,12 @@ source or the payload being checked.
   2026-10-13, with concise subjects and non-empty `what:` and `why:` fields.
 - [x] The commit bodies on `main` use `what:`/`why:` and the detailed rationale
   remains in commits and research/decision notes; no `CHANGELOG.md` exists.
+
+## Immutable consumer releases
+
+- [x] `v1.0.0` is an annotated tag at `6b279b3`, the payload commit validated
+  by the 2026-10-13 Codex and Claude Code smoke matrix. It does not have a
+  GitHub Release or changelog.
 
 ## Published-package smoke matrix
 

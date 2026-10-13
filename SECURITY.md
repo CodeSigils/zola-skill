@@ -6,7 +6,8 @@ Report security vulnerabilities via [GitHub Security Advisories](https://github.
 
 ## Supported Versions
 
-Only the latest release on the `main` branch receives security updates.
+Only the latest immutable release tag and the current `main` branch receive
+security updates.
 
 ## Repo-Specific Concerns
 

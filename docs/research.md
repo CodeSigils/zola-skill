@@ -599,10 +599,13 @@ needs independent discovery, different tools, or a large body of guidance.
 
 **Decision (revised 2026-10-13):** Record notable changes in the git commit
 history (`what:`/`why:` commit bodies) while publishing from `main`; do not keep
-a `CHANGELOG.md` and do not require GitHub Releases or semver tags. History and
-per-phase progress live in the git log and `docs/roadmap.md`, not a changelog
-file. Prior `CHANGELOG.md` entries were folded into this model on 2026-10-13.
-`SKILL.md` declares no skill self-version (no top-level `version:`;
+a `CHANGELOG.md`, GitHub Releases, or a calendar release cadence. `v1.0.0` is
+an annotated immutable consumer-release tag for the validated payload at
+`6b279b3`. Create a later semver tag only for a release-worthy runtime-payload
+change after the checklist passes, not for documentation-only or CI-only work.
+History and per-phase progress live in the git log and `docs/roadmap.md`, not a
+changelog file. Prior `CHANGELOG.md` entries were folded into this model on
+2026-10-13. `SKILL.md` declares no skill self-version (no top-level `version:`;
 `metadata.version` stays the pinned Zola tool version, not a skill release).
 
 **Rationale:** The 2026-09-03 skill-repo git-polish survey (study note
@@ -617,7 +620,7 @@ had accepted. The repository therefore uses the conservative
 `metadata.compatibility` shape, while `metadata.version` stays an opaque custom
 key for the pinned Zola tool version.
 
-**Revisit when:** a consumer needs an immutable, machine-readable release point
+**Revisit when:** a release tag fails to provide sufficient consumer stability,
 or the repository grows a multi-maintainer release process.
 
 ## External skill evidence — jim60105/blog `blog-post` (2026-09-05)

@@ -78,7 +78,9 @@ terms are present in the repository. Changes are published from `main` and
 recorded in the git commit history (`what:`/`why:` commit bodies), which the
 commit-message workflow verifies on pull requests and pushes to `main`; this
 repository keeps no `CHANGELOG.md` and does not require GitHub Releases or
-semver tags. `SKILL.md` declares no skill self-version, and
+semver tags on a calendar. The immutable `v1.0.0` tag identifies the first
+consumer release; future tags are event-driven release records, not a cadence.
+`SKILL.md` declares no skill self-version, and
 `metadata.version` is the pinned Zola tool version the skill is validated
 against, not a skill release number.
 

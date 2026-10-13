@@ -81,10 +81,15 @@ full terms are in [`LICENSE`](../LICENSE), and `skills/zola/SKILL.md` declares
 
 Publish changes from `main` and record notable updates in the git commit
 history (`what:`/`why:` commit bodies); do not keep a `CHANGELOG.md` and do not
-require GitHub Releases or semver tags. Do not add a `version` field to
-`SKILL.md` frontmatter. Tags `phase-1`..`phase-5` are historical roadmap
-milestones; the validation runner's pinned Zola version is the tool version the
-skill is validated against and is independent of a skill release identity.
+require GitHub Releases or a calendar release cadence. `v1.0.0` is the first
+immutable consumer-release tag. Create another semver tag only after a payload
+change that has passed the release checklist: increment major for a breaking
+scope/routing removal, minor for a backward-compatible workflow expansion, and
+patch for a compatible correction. Do not tag documentation-only or CI-only
+changes. Do not add a `version` field to `SKILL.md` frontmatter. Tags
+`phase-1`..`phase-5` are historical roadmap milestones; the validation runner's
+pinned Zola version is the tool version the skill is validated against and is
+independent of a skill release identity.
 
 The `Commit messages` workflow checks the commit-message contract on pull
 requests and pushes to `main`. Fixture, structural, and published-package
