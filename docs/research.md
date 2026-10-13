@@ -595,8 +595,11 @@ a distinct trigger or reference corpus.
 **Revisit when:** theme work, deployment, or a publishing pipeline regularly
 needs independent discovery, different tools, or a large body of guidance.
 
-**Decision (revised 2026-09-05):** Record notable changes in `CHANGELOG.md`
-while publishing from `main`; do not require GitHub Releases or semver tags.
+**Decision (revised 2026-10-13):** Record notable changes in the git commit
+history (`what:`/`why:` commit bodies) while publishing from `main`; do not keep
+a `CHANGELOG.md` and do not require GitHub Releases or semver tags. History and
+per-phase progress live in the git log and `docs/roadmap.md`, not a changelog
+file. Prior `CHANGELOG.md` entries were folded into this model on 2026-10-13.
 `SKILL.md` declares no skill self-version (no top-level `version:`;
 `metadata.version` stays the pinned Zola tool version, not a skill release).
 

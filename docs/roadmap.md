@@ -79,8 +79,9 @@ same license (or a reference to it) in `SKILL.md`. The repository uses MIT: the
 full terms are in [`LICENSE`](../LICENSE), and `skills/zola/SKILL.md` declares
 `license: MIT`.
 
-Publish changes from `main` and record notable updates in `CHANGELOG.md`; do
-not require GitHub Releases or semver tags. Do not add a `version` field to
+Publish changes from `main` and record notable updates in the git commit
+history (`what:`/`why:` commit bodies); do not keep a `CHANGELOG.md` and do not
+require GitHub Releases or semver tags. Do not add a `version` field to
 `SKILL.md` frontmatter. Tags `phase-1`..`phase-5` are historical roadmap
 milestones; the validation runner's pinned Zola version is the tool version the
 skill is validated against and is independent of a skill release identity.
@@ -682,7 +683,7 @@ Phase 7 is a completed bounded expansion of the existing `zola` skill, informed 
 inspected `jim60105/blog` `blog-post` skill and the 2026-09-05 skill-repository
 standards study. It adopts reusable workflow shapes, not GPL-3.0 source text
 or site-specific policies. It remains one routed skill with conditional
-resources, changelog-on-main change record, and the existing manual
+resources, commit-history change record, and the existing manual
 validation model; do not create a second publishing skill, add a CI gate stack,
 or add a skill self-version.
 

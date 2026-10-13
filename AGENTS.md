@@ -81,11 +81,12 @@ Run `python3 scripts/check_commit_messages.py HEAD` before handoff. To review a
 batch, pass a range such as `HEAD~5..HEAD`. The checker enforces a concise
 subject plus non-empty `what:` and `why:` fields.
 
-Keep `CHANGELOG.md` curated: record user-visible or maintainer-significant
-changes, group related work under `Unreleased`, and periodically consolidate it
-into release notes. Commit history, research, decisions, and session notes hold
-the detailed implementation and rationale; do not mirror every commit in the
-changelog.
+This repository keeps no `CHANGELOG.md`. The commit history is the canonical
+change record: every commit body carries `what:` and `why:` (see above), so do
+not mirror changes into a separate changelog file. Research and decision logs
+hold the detailed rationale, and `docs/roadmap.md` tracks progress and records
+each completed phase. Do not reintroduce a changelog; when you close a phase,
+update the roadmap status and the affected planning documents instead.
 
 ### Repeated-value heuristic
 

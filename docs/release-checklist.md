@@ -6,8 +6,8 @@ checks that cannot be meaningfully run against the local source tree.
 
 ## Release policy
 
-1. Merge reviewed changes to `main` and record notable user-facing changes in
-   [`CHANGELOG.md`](../CHANGELOG.md).
+1. Merge reviewed changes to `main`; the merge commit body (with `what:` and
+   `why:`) is the change record. This repository keeps no `CHANGELOG.md`.
 2. Before announcing an updated published skill, complete the manual checks in
    this document: run `bash tests/run.sh` with Zola 0.23.4, validate the skill
    with `skills-ref`, and run clean published-package installs for Codex and
@@ -40,13 +40,13 @@ source or the payload being checked.
   reported `Valid skill: skills/zola`.
 - [x] `tests/run.sh` passed with Zola 0.23.4: valid site and non-root URL
   checks passed; the broken-template check and build failed as expected.
-- [x] `CHANGELOG.md` records the published change on `main`; no GitHub Release
-  or semver tag is required. Existing `phase-1`..`phase-5` tags are historical
-  roadmap milestones.
+- [x] The commit history on `main` records published changes via `what:`/`why:`
+  commit bodies; no `CHANGELOG.md`, GitHub Release, or semver tag is required.
+  Existing `phase-1`..`phase-5` tags are historical roadmap milestones.
 - [ ] `python3 scripts/check_commit_messages.py <release-range>` passes, with
   concise subjects and non-empty `what:` and `why:` fields.
-- [ ] `CHANGELOG.md` contains only user-visible or maintainer-significant
-  changes; detailed rationale remains in commits and research/decision notes.
+- [ ] The commit bodies on `main` use `what:`/`why:` and the detailed rationale
+  remains in commits and research/decision notes; no `CHANGELOG.md` exists.
 
 ## Published-package smoke matrix
 

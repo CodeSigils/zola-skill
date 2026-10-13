@@ -14,8 +14,11 @@ The shipped payload is one portable skill directory with no agent-specific
 runtime commands or paths, so it works with any terminal-capable coding agent.
 It is agentskills.io-compatible.
 
-Repository commits follow a checked `what:`/`why:` body policy. The changelog is
-curated and does not duplicate the full commit history.
+Repository commits follow a checked `what:`/`why:` body policy, and the commit
+history is the repository's canonical change record. This repository keeps no
+`CHANGELOG.md`: the git log holds the change history, research and decision
+notes hold detailed rationale, and `docs/roadmap.md` tracks progress and records
+each completed phase.
 
 Reviewers treat repeated semantic values—such as versions, runners, paths, and
 SHAs—as possible duplication or drift smells. Centralization is recommended
@@ -183,7 +186,6 @@ Pair it with a deployment skill for those capabilities.
 ## See Also
 
 - [AGENTS.md](AGENTS.md) — Repository instructions and documentation contract
-- [CHANGELOG.md](CHANGELOG.md) — Version history
 - [Planning Documentation](docs/README.md) — Design source of truth
 - [Skill Specification](skills/zola/SKILL.md) — Runtime skill definition
 - [SECURITY.md](SECURITY.md) — Security policy and reporting

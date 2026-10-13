@@ -27,7 +27,7 @@ not future runtime context for the skill.
 | JavaScript, Rust, WebAssembly, runtime-service, or Zola-core change | [future-capabilities.md](future-capabilities.md), [vision.md](vision.md), [roadmap.md](roadmap.md) |
 | Editorial change to one planning document only                      | The target document and every document whose decision, scope, or link changes                      |
 | Repeated values or centralization                                   | `AGENTS.md`, `vision.md`, `roadmap.md`, `release-checklist.md`                            |
-| Commit or changelog policy                                          | `AGENTS.md`, `README.md`, `release-checklist.md`, `CHANGELOG.md`                           |
+| Commit-message or change-record policy                               | `AGENTS.md`, `README.md`, `release-checklist.md`                                            |
 
 ## Update rules
 
