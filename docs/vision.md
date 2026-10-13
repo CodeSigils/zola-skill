@@ -6,7 +6,7 @@ repository-layout guidance delivered.
 **Audience:** Skill maintainers and contributors  
 **Owner:** Project maintainers  
 **Review cadence:** Before a release, after a Zola upgrade, or every six months  
-**Last reviewed:** 2026-09-06
+**Last reviewed:** 2026-10-13
 
 ## Purpose
 
@@ -75,7 +75,8 @@ metadata may be added only when it does not affect the portable workflow. Do
 not rely on experimental `allowed-tools` metadata for v1. A public release also
 needs an explicit maintainer-selected license; do not declare one until its
 terms are present in the repository. Changes are published from `main` and
-recorded in the git commit history (`what:`/`why:` commit bodies); this
+recorded in the git commit history (`what:`/`why:` commit bodies), which the
+commit-message workflow verifies on pull requests and pushes to `main`; this
 repository keeps no `CHANGELOG.md` and does not require GitHub Releases or
 semver tags. `SKILL.md` declares no skill self-version, and
 `metadata.version` is the pinned Zola tool version the skill is validated

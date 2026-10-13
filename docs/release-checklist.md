@@ -7,7 +7,9 @@ checks that cannot be meaningfully run against the local source tree.
 ## Release policy
 
 1. Merge reviewed changes to `main`; the merge commit body (with `what:` and
-   `why:`) is the change record. This repository keeps no `CHANGELOG.md`.
+   `why:`) is the change record. The `Commit messages` workflow checks this
+   contract on pull requests and pushes to `main`. This repository keeps no
+   `CHANGELOG.md`.
 2. Before announcing an updated published skill, complete the manual checks in
    this document: run `bash tests/run.sh` with Zola 0.23.4, validate the skill
    with `skills-ref`, and run clean published-package installs for Codex and
@@ -23,6 +25,9 @@ checks that cannot be meaningfully run against the local source tree.
    names, paths, SHAs, ports, and feature flags) as possible duplication/drift
    smells. Centralize only when the values should change together and the
    trade-off improves clarity; document intentional copies.
+
+To make the workflow a merge requirement, repository administrators must mark
+the `Commit messages` check as required in `main` branch protection or rulesets.
 
 If the default UV cache is not writable, set `UV_CACHE_DIR` to a writable
 temporary directory for the pinned `skills-ref` command. The cache is local
@@ -43,9 +48,9 @@ source or the payload being checked.
 - [x] The commit history on `main` records published changes via `what:`/`why:`
   commit bodies; no `CHANGELOG.md`, GitHub Release, or semver tag is required.
   Existing `phase-1`..`phase-5` tags are historical roadmap milestones.
-- [ ] `python3 scripts/check_commit_messages.py <release-range>` passes, with
-  concise subjects and non-empty `what:` and `why:` fields.
-- [ ] The commit bodies on `main` use `what:`/`why:` and the detailed rationale
+- [x] `python3 scripts/check_commit_messages.py HEAD~30..HEAD` passed on
+  2026-10-13, with concise subjects and non-empty `what:` and `why:` fields.
+- [x] The commit bodies on `main` use `what:`/`why:` and the detailed rationale
   remains in commits and research/decision notes; no `CHANGELOG.md` exists.
 
 ## Published-package smoke matrix
@@ -102,6 +107,17 @@ the package checks.
 | --- | --- |
 | Codex | Passed from a clean temporary directory: 13 Markdown payload files, including `author-post.md` and `editorial-review.md`, were installed under `.agents/skills/zola`; `skills ls -a codex` listed `zola`. |
 | Claude Code | Pending target-specific verification. In the current Codex host, `skills add --agent claude-code` auto-detected Codex and installed under `.agents/skills/zola`, so this run is not evidence for `.claude/skills/zola`. Re-run the documented row from a Claude Code host before the next release. |
+
+### 2026-10-13 current-main validation
+
+Source: `CodeSigils/zola-skill@zola`, commit `6b279b3`. Skills CLI: `1.7.2`.
+The pinned `skills-ref` validator and `bash tests/run.sh` passed locally before
+the package checks.
+
+| Host | Result |
+| --- | --- |
+| Codex | Passed from a clean temporary directory: 13 Markdown payload files, including `author-post.md` and `editorial-review.md`, were installed under `.agents/skills/zola`; `skills ls -a codex` listed `zola`. |
+| Claude Code | Passed from a clean temporary directory: 13 Markdown payload files, including `author-post.md` and `editorial-review.md`, were installed under `.claude/skills/zola`; `skills ls -a claude-code` listed `zola`. |
 
 ## Record
 

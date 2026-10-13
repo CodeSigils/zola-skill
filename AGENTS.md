@@ -79,7 +79,8 @@ required label with an unlabeled summary.
 
 Run `python3 scripts/check_commit_messages.py HEAD` before handoff. To review a
 batch, pass a range such as `HEAD~5..HEAD`. The checker enforces a concise
-subject plus non-empty `what:` and `why:` fields.
+subject plus non-empty `what:` and `why:` fields; the `Commit messages` GitHub
+Actions workflow applies the same check to pull requests and pushes to `main`.
 
 This repository keeps no `CHANGELOG.md`. The commit history is the canonical
 change record: every commit body carries `what:` and `why:` (see above), so do

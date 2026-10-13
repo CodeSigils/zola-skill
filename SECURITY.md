@@ -33,16 +33,16 @@ The runtime payload is the `skills/zola/` directory containing:
 - 6 workflow markdown files
 - 6 reference markdown files
 
-Total: 13 markdown files, ~150KB. No scripts, no config files, no dependencies. Users copy only `skills/zola/` to their agent's skill directory.
+Total: 13 markdown files, ~60KB. No scripts, no config files, no dependencies. Users copy only `skills/zola/` to their agent's skill directory.
 
 ## Last Reviewed
 
-Last reviewed: 2026-09-06.
+Last reviewed: 2026-10-13.
 
 ## Manual validation
 
-This repository has no CI workflow at present. Before a release, follow the
-manual checks in [docs/release-checklist.md](docs/release-checklist.md):
-validate the skill with `skills-ref`, run `bash tests/run.sh`, and perform the
-published-package smoke matrix. Revisit automation only if the documented
-manual process becomes a demonstrated maintenance bottleneck.
+The commit-message workflow checks the `what:`/`why:` record on pull requests
+and pushes to `main`. Before a release, follow the manual checks in
+[docs/release-checklist.md](docs/release-checklist.md): validate the skill with
+`skills-ref`, run `bash tests/run.sh`, and perform the published-package smoke
+matrix.

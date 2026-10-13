@@ -494,13 +494,15 @@ For a solo skill repo like `zola-skill`, a lightweight CI (skill-ref validate,
 `tests/run.sh`, docs link check) would be at the higher end of ecosystem norms
 but is entirely reasonable given the testing infrastructure already exists.
 
-**Decision:** No CI workflow for v1. The release process is manual and
-documented in the [release checklist](release-checklist.md); the published-
-package smoke tests are the release gate, not an automated pipeline.
+**Decision (revised 2026-10-13):** Use one lightweight CI workflow to check
+the `what:`/`why:` commit-message contract on pull requests and pushes to
+`main`. The release process remains manual and documented in the
+[release checklist](release-checklist.md); fixture, structural, and
+published-package smoke tests remain release checks, not an automated pipeline.
 
-**Revisit when:** the release cadence or contributor count makes manual
-validation a bottleneck, or when a regression is caught by users that the
-existing test suite would have caught.
+**Revisit when:** the release cadence or contributor count makes the remaining
+manual validation a bottleneck, or when a regression is caught by users that
+the existing test suite would have caught.
 
 ## Quality benchmark against strong skill repositories (2026-09-05)
 

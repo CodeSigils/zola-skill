@@ -14,8 +14,9 @@ The shipped payload is one portable skill directory with no agent-specific
 runtime commands or paths, so it works with any terminal-capable coding agent.
 It is agentskills.io-compatible.
 
-Repository commits follow a checked `what:`/`why:` body policy, and the commit
-history is the repository's canonical change record. This repository keeps no
+Repository commits follow a `what:`/`why:` body policy, checked in
+the commit-message workflow, and the commit history is the repository's
+canonical change record. This repository keeps no
 `CHANGELOG.md`: the git log holds the change history, research and decision
 notes hold detailed rationale, and `docs/roadmap.md` tracks progress and records
 each completed phase.
@@ -24,12 +25,10 @@ Reviewers treat repeated semantic values—such as versions, runners, paths, and
 SHAs—as possible duplication or drift smells. Centralization is recommended
 only when the values should change together and the trade-off improves clarity.
 
-**Compatibility status:** Codex is verified through the current
-published-package smoke check. The payload follows Claude Code's documented
-`.claude/skills/<name>/SKILL.md` structure and has historical package evidence,
-but a target-specific Claude Code install still needs to be rerun from a Claude
-Code host. Hermes external-directory setup is documented but not part of the
-verification matrix.
+**Compatibility status:** The current published source (`6b279b3`, checked
+2026-10-13) passed the copied-package smoke matrix for Codex and Claude Code
+with Skills CLI 1.7.2. Hermes external-directory setup is documented but not
+part of the verification matrix.
 
 ---
 

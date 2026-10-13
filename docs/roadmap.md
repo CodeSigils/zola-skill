@@ -3,7 +3,7 @@
 **Status:** Phase 5 complete; Phase 6 remains optional; Phase 7 (opt-in content authoring and repository-layout workflows) is complete
 **Audience:** Skill maintainers and contributors  
 **Owner:** Project maintainers  
-**Last reviewed:** 2026-09-06
+**Last reviewed:** 2026-10-13
 
 This roadmap turns the [vision](vision.md) into a small, demonstrated skill.
 Do not implement advanced guidance merely because it appears in a planning
@@ -85,6 +85,10 @@ require GitHub Releases or semver tags. Do not add a `version` field to
 `SKILL.md` frontmatter. Tags `phase-1`..`phase-5` are historical roadmap
 milestones; the validation runner's pinned Zola version is the tool version the
 skill is validated against and is independent of a skill release identity.
+
+The `Commit messages` workflow checks the commit-message contract on pull
+requests and pushes to `main`. Fixture, structural, and published-package
+validation remain manual release checks.
 
 ## Phase 1 — Debug-build vertical slice
 
@@ -683,9 +687,9 @@ Phase 7 is a completed bounded expansion of the existing `zola` skill, informed 
 inspected `jim60105/blog` `blog-post` skill and the 2026-09-05 skill-repository
 standards study. It adopts reusable workflow shapes, not GPL-3.0 source text
 or site-specific policies. It remains one routed skill with conditional
-resources, commit-history change record, and the existing manual
-validation model; do not create a second publishing skill, add a CI gate stack,
-or add a skill self-version.
+resources, commit-history change record, and manual release validation; do not
+create a second publishing skill, add a CI gate stack beyond the focused
+commit-message check, or add a skill self-version.
 
 ### Scope and sequence
 
