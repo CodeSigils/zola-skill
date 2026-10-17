@@ -182,6 +182,21 @@ Pair it with a deployment skill for those capabilities.
 
 ---
 
+## Maintainer verification
+
+The commit-message workflow checks the commits introduced by a push or pull
+request. To check a local commit or range before handoff:
+
+```bash
+python3 scripts/check_commit_messages.py HEAD
+```
+
+Pass a range such as `HEAD~5..HEAD` to check several commits. See
+[AGENTS.md](AGENTS.md#commit-message-contract) for the message contract and
+[the release checklist](docs/release-checklist.md) for release verification.
+
+---
+
 ## See Also
 
 - [AGENTS.md](AGENTS.md) — Repository instructions and documentation contract
