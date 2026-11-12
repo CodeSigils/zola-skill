@@ -106,7 +106,7 @@ and the condition that requires a fixture upgrade.
 **Fixture version policy (2026-09-02):** fixtures are pinned to Zola `0.23.4`.
 The validation runner accepts only that reported version and uses the local
 binary selected by `ZOLA_BIN` (or `zola`). The implementation binary used for
-the initial evidence is `/home/sand/.local/bin/zola`, SHA-256
+the initial evidence was a local Zola 0.23.4 binary, SHA-256
 `3043f86c7bd2872cd8ac3acd5fa006fea9711fa6b6d51a12f750313aa717e3f1`;
 its intended upstream source is the official
 [v0.23.4 release](https://github.com/getzola/zola/releases/tag/v0.23.4), whose
@@ -502,7 +502,7 @@ see the [release checklist](release-checklist.md) for the commands and outcomes.
 ### Phase 4 close-gate evidence — 2026-09-03
 
 The documentation index and its reading matrix were re-read before closing the
-phase. `ZOLA_BIN=/home/sand/.local/bin/zola tests/run.sh` passed with Zola
+phase. `ZOLA_BIN=<local-zola-binary> tests/run.sh` passed with Zola
 0.23.4: valid, non-root URL, i18n, existing-site modification/review, theme
 override, taxonomy/pagination, unsafe-`safe` review, and creation fixtures
 passed their assertions; the intentionally broken template, configuration,
