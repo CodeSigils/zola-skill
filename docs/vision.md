@@ -207,7 +207,7 @@ full theme authoring requests must not activate automatically.
 
 ### Phase 4 close-gate evidence
 
-- Complete: on 2026-09-03, `ZOLA_BIN=/home/sand/.local/bin/zola tests/run.sh`
+- Complete: on 2026-09-03, `ZOLA_BIN=<local-zola-binary> tests/run.sh`
   passed under Zola 0.23.4. It covered minimal, theme-override, taxonomy/
   pagination, non-root URL, template/front-matter failure, and unsafe-`safe`
   fixtures; intentional failure cases failed as expected.
