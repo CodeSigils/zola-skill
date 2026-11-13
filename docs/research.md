@@ -544,7 +544,7 @@ Sources: [Agent Skills specification](https://agentskills.io/specification),
 The official Claude Code documentation describes skills as directories with a
 required `SKILL.md` containing YAML frontmatter and Markdown instructions. A
 project skill is discovered at `.claude/skills/<skill-name>/SKILL.md`; personal
-skills use `~/.claude/skills/<skill-name>/SKILL.md`. The directory name becomes
+skills use `$HOME/.claude/skills/<skill-name>/SKILL.md`. The directory name becomes
 the slash-command name, while `description` is used for automatic selection.
 Supporting files may sit beside `SKILL.md` and are loaded on demand. Claude
 also supports optional extensions such as invocation controls, dynamic context,
