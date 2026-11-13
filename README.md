@@ -64,7 +64,7 @@ until a hub identifier is published and verified.
 <summary><b>Claude Code</b></summary>
 
 ```bash
-cp -r skills/* ~/.claude/skills/
+cp -r skills/* "$HOME/.claude/skills/"
 ```
 </details>
 
@@ -88,7 +88,7 @@ cp -r skills/* .agents/skills/
 <summary><b>OpenCode</b></summary>
 
 ```bash
-cp -r skills/* ~/.config/opencode/skills/
+cp -r skills/* "$HOME/.config/opencode/skills/"
 ```
 </details>
 
