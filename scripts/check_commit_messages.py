@@ -9,7 +9,7 @@ import sys
 
 def commits(ref: str) -> list[str]:
     result = subprocess.run(
-        ["git", "log", "--format=%H", ref],
+        ["git", "log", "--format=%H", "--no-merges", ref],
         check=True,
         text=True,
         capture_output=True,
@@ -17,12 +17,21 @@ def commits(ref: str) -> list[str]:
     return [line for line in result.stdout.splitlines() if line]
 
 
+def is_merge(commit: str) -> bool:
+    result = subprocess.run(
+        ["git", "rev-list", "--parents", "-n", "1", commit],
+        check=True,
+        text=True,
+        capture_output=True,
+    )
+    return len(result.stdout.strip().split()) > 2
+
+
 def main() -> int:
     refs = sys.argv[1:] or ["HEAD"]
-    hashes: list[str] = ["HEAD"] if refs == ["HEAD"] else []
+    hashes: list[str] = []
     for ref in refs:
-        if ref != "HEAD" or refs != ["HEAD"]:
-            hashes.extend(commits(ref))
+        hashes.extend(commits(ref))
 
     errors: list[str] = []
     seen: set[str] = set()
@@ -30,6 +39,8 @@ def main() -> int:
         if commit in seen:
             continue
         seen.add(commit)
+        if is_merge(commit):
+            continue
         body = subprocess.run(
             ["git", "show", "--quiet", "--format=%B", commit],
             check=True,
