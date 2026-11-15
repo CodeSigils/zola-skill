@@ -597,16 +597,19 @@ a distinct trigger or reference corpus.
 **Revisit when:** theme work, deployment, or a publishing pipeline regularly
 needs independent discovery, different tools, or a large body of guidance.
 
-**Decision (revised 2026-10-13):** Record notable changes in the git commit
-history (`what:`/`why:` commit bodies) while publishing from `main`; do not keep
-a `CHANGELOG.md`, GitHub Releases, or a calendar release cadence. `v1.0.0` is
-an annotated immutable consumer-release tag for the validated payload at
-`6b279b3`. Create a later semver tag only for a release-worthy runtime-payload
-change after the checklist passes, not for documentation-only or CI-only work.
-History and per-phase progress live in the git log and `docs/roadmap.md`, not a
-changelog file. Prior `CHANGELOG.md` entries were folded into this model on
-2026-10-13. `SKILL.md` declares no skill self-version (no top-level `version:`;
-`metadata.version` stays the pinned Zola tool version, not a skill release).
+**Decision (revised 2026-10-13; hybrid distribution clarified 2026-11-15):**
+Record notable changes in the git commit history (`what:`/`why:` commit bodies)
+while publishing from `main`; do not keep a `CHANGELOG.md`, GitHub Releases, or
+a calendar release cadence. `main` is the canonical distribution/install/update
+path. `v1.0.0` (`6b279b3`) and `v1.0.1` (`95f046d`) are historical annotated
+milestone tags for validated payload states; create a later semver tag only as
+an optional milestone/audit marker when a durable reference point is useful
+(reproducibility, consumer pinning/rollback, or a clear validated payload
+boundary) after relevant checks pass—routine docs/CI-only changes generally do
+not need tags. History and per-phase progress live in the git log and
+`docs/roadmap.md`, not a changelog file. `SKILL.md` declares no skill
+self-version (no top-level `version:`; `metadata.version` stays the pinned Zola
+tool version, not a milestone/release identity).
 
 **Rationale:** The 2026-09-03 skill-repo git-polish survey (study note
 `2026-09-05-SYNTHESIS-ecosystem-conform-zola-skill.md`) supports keeping release

@@ -61,8 +61,8 @@ not complete until this documentation gate passes.
   architecture decisions.
 - [future-capabilities.md](future-capabilities.md): explicitly deferred
   capability guidance; not v1 runtime context.
-- [release-checklist.md](release-checklist.md): versioned public-release
-  verification steps; not runtime skill context.
+- [release-checklist.md](release-checklist.md): validation checklist and hybrid
+  milestone-tag policy (optional audit markers); not runtime skill context.
 
 Review time-sensitive material before a release, after a Zola upgrade, or every
 six months.

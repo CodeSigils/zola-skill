@@ -25,10 +25,13 @@ Reviewers treat repeated semantic values—such as versions, runners, paths, and
 SHAs—as possible duplication or drift smells. Centralization is recommended
 only when the values should change together and the trade-off improves clarity.
 
-**Compatibility status:** The immutable `v1.0.0` tag (`6b279b3`, checked
-2026-10-13) passed the copied-package smoke matrix for Codex and Claude Code
-with Skills CLI 1.7.2. Hermes external-directory setup is documented but not
-part of the verification matrix.
+**Distribution:** `main` is the canonical install/update path for this living
+skill payload. Immutable tags are optional milestone/audit markers (not
+required for every change): `v1.0.0` (`6b279b3`, checked 2026-10-13) and
+`v1.0.1` (`95f046d`) record validated payload milestones (including the Codex
+and Claude Code copied-package smoke matrix with Skills CLI 1.7.2 for
+`v1.0.0`). Hermes external-directory setup is documented but not part of the
+verification matrix.
 
 ---
 
