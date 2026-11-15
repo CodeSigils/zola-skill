@@ -32,8 +32,13 @@ accessibility, security, external-link, browser, or deployment claim.
 ## Source boundary
 
 Use the CLI, linking, configuration, and Tera rows in the
-[source registry](source-registry.md). Recheck those official sources when the
-installed Zola version differs from the verified version.
+[source registry](source-registry.md) at point of use. Treat URLs/"Verified
+date" as time-sensitive evidence: recheck when the source is volatile, the
+installed Zola version or target configuration differs, or on explicit request.
+If a source is unavailable or cannot be verified, report the dependent claim as
+*unverified against the current source/target version* with bounded uncertainty
+and do not cache external snippets as fact. Recheck those official sources when
+the installed Zola version differs from the verified version.
 
 ## Related review workflows
 

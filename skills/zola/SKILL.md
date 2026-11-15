@@ -74,10 +74,20 @@ implemented; do not substitute generic advice.
      change:** also read [content-model reference](references/content-model.md).
    - **Tera construct, auto-escaping, or undefined/missing variable** during
      build/render/escaping review: read [Tera template-context reference](references/tera-template-context.md).
-   Consult the matching official entry in [the source registry](references/source-registry.md)
-   before relying on version-sensitive behavior.
+
+   Load only the references/workflows needed for the active task (opt-in,
+   point-of-use). Before relying on version-sensitive behavior or external
+   source-backed claims, consult the matching row in
+   [the source registry](references/source-registry.md) and the current official
+   source it names. Treat registry URLs and "Verified date" values as
+   time-sensitive evidence: recheck when the source is volatile, the installed
+   Zola version or target configuration differs, or on explicit verification;
+   if a source is unavailable or cannot be verified, report the claim as
+   *unverified against the current source/target version* with bounded
+   uncertainty. Do not cache or paraphrase external snippets as current fact.
 5. Report the likely cause, concrete evidence, smallest safe repair, competing
-   hypothesis where relevant, and exact validation commands.
+   hypothesis where relevant, and exact validation commands. State when a
+   version-sensitive or external claim is unverified.
 
 ## Validation rules
 

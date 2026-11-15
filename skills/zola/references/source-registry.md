@@ -1,7 +1,18 @@
 # Official source registry
 
-Consult only the row needed for the active workflow. These sources support the
-implemented Zola workflows; they are not a copied reference manual.
+Consult only the row needed for the active workflow (opt-in, point-of-use).
+These sources support the implemented Zola workflows; they are not a copied
+reference manual.
+
+Treat each URL and "Verified date" as time-sensitive evidence, not proof of
+current behavior. When a task depends on a row, recheck it against the current
+official source (and the installed Zola version / target configuration) if the
+source is volatile, versions/config differ, or verification is requested. If a
+source is unavailable or cannot be verified, report the dependent claim as
+*unverified against the current source/target version* with bounded
+uncertainty. Do not cache or paraphrase external snippets as current fact; keep
+this registry target-generic and update rows only for primary-source route,
+version-sensitive fact, or generic caveat changes.
 
 | URL | Topic | Verified Zola version | Verified date | Caveat |
 | --- | --- | --- | --- | --- |
