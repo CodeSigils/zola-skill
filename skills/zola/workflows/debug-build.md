@@ -20,14 +20,20 @@ site with a build, rendering, template, or configuration failure.
 
 ## Verify and repair
 
-Use the source registry to open the official Zola CLI/configuration page or
-the official Tera documentation that matches the observed construct. When the
-failure is a Tera template/rendering or escaping problem, first read the bounded
+At point of use, consult the matching row in
+[the source registry](../references/source-registry.md) and the current
+official Zola/Tera documentation for the observed construct before relying on
+version-sensitive behavior. Treat registry URLs/"Verified date" as
+time-sensitive evidence (recheck if volatile, version/config differs, or on
+explicit request); if unavailable or unverifiable, report the claim as
+*unverified against the current source/target version* with bounded
+uncertainty and do not cache external snippets as fact. When the failure is a
+Tera template/rendering or escaping problem, first read the bounded
 [Tera template-context reference](../references/tera-template-context.md) to
-interpret the construct. Treat a
-theme or copied snippet as project evidence, not authority. Make the smallest
-change supported by the error and source. Do not add JavaScript, a framework,
-or `| safe` merely to suppress a rendering problem.
+interpret the construct. Treat a theme or copied snippet as project evidence,
+not authority. Make the smallest change supported by the error and source. Do
+not add JavaScript, a framework, or `| safe` merely to suppress a rendering
+problem.
 
 ### Configuration and front matter parser failures
 

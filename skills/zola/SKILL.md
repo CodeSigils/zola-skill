@@ -49,33 +49,45 @@ implemented; do not substitute generic advice.
 3. Run `zola --version` if available. If it is unavailable or differs from the
    fixture version, state that limitation and do not claim unverified
    version-specific behavior.
-4. Read [the creation workflow](workflows/create-site.md) for a new minimal
-   site, [the debug-build workflow](workflows/debug-build.md) for a build or
-   template failure, [the i18n workflow](workflows/i18n.md) for language
-   configuration, translated content, or language-aware URL failures, [the
-   post-authoring workflow](workflows/author-post.md) for an explicit post
-   draft/edit request, or [the
-   modification/review workflow](workflows/modify-review.md) for an existing
-   site's authorized change or review, or [the theme override
-   workflow](workflows/theme-override.md) for one verified existing-theme
-   template override. For an explicitly requested pre-release static-site
-   review, also read [the release-review reference](references/release-review.md).
-   For an accessibility review affecting content, media, templates, generated
-   pages, CSS, or theme overrides, read [the accessibility-review
-   reference](references/accessibility-review.md).
-   For an authorized content-structure, front-matter, route, or co-located
-   asset change, read [the content-model reference](references/content-model.md).
-   For an explicit article-quality review, read [the editorial-review
-   reference](references/editorial-review.md). For an authoring or disclosure
-   change, also read [the content-model reference](references/content-model.md).
-   When interpreting a Tera template construct, its auto-escaping, or an
-   undefined/missing variable during a build, rendering, or escaping review,
-   read [the Tera template-context
-   reference](references/tera-template-context.md). Consult the matching
-   official entry in [the source registry](references/source-registry.md)
-   before relying on version-sensitive behavior.
+4. Route by request and load references conditionally (opt in to only the files
+   needed):
+   - **New minimal site:** [creation workflow](workflows/create-site.md).
+   - **Build/template/config/content failure:** [debug-build workflow](workflows/debug-build.md);
+     for i18n/language/translated-route failures also read [i18n workflow](workflows/i18n.md).
+   - **Existing-site change or review:** [modification/review workflow](workflows/modify-review.md);
+     for one verified existing-theme template override read [theme override workflow](workflows/theme-override.md).
+   - **Substantive post drafting, revision, or article-quality review** in an
+     existing site (editorial work beyond a light metadata/taxonomy/front-matter
+     correction): read [post-authoring workflow](workflows/author-post.md) and
+     [content-model reference](references/content-model.md) before writing or
+     changing prose, and read [editorial-review reference](references/editorial-review.md)
+     before substantive drafting/revision/review. Treat the target repository's
+     editorial rules and the user's instruction as authoritative for voice,
+     claims, and form; this skill supplies mechanics, structure checks, and
+     Zola-aware validation, never invented experience, facts, sources, or house
+     style. A light non-substantive edit may stay scoped to the relevant
+     workflow/reference without a full editorial pass.
+   - **Explicit pre-release static-site review:** also read [release-review reference](references/release-review.md).
+   - **Accessibility review** (content, media, templates, generated pages, CSS,
+     or theme overrides): also read [accessibility-review reference](references/accessibility-review.md).
+   - **Authorized content-structure/front-matter/route/co-located asset/disclosure
+     change:** also read [content-model reference](references/content-model.md).
+   - **Tera construct, auto-escaping, or undefined/missing variable** during
+     build/render/escaping review: read [Tera template-context reference](references/tera-template-context.md).
+
+   Load only the references/workflows needed for the active task (opt-in,
+   point-of-use). Before relying on version-sensitive behavior or external
+   source-backed claims, consult the matching row in
+   [the source registry](references/source-registry.md) and the current official
+   source it names. Treat registry URLs and "Verified date" values as
+   time-sensitive evidence: recheck when the source is volatile, the installed
+   Zola version or target configuration differs, or on explicit verification;
+   if a source is unavailable or cannot be verified, report the claim as
+   *unverified against the current source/target version* with bounded
+   uncertainty. Do not cache or paraphrase external snippets as current fact.
 5. Report the likely cause, concrete evidence, smallest safe repair, competing
-   hypothesis where relevant, and exact validation commands.
+   hypothesis where relevant, and exact validation commands. State when a
+   version-sensitive or external claim is unverified.
 
 ## Validation rules
 
