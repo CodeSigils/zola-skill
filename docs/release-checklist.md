@@ -1,33 +1,38 @@
-# Release Checklist
+# Release & Milestone Validation Checklist
 
-Use this checklist only after the `zola-skill` repository is publicly
-resolvable at its final owner/repository path. It records the Phase 1 release
-checks that cannot be meaningfully run against the local source tree.
+Use this checklist when you need recorded validation evidence for the
+`zola-skill` repository (for example before announcing an updated payload or
+when cutting an optional milestone tag). `main` is the canonical distribution
+and install/update path; immutable tags are optional milestone/audit markers,
+not required for every change.
 
-## Release policy
+## Release and milestone policy (hybrid)
 
-1. Merge reviewed changes to `main`; the merge commit body (with `what:` and
-   `why:`) is the change record. The `Commit messages` workflow checks this
-   contract on pull requests and pushes to `main`. This repository keeps no
-   `CHANGELOG.md`.
-2. Before announcing an updated published skill, complete the manual checks in
-   this document: run `bash tests/run.sh` with Zola 0.23.4, validate the skill
-   with `skills-ref`, and run clean published-package installs for Codex and
-   Claude Code.
-3. Record the source commit, tool versions, commands, and results for each
-   published-package check below.
-4. Do not add a skill self-version, version-consistency gate, or release
-   automation at the current maintenance scale.
-5. Keep releases event-driven. After a runtime-payload change passes this
-   checklist, create one annotated immutable semver tag: major for a breaking
-   scope/routing removal, minor for a backward-compatible workflow expansion,
-   or patch for a compatible correction. Do not tag documentation-only or
-   CI-only changes. GitHub Releases are not required.
-
-6. Before release, review repeated semantic values (versions, runners, OS
-   names, paths, SHAs, ports, and feature flags) as possible duplication/drift
-   smells. Centralize only when the values should change together and the
-   trade-off improves clarity; document intentional copies.
+1. **`main` is canonical.** Merge reviewed changes to `main`; the merge commit
+   body (with `what:` and `why:`) is the change record. The `Commit messages`
+   workflow checks this contract on pull requests and pushes to `main`. This
+   repository keeps no `CHANGELOG.md`.
+2. **Validate as needed.** Before announcing an updated published payload or
+   creating a milestone tag, run the relevant manual checks in this document
+   (for example `bash tests/run.sh` with Zola 0.23.4, `skills-ref` validation,
+   and/or clean published-package installs for Codex and Claude Code) and record
+   source commit, tool versions, commands, and results.
+3. **Tags are optional milestones.** Create an annotated immutable semver tag
+   only when you want a durable reference point for reproducibility/auditability,
+   consumer pinning/rollback, or a clear validated payload boundary. Suggested
+   increments when tagging: major for a breaking scope/routing removal, minor
+   for a backward-compatible workflow expansion, patch for a compatible
+   correction. Do not tag routine docs/CI-only changes unless you intentionally
+   need to pin them. GitHub Releases are not required.
+4. **No release ceremony overhead by default.** Do not add a skill self-version,
+   version-consistency gate, or release automation at the current maintenance
+   scale. Existing tags (`phase-1`..`phase-5`, `v1.0.0`, `v1.0.1`) are historical
+   milestones and remain as-is.
+5. **Before announcing/tagging, review for drift.** Check repeated semantic
+   values (versions, runners, OS names, paths, SHAs, ports, and feature flags)
+   as possible duplication/drift smells. Centralize only when values should
+   change together and the trade-off improves clarity; document intentional
+   copies.
 
 To make the workflow a merge requirement, repository administrators must mark
 the `Commit messages` check as required in `main` branch protection or rulesets.
@@ -56,13 +61,15 @@ source or the payload being checked.
 - [x] The commit bodies on `main` use `what:`/`why:` and the detailed rationale
   remains in commits and research/decision notes; no `CHANGELOG.md` exists.
 
-## Immutable consumer releases
+## Historical milestone tags
 
 - [x] `v1.0.0` is an annotated tag at `6b279b3`, the payload commit validated
   by the 2026-10-13 Codex and Claude Code smoke matrix. It does not have a
-  GitHub Release or changelog.
+  GitHub Release or changelog. (Optional milestone/audit marker; `main` is the
+  canonical install/update path.)
 - [x] `v1.0.1` is an annotated tag at `95f046d`, the compatible human-voice
-  review refinement. It does not have a GitHub Release or changelog.
+  review refinement. It does not have a GitHub Release or changelog. (Optional
+  milestone/audit marker.)
 
 ## Published-package smoke matrix
 

@@ -33,12 +33,14 @@ linter.
 
 ## Runtime distribution contract
 
-`skills/zola/` is the canonical runtime payload. Installed copies are
-distribution artifacts, not a second source of truth. After a runtime-payload
-change, verify or refresh an installed copy only when active-host use or a
-release/install check requires it; otherwise report that a running host session
-may still use an older copy. A source commit does not update installed skills
-or a running host automatically.
+`skills/zola/` on `main` is the canonical runtime payload and supported install/
+update path. Immutable tags are optional milestone/audit markers (for
+reproducibility, consumer pinning/rollback, or a validated payload boundary),
+not required for every change. Installed copies are distribution artifacts, not
+a second source of truth. After a runtime-payload change, verify or refresh an
+installed copy only when active-host use or a milestone/install check requires
+it; otherwise report that a running host session may still use an older copy. A
+source commit does not update installed skills or a running host automatically.
 
 ## Mandatory phase-close documentation gate
 
