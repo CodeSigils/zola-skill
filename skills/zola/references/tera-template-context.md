@@ -1,5 +1,8 @@
 # Bounded Tera template-context interpretation
 
+Apply the [shared inspect-first method](../SKILL.md#shared-inspect-first-method) from `skills/zola/SKILL.md` before using this file; this file is the topic-specific delta.
+
+
 Read this only when diagnosing a Tera template/rendering failure or reviewing
 escaping or undefined-variable behavior in an existing Zola site's templates.
 It supports interpreting the construct actually observed; it does not list

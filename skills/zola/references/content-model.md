@@ -1,5 +1,8 @@
 # Bounded content-model changes
 
+Apply the [shared inspect-first method](../SKILL.md#shared-inspect-first-method) from `skills/zola/SKILL.md` before using this file; this file is the topic-specific delta.
+
+
 Read this only for an authorized existing-site change involving content files,
 front matter, routes, or co-located assets. Preserve the current content model;
 do not use it to introduce a blog, search, feeds, a taxonomy, or a new

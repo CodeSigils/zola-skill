@@ -1,5 +1,8 @@
 # Bounded accessibility review
 
+Apply the [shared inspect-first method](../SKILL.md#shared-inspect-first-method) from `skills/zola/SKILL.md` before using this file; this file is the topic-specific delta.
+
+
 Read this for an accessibility review of an existing Zola site's content,
 templates, generated pages, media, CSS, or theme overrides. It supports
 concrete static findings; it does not establish WCAG conformance, test

@@ -1,5 +1,8 @@
 # Bounded static-site release review
 
+Apply the [shared inspect-first method](../SKILL.md#shared-inspect-first-method) from `skills/zola/SKILL.md` before using this file; this file is the topic-specific delta.
+
+
 Read this only for an explicitly requested pre-release, quality, or release
 review of an existing Zola site. It supports a static build review; it does not
 authorize deployment, promise accessibility compliance, or replace a security
