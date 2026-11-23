@@ -795,7 +795,7 @@ builds passed under Zola 0.23.4.
 
 ## Shared inspect-first routing contract (implemented 2026-11-23)
 
-**Status:** Implemented in working tree (not yet committed/tagged)
+**Status:** Implemented on `main` (PR #13, merge `26e6e3a`; contract hardening follow-up in working tree)
 **Owner:** Maintainers
 **Last reviewed:** 2026-11-23
 
@@ -812,7 +812,9 @@ Zola-specific workflows/references.
   remains a point-of-use evidence registry and is excluded.
 - Deterministic guard: `skills/zola/scripts/check_runtime_contract.py` with
   `--self-test`; CI runs self-test and contract check via
-  `.github/workflows/validate.yml`.
+  `.github/workflows/validate.yml`. The guard is structural (anchor/boundary
+  markers, routed-link presence/placement, explicit delta marker, no duplicate
+  canonical heading) and intentionally not behavioral proof.
 - Behavioral evidence: `docs/evals/shared-inspect-first-routing.md` provides
   manual positive/boundary scenarios (not CI/runtime assertions).
 - Docs sync: `AGENTS.md`, `README.md`, `docs/README.md`, `SECURITY.md`,
@@ -846,3 +848,14 @@ remains bounded evidence. Before publishing this payload shape, update the
 release-checklist smoke matrix/counts for 14 payload files (13 markdown + 1
 Python script) and treat runtime contract self-test/check as pre-publish hard
 gates. No commit/push/PR/publish/deploy inferred.
+
+### Maintenance pitfalls / scalability notes
+
+- **Router scalability:** Acceptable now. If routing grows, split routing into a
+  clearly labeled subsection/table in `SKILL.md`, keeping the
+  `## Shared inspect-first method` anchor and semantics stable.
+- **Delta, not duplication:** Routed workflows/references must remain
+  topic-specific deltas; do not restate canonical method steps/boundaries.
+- **Guard scope:** Keep deterministic guard modular/structural. Add checks only
+  for observed, stable, low-false-positive drift patterns; use evals and
+  `tests/run.sh` for behavioral confidence.
