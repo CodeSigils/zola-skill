@@ -1,0 +1,22 @@
+name: Validate
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  payload-checks:
+    name: Payload contract checks
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Runtime contract self-test
+        run: python3 skills/zola/scripts/check_runtime_contract.py --self-test
+
+      - name: Runtime contract check
+        run: python3 skills/zola/scripts/check_runtime_contract.py

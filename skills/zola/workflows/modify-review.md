@@ -1,5 +1,8 @@
 # Modify or review an existing Zola site
 
+Apply the [shared inspect-first method](../SKILL.md#shared-inspect-first-method) from `skills/zola/SKILL.md` before using this file; this file is the topic-specific delta.
+
+
 Use this workflow for a small authorized content/template/configuration change
 to an existing Zola site, or a review of one. Do not use it to create a site,
 choose a theme, or redesign a project.

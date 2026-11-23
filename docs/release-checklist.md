@@ -79,26 +79,41 @@ the temporary directory may then be removed safely. `skills.sh` documents
 `codex` and `claude-code` as the corresponding agent identifiers and installs
 project-scoped skills under `.agents/skills/` and `.claude/skills/`.
 
+**Current payload shape (shared inspect-first routing contract):** 14 files —
+`SKILL.md`, 6 workflows, 6 references, and
+`scripts/check_runtime_contract.py`. Before publishing a package that includes
+this shape, use the matrix below and treat runtime contract checks as hard
+gates.
+
 | Host | Install and verify | Pass condition |
 | --- | --- | --- |
-| Codex | `release_dir="$(mktemp -d)" && cd "$release_dir" && npx skills add CodeSigils/zola-skill@zola --agent codex --copy --yes && test "$(find .agents/skills/zola -type f -name '*.md' | wc -l)" -eq 13 && test -f .agents/skills/zola/workflows/author-post.md && test -f .agents/skills/zola/references/editorial-review.md && npx skills ls -a codex` | The installed `zola` skill is listed and all thirteen payload files exist. |
-| Claude Code | `release_dir="$(mktemp -d)" && cd "$release_dir" && npx skills add CodeSigils/zola-skill@zola --agent claude-code --copy --yes && test "$(find .claude/skills/zola -type f -name '*.md' | wc -l)" -eq 13 && test -f .claude/skills/zola/workflows/author-post.md && test -f .claude/skills/zola/references/editorial-review.md && npx skills ls -a claude-code` | The installed `zola` skill is listed and all thirteen payload files exist. |
+| Codex | `release_dir="$(mktemp -d)" && cd "$release_dir" && npx skills add CodeSigils/zola-skill@zola --agent codex --copy --yes && test "$(find .agents/skills/zola -type f -name '*.md' | wc -l)" -eq 13 && test "$(find .agents/skills/zola -type f | wc -l)" -eq 14 && test -f .agents/skills/zola/workflows/author-post.md && test -f .agents/skills/zola/references/editorial-review.md && test -f .agents/skills/zola/scripts/check_runtime_contract.py && python3 .agents/skills/zola/scripts/check_runtime_contract.py --self-test && python3 .agents/skills/zola/scripts/check_runtime_contract.py && npx skills ls -a codex` | The installed `zola` skill is listed, all 14 payload files exist (13 markdown + 1 runtime contract script), and runtime contract self-test/check pass. |
+| Claude Code | `release_dir="$(mktemp -d)" && cd "$release_dir" && npx skills add CodeSigils/zola-skill@zola --agent claude-code --copy --yes && test "$(find .claude/skills/zola -type f -name '*.md' | wc -l)" -eq 13 && test "$(find .claude/skills/zola -type f | wc -l)" -eq 14 && test -f .claude/skills/zola/workflows/author-post.md && test -f .claude/skills/zola/references/editorial-review.md && test -f .claude/skills/zola/scripts/check_runtime_contract.py && python3 .claude/skills/zola/scripts/check_runtime_contract.py --self-test && python3 .claude/skills/zola/scripts/check_runtime_contract.py && npx skills ls -a claude-code` | The installed `zola` skill is listed, all 14 payload files exist (13 markdown + 1 runtime contract script), and runtime contract self-test/check pass. |
 
 After recording each result, remove the exact temporary directory created for
 that row, for example `rm -rf "$release_dir"`. Do not run the command from a
 working repository and do not use a global install: the intent is a clean,
 project-scoped published-package check.
 
-### Phase 7 package additions
+### Runtime contract additions
+
+For releases that include the shared inspect-first routing contract, the
+published-package smoke matrix above is the pre-publish hard gate: it verifies
+the script is present, total payload count is 14, and
+`check_runtime_contract.py --self-test`/contract check pass in the installed
+copy. Historical validation records below may reflect the previous 13-markdown
+payload shape; do not treat them as evidence for a contract-script release.
+
+## Phase 7 package additions
 
 For the Phase 7 release candidate, extend each matching matrix command with
 the host-specific checks for `workflows/author-post.md` and
-`references/editorial-review.md`, and require all thirteen payload files
-(`SKILL.md`, six workflows, and six references). This reproducible package
-install is the release gate. A live skills.sh file-tree check is supplemental
-only: the unauthenticated file-snapshot endpoint may be unavailable. This check
-cannot run against an uncommitted local payload. The current matrix above
-already includes these Phase 7 assertions.
+`references/editorial-review.md`, and require all thirteen markdown payload
+files (`SKILL.md`, six workflows, and six references). This reproducible
+package install is the release gate. A live skills.sh file-tree check is
+supplemental only: the unauthenticated file-snapshot endpoint may be
+unavailable. This check cannot run against an uncommitted local payload. The
+current matrix above already includes these Phase 7 assertions.
 
 ### 2026-09-05 Phase 7 published-package results
 

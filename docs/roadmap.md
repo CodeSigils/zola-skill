@@ -792,3 +792,57 @@ page. The layout test combined `.gitmodules` evidence with a dangling `content`
 symlink; Zola built zero content pages, confirming that repository layout must
 be diagnosed before generator behavior is blamed. All three checks and isolated
 builds passed under Zola 0.23.4.
+
+## Shared inspect-first routing contract (implemented 2026-11-23)
+
+**Status:** Implemented in working tree (not yet committed/tagged)
+**Owner:** Maintainers
+**Last reviewed:** 2026-11-23
+
+Apply C-036 as a bounded Zola maintenance contract: make the shared inspect-first
+method canonical, enforceable, and behaviorally evidenced without flattening
+Zola-specific workflows/references.
+
+### Scope
+
+- Canonical owner: `skills/zola/SKILL.md## Shared inspect-first method`.
+- Routed deltas: all 6 workflows and 5 references carry the exact
+  `[shared inspect-first method](../SKILL.md#shared-inspect-first-method)` link
+  and a topic-specific delta note; `skills/zola/references/source-registry.md`
+  remains a point-of-use evidence registry and is excluded.
+- Deterministic guard: `skills/zola/scripts/check_runtime_contract.py` with
+  `--self-test`; CI runs self-test and contract check via
+  `.github/workflows/validate.yml`.
+- Behavioral evidence: `docs/evals/shared-inspect-first-routing.md` provides
+  manual positive/boundary scenarios (not CI/runtime assertions).
+- Docs sync: `AGENTS.md`, `README.md`, `docs/README.md`, `SECURITY.md`,
+  `docs/release-checklist.md`, and this roadmap reviewed/updated for the contract.
+
+### Zola boundary (canonical)
+
+The contract preserves Zola-specific validation boundaries: no `--force` by
+default; use an isolated `--output-dir` for safe validation runs; use
+`zola check --skip-external-links` and `zola build` as appropriate; explain the
+external-link caveat; add a rendered smoke check when feasible; preserve
+escaping/quoting; never infer commit, push, pull request, publish, or deploy
+authorization. A clean local `zola check`/`zola build` verifies generation,
+rendered inspection verifies affected presentation, and neither verifies
+publication, deployment, hosting, or CDN behavior.
+
+### Validation evidence
+
+- `python3 skills/zola/scripts/check_runtime_contract.py --self-test` — PASS (2026-11-23).
+- `python3 skills/zola/scripts/check_runtime_contract.py` — PASS (2026-11-23).
+- `python3 -m py_compile skills/zola/scripts/check_runtime_contract.py` — PASS (2026-11-23).
+- `bash tests/run.sh` — PASS (Zola 0.23.4, 2026-11-23).
+- `git diff --check` — PASS (2026-11-23).
+
+### Phase-close / handoff note
+
+This is a bounded contract/maintenance change, not a roadmap phase completion.
+Structural contract checks prove structure/markers, not behavioral routing;
+`docs/evals/shared-inspect-first-routing.md` is a manual review aid and C-036
+remains bounded evidence. Before publishing this payload shape, update the
+release-checklist smoke matrix/counts for 14 payload files (13 markdown + 1
+Python script) and treat runtime contract self-test/check as pre-publish hard
+gates. No commit/push/PR/publish/deploy inferred.

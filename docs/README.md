@@ -9,7 +9,11 @@ references for existing-site work; see [roadmap.md](roadmap.md). Phase 6
 (optional capabilities) remains open. Phase 7 is complete: opt-in content
 authoring and repository-layout workflows passed local and published-package
 validation. They are inspired by, but not copied from, the reviewed `blog-post`
-skill. Planning documents are maintainer context,
+skill. The runtime payload now includes a C-036-style shared inspect-first
+contract: `skills/zola/SKILL.md` is the canonical owner, routed
+workflows/references carry delta links, `skills/zola/scripts/check_runtime_contract.py`
+is the deterministic guard, and `docs/evals/shared-inspect-first-routing.md`
+records manual behavioral scenarios. Planning documents are maintainer context,
 not future runtime context for the skill.
 
 ## Reading matrix
@@ -63,6 +67,9 @@ not complete until this documentation gate passes.
   capability guidance; not v1 runtime context.
 - [release-checklist.md](release-checklist.md): validation checklist and hybrid
   milestone-tag policy (optional audit markers); not runtime skill context.
+- [evals/shared-inspect-first-routing.md](evals/shared-inspect-first-routing.md):
+  manual behavioral review scenarios for the shared inspect-first routing
+  contract; not CI/runtime assertions.
 
 Review time-sensitive material before a release, after a Zola upgrade, or every
 six months.

@@ -1,5 +1,8 @@
 # Bounded article-quality review
 
+Apply the [shared inspect-first method](../SKILL.md#shared-inspect-first-method) from `skills/zola/SKILL.md` before using this file; this file is the topic-specific delta.
+
+
 Read this for explicit article-quality review and for substantive drafting or
 revision in an existing Zola site. Apply it as a portable suggestion pass, not
 a house style, SEO formula, or publication gate. Read and follow the target
