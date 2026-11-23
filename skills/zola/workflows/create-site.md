@@ -1,5 +1,8 @@
 # Create a minimal Zola site
 
+Apply the [shared inspect-first method](../SKILL.md#shared-inspect-first-method) from `skills/zola/SKILL.md` before using this file; this file is the topic-specific delta.
+
+
 Use this workflow only when the user asks to create a new Zola site and has
 identified a target directory. It creates a small static starting point, not a
 theme, deployment pipeline, frontend application, or content-management system.

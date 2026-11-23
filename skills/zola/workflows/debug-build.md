@@ -1,5 +1,8 @@
 # Debug a Zola build or template failure
 
+Apply the [shared inspect-first method](../SKILL.md#shared-inspect-first-method) from `skills/zola/SKILL.md` before using this file; this file is the topic-specific delta.
+
+
 Use this workflow after the Zola skill has been selected for an existing local
 site with a build, rendering, template, or configuration failure.
 

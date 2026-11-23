@@ -1,5 +1,8 @@
 # Override one existing Zola theme template
 
+Apply the [shared inspect-first method](../SKILL.md#shared-inspect-first-method) from `skills/zola/SKILL.md` before using this file; this file is the topic-specific delta.
+
+
 Use this workflow for an authorized, bounded override of a template block in a
 theme already configured in a local Zola site, or for a review of that
 relationship. Do not use it to select or install a third-party theme, copy a

@@ -1,5 +1,8 @@
 # Bounded post authoring
 
+Apply the [shared inspect-first method](../SKILL.md#shared-inspect-first-method) from `skills/zola/SKILL.md` before using this file; this file is the topic-specific delta.
+
+
 Read this only for an explicit request to draft, edit, or prepare a post in an
 existing Zola repository. It is not a general writing, CMS, SEO, or publishing
 workflow.
