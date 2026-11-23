@@ -1,16 +1,18 @@
 #!/usr/bin/env python3
 """Deterministic contract checks for the Zola runtime payload.
 
-The check encodes the shared inspect-first routing contract:
+The check encodes the shared inspect-first routing contract as a structural,
+deterministic guard (not behavioral proof):
 
 - ``skills/zola/SKILL.md`` owns the canonical shared inspect-first method.
 - Routed workflows and references (all ``skills/zola/workflows/*.md`` and
   ``skills/zola/references/*.md`` except ``source-registry.md``) link to that
   anchor and act as topic-specific deltas.
+- Routed deltas keep the shared-method link near the top, include an explicit
+  delta marker, and do not redefine the canonical method heading.
 - The shared method states the Zola validation boundary explicitly.
 
-Run ``--self-test`` to verify the guard rejects a missing link and missing
-boundary markers before trusting the repository-level result.
+Run ``--self-test`` to verify guard behavior before trusting repository results.
 """
 
 from __future__ import annotations
@@ -24,11 +26,13 @@ from pathlib import Path
 ANCHOR = "#shared-inspect-first-method"
 SHARED_METHOD_LINK = f"[shared inspect-first method](../SKILL.md{ANCHOR})"
 SHARED_METHOD_HEADING = "## Shared inspect-first method"
+DELTA_MARKER = "topic-specific delta"
 VALIDATION_BOUNDARY_MARKERS = (
     "zola check --skip-external-links",
     "zola build",
     "neither verifies publication, deployment, hosting, or CDN behavior",
 )
+LINK_PLACEMENT_LIMIT = 8
 
 
 def repo_root() -> Path:
@@ -76,10 +80,27 @@ def check_contract(root: Path) -> list[str]:
         return errors
 
     for path in routed_paths:
+        rel = path.relative_to(root)
         text = path.read_text(encoding="utf-8")
         if SHARED_METHOD_LINK not in text:
+            errors.append(f"{rel} must link to {SHARED_METHOD_LINK}")
+            continue
+
+        lines = text.splitlines()
+        link_lines = [idx for idx, line in enumerate(lines, start=1) if SHARED_METHOD_LINK in line]
+        if not link_lines or link_lines[0] > LINK_PLACEMENT_LIMIT:
             errors.append(
-                f"{path.relative_to(root)} must link to {SHARED_METHOD_LINK}"
+                f"{rel} must place {SHARED_METHOD_LINK} within first {LINK_PLACEMENT_LIMIT} lines"
+            )
+
+        if DELTA_MARKER not in text.lower():
+            errors.append(
+                f"{rel} must include an explicit delta marker containing {DELTA_MARKER!r}"
+            )
+
+        if SHARED_METHOD_HEADING in text:
+            errors.append(
+                f"{rel} must not redefine canonical heading {SHARED_METHOD_HEADING!r}; keep it as a routed delta"
             )
 
     return errors
@@ -90,6 +111,9 @@ def write_contract_fixture(
     *,
     include_ref_link: bool,
     include_boundary_markers: bool,
+    link_at_top: bool = True,
+    include_delta_marker: bool = True,
+    include_duplicate_heading: bool = False,
 ) -> None:
     runtime = runtime_root(root)
     workflows = runtime / "workflows"
@@ -122,13 +146,20 @@ def write_contract_fixture(
         encoding="utf-8",
     )
 
-    ref_prefix = (
-        f"Apply the {SHARED_METHOD_LINK} before this workflow; this file is the debug delta.\n\n"
-        if include_ref_link
-        else ""
+    delta = "topic-specific delta" if include_delta_marker else "supporting notes"
+    ref_line = (
+        f"Apply the {SHARED_METHOD_LINK} before this workflow; this file is the {delta}.\n\n"
     )
+    top = ref_line if include_ref_link and link_at_top else ""
+    bottom = "" if (not include_ref_link or link_at_top) else ref_line
+    duplicate_heading = f"{SHARED_METHOD_HEADING}\n\n" if include_duplicate_heading else ""
     (workflows / "debug-build.md").write_text(
-        ref_prefix + "# Debug build\n", encoding="utf-8"
+        top
+        + "# Debug build\n\n"
+        + duplicate_heading
+        + ("intro\n\n" * 8 if not link_at_top else "")
+        + bottom,
+        encoding="utf-8",
     )
     (references / "source-registry.md").write_text(
         "# Source registry\n", encoding="utf-8"
@@ -155,6 +186,42 @@ def run_self_test() -> list[str]:
         missing_boundary_errors = check_contract(root)
         if not any("validation boundary marker" in error for error in missing_boundary_errors):
             errors.append("self-test expected missing validation boundary marker to fail")
+
+    with tempfile.TemporaryDirectory() as tmp:
+        root = Path(tmp)
+        write_contract_fixture(
+            root,
+            include_ref_link=True,
+            include_boundary_markers=True,
+            link_at_top=False,
+        )
+        placement_errors = check_contract(root)
+        if not any("within first" in error for error in placement_errors):
+            errors.append("self-test expected late shared-method link to fail")
+
+    with tempfile.TemporaryDirectory() as tmp:
+        root = Path(tmp)
+        write_contract_fixture(
+            root,
+            include_ref_link=True,
+            include_boundary_markers=True,
+            include_delta_marker=False,
+        )
+        delta_errors = check_contract(root)
+        if not any("delta marker" in error for error in delta_errors):
+            errors.append("self-test expected missing delta marker to fail")
+
+    with tempfile.TemporaryDirectory() as tmp:
+        root = Path(tmp)
+        write_contract_fixture(
+            root,
+            include_ref_link=True,
+            include_boundary_markers=True,
+            include_duplicate_heading=True,
+        )
+        heading_errors = check_contract(root)
+        if not any("must not redefine canonical heading" in error for error in heading_errors):
+            errors.append("self-test expected duplicate canonical heading to fail")
 
     with tempfile.TemporaryDirectory() as tmp:
         root = Path(tmp)
