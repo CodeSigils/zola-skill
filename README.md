@@ -152,9 +152,11 @@ What users receive:
 - agentskills.io `name` and `description` frontmatter in the skill;
 - inline workflow routing with no deferred rule files;
 - version-aware diagnosis based on Zola source registry; and
-- deterministic runtime contract checks for the shared inspect-first routing
-  method (`skills/zola/scripts/check_runtime_contract.py`), plus repository
-  maintainer validation outside the installed runtime payload; and
+- deterministic structural runtime contract checks for the shared inspect-first
+  routing method (`skills/zola/scripts/check_runtime_contract.py`: anchor/boundary
+  markers, routed-link placement, explicit delta marker, no duplicate canonical
+  heading), plus repository maintainer validation outside the installed runtime
+  payload; and
 - no runtime dependencies, test fixtures, or generated output.
 
 Copy the complete `skills/` directory to preserve workflow and reference discovery.
@@ -202,7 +204,8 @@ python3 scripts/check_commit_messages.py HEAD
 ```
 
 `docs/evals/shared-inspect-first-routing.md` contains manual behavioral review
-scenarios; structural contract checks do not replace them. Pass a commit range
+scenarios; structural contract checks do not replace them. Keep the guard
+modular/structural; do not turn it into semantic/behavior lint. Pass a commit range
 such as `HEAD~5..HEAD` to check several commits. See
 [AGENTS.md](AGENTS.md#commit-message-contract) for the message contract and
 [the release checklist](docs/release-checklist.md) for release verification.

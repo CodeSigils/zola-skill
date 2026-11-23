@@ -33,9 +33,17 @@ linter.
 
 ## Runtime shared inspect-first contract
 
-`skills/zola/SKILL.md` owns the canonical [Shared inspect-first method](skills/zola/SKILL.md#shared-inspect-first-method). Routed workflow and reference files under `skills/zola/workflows/` and `skills/zola/references/` are topic-specific deltas: they must keep the exact shared-method link and must not duplicate or replace the canonical method, its authorization boundary, or its Zola validation boundary. `skills/zola/references/source-registry.md` is a point-of-use evidence registry, not a routed workflow/reference delta, and is excluded from the shared-method link requirement.
+`skills/zola/SKILL.md` owns the canonical [Shared inspect-first method](skills/zola/SKILL.md#shared-inspect-first-method). Routed workflow and reference files under `skills/zola/workflows/` and `skills/zola/references/` are topic-specific deltas: they must keep the exact shared-method link near the top, include an explicit topic-specific-delta marker, and must not duplicate or redefine the canonical method, its authorization boundary, or its Zola validation boundary. `skills/zola/references/source-registry.md` is a point-of-use evidence registry, not a routed workflow/reference delta, and is excluded from the shared-method link requirement.
 
-`skills/zola/scripts/check_runtime_contract.py` is the deterministic runtime contract guard. Before handoff for runtime-routing or contract changes, run `python3 skills/zola/scripts/check_runtime_contract.py --self-test` and `python3 skills/zola/scripts/check_runtime_contract.py`. Structural contract checks do not replace behavioral evidence: `docs/evals/shared-inspect-first-routing.md` provides manual positive/boundary review scenarios, and `tests/run.sh` remains the Zola fixture/scenario validation.
+`skills/zola/scripts/check_runtime_contract.py` is the deterministic runtime contract guard (structural, not behavioral). It checks SKILL anchor/boundary markers and routed-delta link presence/placement, delta marker, and no duplicate canonical heading. Before handoff for runtime-routing or contract changes, run `python3 skills/zola/scripts/check_runtime_contract.py --self-test` and `python3 skills/zola/scripts/check_runtime_contract.py`. Structural contract checks do not replace behavioral evidence: `docs/evals/shared-inspect-first-routing.md` provides manual positive/boundary review scenarios, and `tests/run.sh` remains the Zola fixture/scenario validation.
+
+**Router scalability:** Acceptable now. If routing grows, inform the maintainer and split routing into a clearly labeled subsection/table while keeping the canonical method anchor and semantics stable.
+
+**Delta, not duplication (pitfall):** Do not restate SKILL step 5 or the full inspect-first method in workflows/references. Keep only topic-specific caveats/checks; point to the canonical method. Duplication creates drift and false confidence.
+
+**Guard scope recommendation:** Keep the deterministic guard modular and structural (fast, low false-positive checks such as anchor/markers/link placement/delta marker/no duplicate heading/inventory). Do not make it a semantic/behavior linter. Use `docs/evals/shared-inspect-first-routing.md` and `tests/run.sh` for behavioral confidence; add new guard checks only when a drift pattern is observed, stable, and cheap to validate.
+
+**Anchor stability:** Treat `## Shared inspect-first method` and its `#shared-inspect-first-method` anchor as contract-stable API. Renaming either requires synchronized updates to the guard, routed deltas, evals, and guidance docs; avoid churn unless the method semantics change.
 
 ## Runtime distribution contract
 
