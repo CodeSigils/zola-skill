@@ -8,7 +8,7 @@
 
 Load `zola` when you need to diagnose build failures, configure a multilingual site,
 review or modify an existing Zola/Tera project, or create a minimal site from scratch.
-It routes to the appropriate workflow and reference documentation automatically.
+It begins with the canonical [Shared inspect-first method](skills/zola/SKILL.md#shared-inspect-first-method): confirm scope/authority, inspect the target Zola repo, frame one affected outcome, load one conditional workflow/reference delta with point-of-use source-registry evidence, then make the smallest coherent change and validate with Zola-appropriate boundaries. Routed workflows and references are topic-specific deltas, not replacements for inspection or delivery boundaries.
 
 The shipped payload is one portable skill directory with no agent-specific
 runtime commands or paths, so it works with any terminal-capable coding agent.
@@ -128,7 +128,9 @@ workflows, and reference documents.
 ```text
 skills/
 └── zola/
-    ├── SKILL.md                         # skill router and workflow routing
+    ├── SKILL.md                         # canonical shared inspect-first method + routing
+    ├── scripts/
+    │   └── check_runtime_contract.py    # deterministic runtime contract guard
     ├── workflows/
     │   ├── author-post.md               # explicit existing-site post authoring
     │   ├── create-site.md               # minimal site creation
@@ -137,7 +139,7 @@ skills/
     │   ├── modify-review.md             # existing-site modification/review
     │   └── theme-override.md            # bounded existing-theme override
     └── references/
-        ├── source-registry.md           # official source versions
+        ├── source-registry.md           # point-of-use official source registry
         ├── release-review.md            # pre-release static-site review
         ├── accessibility-review.md      # template accessibility review
         ├── content-model.md             # content structure and front-matter
@@ -150,8 +152,10 @@ What users receive:
 - agentskills.io `name` and `description` frontmatter in the skill;
 - inline workflow routing with no deferred rule files;
 - version-aware diagnosis based on Zola source registry; and
-- no runtime scripts, configuration files, dependencies, test fixtures, or
-  maintainer-only validation tooling.
+- deterministic runtime contract checks for the shared inspect-first routing
+  method (`skills/zola/scripts/check_runtime_contract.py`), plus repository
+  maintainer validation outside the installed runtime payload; and
+- no runtime dependencies, test fixtures, or generated output.
 
 Copy the complete `skills/` directory to preserve workflow and reference discovery.
 Everything outside it is repository-only development infrastructure.
@@ -188,13 +192,18 @@ Pair it with a deployment skill for those capabilities.
 ## Maintainer verification
 
 The commit-message workflow checks the commits introduced by a push or pull
-request. To check a local commit or range before handoff:
+request. For runtime routing/contract changes, also run the deterministic
+shared inspect-first contract guard:
 
 ```bash
+python3 skills/zola/scripts/check_runtime_contract.py --self-test
+python3 skills/zola/scripts/check_runtime_contract.py
 python3 scripts/check_commit_messages.py HEAD
 ```
 
-Pass a range such as `HEAD~5..HEAD` to check several commits. See
+`docs/evals/shared-inspect-first-routing.md` contains manual behavioral review
+scenarios; structural contract checks do not replace them. Pass a commit range
+such as `HEAD~5..HEAD` to check several commits. See
 [AGENTS.md](AGENTS.md#commit-message-contract) for the message contract and
 [the release checklist](docs/release-checklist.md) for release verification.
 

@@ -31,10 +31,13 @@ This repo does **not** contain:
 
 The runtime payload is the `skills/zola/` directory containing:
 - 1 SKILL.md frontmatter + markdown body
+- 1 deterministic runtime contract script (`scripts/check_runtime_contract.py`)
 - 6 workflow markdown files
 - 6 reference markdown files
 
-Total: 13 markdown files, ~60KB. No scripts, no config files, no dependencies. Users copy only `skills/zola/` to their agent's skill directory.
+Total: 14 files (13 markdown files plus 1 Python script). No runtime
+dependencies, config files, or generated output. Users copy only `skills/zola/`
+to their agent's skill directory.
 
 ## Last Reviewed
 

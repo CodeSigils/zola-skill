@@ -31,6 +31,12 @@ recheck volatile or decision-critical external facts at the point of use. This
 is a focused manual freshness review, not a recurring audit or documentation
 linter.
 
+## Runtime shared inspect-first contract
+
+`skills/zola/SKILL.md` owns the canonical [Shared inspect-first method](skills/zola/SKILL.md#shared-inspect-first-method). Routed workflow and reference files under `skills/zola/workflows/` and `skills/zola/references/` are topic-specific deltas: they must keep the exact shared-method link and must not duplicate or replace the canonical method, its authorization boundary, or its Zola validation boundary. `skills/zola/references/source-registry.md` is a point-of-use evidence registry, not a routed workflow/reference delta, and is excluded from the shared-method link requirement.
+
+`skills/zola/scripts/check_runtime_contract.py` is the deterministic runtime contract guard. Before handoff for runtime-routing or contract changes, run `python3 skills/zola/scripts/check_runtime_contract.py --self-test` and `python3 skills/zola/scripts/check_runtime_contract.py`. Structural contract checks do not replace behavioral evidence: `docs/evals/shared-inspect-first-routing.md` provides manual positive/boundary review scenarios, and `tests/run.sh` remains the Zola fixture/scenario validation.
+
 ## Runtime distribution contract
 
 `skills/zola/` on `main` is the canonical runtime payload and supported install/
